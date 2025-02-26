@@ -10,10 +10,12 @@ import nro.services.SkillService;
 import nro.utils.Util;
 
 import java.util.List;
+import nro.models.map.ItemMap;
+import nro.services.Service;
 
 /**
  *
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  *
  */
@@ -37,7 +39,7 @@ public class TrungUyXanhLo extends BossDoanhTrai {
                             goToXY(pl.location.x + Util.nextInt(-20, 20),
                                     Util.nextInt(pl.location.y - 80, this.zone.map.yPhysicInTop(pl.location.x, 0)), false);
                         }
-                        SkillService.gI().useSkill(this, pl, null,null);
+                        SkillService.gI().useSkill(this, pl, null, null);
                         checkPlayerDie(pl);
                     } else {
                         goToPlayer(pl, false);
@@ -59,11 +61,24 @@ public class TrungUyXanhLo extends BossDoanhTrai {
     }
 
     @Override
+    public void rewards(Player pl) {
+
+        if (Util.isTrue(1, 2)) {
+            ItemMap itemMap = new ItemMap(this.zone, 611, 1,
+                    this.location.x,
+                    this.zone.map.yPhysicInTop(this.location.x, this.location.y - 24), -1);
+            Service.getInstance().dropItemMap(this.zone, itemMap);
+        }
+        // Gọi phần thưởng chung, đảm bảo không có lỗi
+        generalRewards(pl);
+    }
+
+    @Override
     protected boolean useSpecialSkill() {
         //boss này chỉ có chiêu thái dương hạ san
         this.playerSkill.skillSelect = this.getSkillSpecial();
         if (SkillService.gI().canUseSkillWithCooldown(this)) {
-            SkillService.gI().useSkill(this, null, null,null);
+            SkillService.gI().useSkill(this, null, null, null);
             return true;
         } else {
             return false;

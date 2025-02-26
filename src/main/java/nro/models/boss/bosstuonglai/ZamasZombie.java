@@ -18,7 +18,7 @@ import nro.services.SkillService;
 import nro.utils.SkillUtil;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class ZamasZombie extends Boss {
@@ -64,23 +64,22 @@ public class ZamasZombie extends Boss {
     @Override
     public void rewards(Player pl) {
         int a = 0;
-        short[] temp = {1066, 1067, 1068, 1069, 1070};
-        if (Util.isTrue(60, 100)) {
-            for (int k = 0; k < 10; k++) {
-                ItemMap itemMap2 = new ItemMap(this.zone, temp[Util.nextInt(0, temp.length - 1)], 10,
-                        this.location.x + a, this.zone.map.yPhysicInTop(this.location.x, this.location.y - 24), -1);
-                Service.getInstance().dropItemMap(this.zone, itemMap2);
-                a += 10;
-            }
-        } else if (Util.isTrue(20, 100)) {
-            for (int i = 0; i < 10; i++) {
-                ItemMap itemMap = new ItemMap(this.zone, 1525, 5,
+        short[] temp = {1066, 1067, 1068, 1069, 1070}; // mảnh thiên sứ
+        if (Util.isTrue(1, 2)) {
+            ItemMap itemMap2 = new ItemMap(this.zone, temp[Util.nextInt(0, temp.length - 1)], 1,
+                    this.location.x, this.zone.map.yPhysicInTop(this.location.x, this.location.y - 24), -1);
+            Service.getInstance().dropItemMap(this.zone, itemMap2);
+
+        } else if (Util.isTrue(1, 5)) {
+            for (int i = 0; i < 5; i++) {
+                ItemMap itemMap = new ItemMap(this.zone, 1525, 1,
                         this.location.x + a, this.zone.map.yPhysicInTop(this.location.x, this.location.y - 24), -1);
                 Service.getInstance().dropItemMap(this.zone, itemMap);
                 a += 10;
             }
-        } else {
-            int soluong = Util.nextInt(5, 10);
+        } 
+        else {
+            int soluong = Util.nextInt(1, 5);
             for (int j = 0; j < soluong; j++) {
                 ItemMap itemMap1 = new ItemMap(this.zone, 1535, 1,
                         this.location.x + a, this.zone.map.yPhysicInTop(this.location.x, this.location.y - 24), -1);

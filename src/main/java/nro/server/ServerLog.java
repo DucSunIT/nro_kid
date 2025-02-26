@@ -8,7 +8,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  */
 public class ServerLog {
 

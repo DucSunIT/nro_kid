@@ -10,7 +10,7 @@ import nro.utils.Util;
 import nro.services.PlayerService;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  */
 public class MiniPet extends Player {
 

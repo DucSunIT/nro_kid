@@ -22,7 +22,7 @@ import nro.consts.ConstTranhNgocNamek;
 import nro.models.phuban.DragonNamecWar.TranhNgocService;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class PlayerService {

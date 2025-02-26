@@ -9,7 +9,7 @@ import java.net.Socket;
 
 /**
  *
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  *
  */

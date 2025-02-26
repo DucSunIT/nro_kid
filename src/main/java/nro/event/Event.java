@@ -11,7 +11,7 @@ import nro.utils.Log;
 import java.util.List;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  */
 public abstract class Event {
 

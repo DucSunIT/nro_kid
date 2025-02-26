@@ -10,7 +10,7 @@ import nro.server.Manager;
 import java.util.List;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class SkillUtil {

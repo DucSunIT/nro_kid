@@ -2,7 +2,7 @@ package nro.models.player;
 
 /**
  *
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  *
  */

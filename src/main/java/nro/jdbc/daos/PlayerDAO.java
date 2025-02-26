@@ -27,7 +27,7 @@ import java.util.logging.Level;
 import nro.models.item.ItemTimeSieuCap;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class PlayerDAO {

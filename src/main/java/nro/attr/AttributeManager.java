@@ -12,7 +12,7 @@ import lombok.Getter;
 
 /**
  *
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  */
 public class AttributeManager {
 

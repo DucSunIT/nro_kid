@@ -25,6 +25,7 @@ import nro.utils.Util;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+
 import nro.consts.ConstItem;
 import nro.consts.ConstTranhNgocNamek;
 import nro.models.phuban.DragonNamecWar.TranhNgoc;
@@ -37,7 +38,7 @@ import nro.server.ServerLog;
 import static nro.services.func.ChangeMapService.NON_SPACE_SHIP;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class Zone {
@@ -146,12 +147,19 @@ public class Zone {
         return total;
     }
 
-    private void updatePlayer() {
-        for (int i = this.notBosses.size() - 1; i >= 0; i--) {
-            Player pl = this.notBosses.get(i);
-            if (!pl.isPet && !pl.isMiniPet) {
-                this.notBosses.get(i).update();
-            }
+    //    private void updatePlayer() {
+//        for (int i = this.notBosses.size() - 1; i >= 0; i--) {
+//            Player pl = this.notBosses.get(i);
+//            if (!pl.isPet && !pl.isMiniPet) {
+//                this.notBosses.get(i).update();
+//            }
+//        }
+//    }
+//    private List<Player> players = new CopyOnWriteArrayList<>();
+
+    public synchronized void updatePlayer() {
+        for (Player player : new ArrayList<>(players)) {
+            player.update();
         }
     }
 

@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  */
 
 public class PetFollowManager extends AbsManager<PetFollow> {

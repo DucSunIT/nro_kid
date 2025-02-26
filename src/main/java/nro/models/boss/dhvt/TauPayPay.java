@@ -5,7 +5,7 @@ import nro.models.boss.BossFactory;
 import nro.models.player.Player;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  */
 public class TauPayPay extends BossDHVT {
 

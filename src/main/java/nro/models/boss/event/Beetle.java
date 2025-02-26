@@ -9,7 +9,7 @@ import nro.services.Service;
 import nro.services.func.ChangeMapService;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  */
 public class Beetle extends EscortedBoss {
     public Beetle(byte id, BossData data, Player owner) {

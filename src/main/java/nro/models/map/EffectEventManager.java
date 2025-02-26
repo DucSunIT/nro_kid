@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  */
 public class EffectEventManager {
     private static final EffectEventManager i = new EffectEventManager();

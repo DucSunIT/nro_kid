@@ -25,7 +25,7 @@ import nro.utils.Util;
 import java.util.List;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  */
 public class SummerEvent extends Event {
 

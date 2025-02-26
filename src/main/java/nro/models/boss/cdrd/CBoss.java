@@ -14,7 +14,7 @@ import nro.models.player.Player;
 
 /**
  *
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  */
 public abstract class CBoss extends Boss {
 

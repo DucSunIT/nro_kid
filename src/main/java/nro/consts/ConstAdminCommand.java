@@ -1,7 +1,7 @@
 package nro.consts;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  */
 public class ConstAdminCommand {
 

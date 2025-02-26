@@ -18,7 +18,7 @@ import nro.services.SkillService;
 import nro.utils.SkillUtil;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class BongBang extends Boss {
@@ -63,19 +63,19 @@ public class BongBang extends Boss {
 
     @Override
     public void rewards(Player pl) {
-        if (Util.isTrue(20, 100)) {
-            ItemMap itemMap1 = new ItemMap(this.zone, 925, 1,
-                    this.location.x - 5, this.zone.map.yPhysicInTop(this.location.x, this.location.y - 24), pl.id);
-            Service.getInstance().dropItemMap(this.zone, itemMap1);
+        int nro_bang = Util.nextInt(925, 931);
+
+        if (Util.isTrue(1, 2) && this.zone != null && pl != null) {
+            int dropX = (this.location != null) ? this.location.x - 5 : pl.location.x;
+            int dropY = (this.zone.map != null) ? this.zone.map.yPhysicInTop(dropX, pl.location.y - 24) : pl.location.y;
+
+            ItemMap itemMap1 = new ItemMap(this.zone, nro_bang, 1, dropX, dropY, pl.id);
+
+            if (Service.getInstance() != null) {
+                Service.getInstance().dropItemMap(this.zone, itemMap1);
+            }
         }
-        int a = 0;
-        for (int i = 0; i < 8; i++) {
-            int idtem = Util.nextInt(926, 931);
-            ItemMap itemMap = new ItemMap(this.zone, idtem, 1,
-                    this.location.x + a, this.zone.map.yPhysicInTop(this.location.x, this.location.y - 24), pl.id);
-            Service.getInstance().dropItemMap(this.zone, itemMap);
-            a += 15;
-        }
+
         generalRewards(pl);
     }
 
@@ -98,11 +98,12 @@ public class BongBang extends Boss {
 
     @Override
     public void leaveMap() {
-        try{
+        try {
             BossFactory.createBoss(BossFactory.BONG_BANG).setJustRest();
             super.leaveMap();
             BossManager.gI().removeBoss(this);
-        }catch(Exception ignored){}
+        } catch (Exception ignored) {
+        }
     }
 
 }

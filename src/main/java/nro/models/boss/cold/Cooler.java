@@ -14,7 +14,7 @@ import nro.services.Service;
 import nro.utils.Util;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class Cooler extends FutureBoss {
@@ -39,7 +39,7 @@ public class Cooler extends FutureBoss {
         if (Util.isTrue(1, 20)) {
             tempId = tempIds1[Util.nextInt(0, tempIds1.length - 1)];
         } else if (Util.isTrue(1, 100)) {
-
+            tempId = tempIds2[Util.nextInt(0, tempIds1.length - 1)];
         }
         if (Manager.EVENT_SEVER == 4 && tempId == -1) {
             tempId = ConstItem.LIST_ITEM_NLSK_TET_2023[Util.nextInt(0, ConstItem.LIST_ITEM_NLSK_TET_2023.length - 1)];
@@ -52,10 +52,10 @@ public class Cooler extends FutureBoss {
                 new RewardService.RatioStar((byte) 1, 1, 2),
                 new RewardService.RatioStar((byte) 2, 1, 3),
                 new RewardService.RatioStar((byte) 3, 1, 4),
-                new RewardService.RatioStar((byte) 4, 1, 5),
-                new RewardService.RatioStar((byte) 5, 1, 6),
-                new RewardService.RatioStar((byte) 6, 1, 7),
-                new RewardService.RatioStar((byte) 7, 1, 8)
+                new RewardService.RatioStar((byte) 4, 1, 10),
+                new RewardService.RatioStar((byte) 5, 1, 20),
+                new RewardService.RatioStar((byte) 6, 1, 30),
+                new RewardService.RatioStar((byte) 7, 1, 40)
             });
             Service.getInstance().dropItemMap(this.zone, itemMap);
         }

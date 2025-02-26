@@ -435,7 +435,7 @@ public class ServerManager {
         activeGame();
         activeLogin();
         autoTask();
-        new AutoMaintenance(5, 0, 0).start(); // Bảo trì định kỳ
+//        new AutoMaintenance(5, 0, 0).start(); // Bảo trì định kỳ
 
         // Khởi động Netty Server
         NettyServer nettyServer = new NettyServer();

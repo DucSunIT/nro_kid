@@ -66,7 +66,7 @@ import nro.services.func.SoMayMan;
 import nro.services.func.TaiXiu;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class Manager {
@@ -100,8 +100,8 @@ public class Manager {
     public static boolean debug;
     public static String NgayRunServer;
 
-    public static int MAX_BAG = 80;
-    public static int MAX_BOX = 60;
+    public static int MAX_BAG = 120;
+    public static int MAX_BOX = 120;
 
     public static byte KHUYEN_MAI_NAP = 3;
 

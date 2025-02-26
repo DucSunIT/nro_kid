@@ -20,7 +20,7 @@ import nro.server.Manager;
 import nro.utils.Util;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class Input {
@@ -320,53 +320,158 @@ public class Input {
 
                     }
                     break;
+//                case TAI_taixiu:
+//                    int sotvxiu1 = Integer.valueOf(text[0]);
+//                    try {
+//                        if (sotvxiu1 >= 1_000 && sotvxiu1 <= 1_000_000) {
+//                            if (player.inventory.ruby >= sotvxiu1) {
+//                                player.inventory.ruby -= sotvxiu1;
+//                                player.goldTai += sotvxiu1;
+//                                TaiXiu.gI().goldTai += sotvxiu1;
+//                                Service.getInstance().sendThongBao(player, "Bạn đã đặt " + Util.format(sotvxiu1) + " Hồng ngọc vào TÀI");
+//                                TaiXiu.gI().addPlayerTai(player);
+//                                InventoryService.gI().sendItemBags(player);
+//                                Service.getInstance().sendMoney(player);
+//                            } else {
+//                                Service.getInstance().sendThongBao(player, "Bạn không đủ Hồng ngọc để chơi.");
+//                            }
+//                        } else {
+//                            Service.getInstance().sendThongBao(player, "Cược ít nhất 1.000 Hồng ngọc.");
+//                        }
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                        Service.getInstance().sendThongBao(player, "Lỗi.");
+//                        System.out.println("nnnnn2  ");
+//                    }
+//                    break;
+//
+//                case XIU_taixiu:
+//                    int sotvxiu2 = Integer.valueOf(text[0]);
+//                    try {
+//                        if (sotvxiu2 >= 1_000 && sotvxiu2 <= 1_000_000) {
+//                            if (player.inventory.ruby >= sotvxiu2) {
+//                                player.inventory.ruby -= sotvxiu2;
+//                                player.goldXiu += sotvxiu2;
+//                                TaiXiu.gI().goldXiu += sotvxiu2;
+//                                Service.getInstance().sendThongBao(player, "Bạn đã đặt " + Util.format(sotvxiu2) + " Hồng ngọc vào XỈU");
+//                                TaiXiu.gI().addPlayerXiu(player);
+//                                InventoryService.gI().sendItemBags(player);
+//                                Service.getInstance().sendMoney(player);
+//                            } else {
+//                                Service.getInstance().sendThongBao(player, "Bạn không đủ Hồng ngọc để chơi.");
+//                            }
+//                        } else {
+//                            Service.getInstance().sendThongBao(player, "Cược ít nhất 1.000 Hồng ngọc.");
+//                        }
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                        Service.getInstance().sendThongBao(player, "Lỗi.");
+//                        System.out.println("nnnnn2  ");
+//                    }
+//                    break;
                 case TAI_taixiu:
+//                    int sotvxiu1 = Integer.valueOf(text[0]);
+//                    try {
+//                        if (sotvxiu1 >= 1_000 && sotvxiu1 <= 1_000_000) {
+//                            if (player.inventory.ruby >= sotvxiu1) {
+//                                player.inventory.ruby -= sotvxiu1;
+//                                player.goldTai += sotvxiu1;
+//                                TaiXiu.gI().goldTai += sotvxiu1;
+//                                Service.getInstance().sendThongBao(player, "Bạn đã đặt " + Util.format(sotvxiu1) + " Hồng ngọc vào TÀI");
+//                                TaiXiu.gI().addPlayerTai(player);
+//                                InventoryService.gI().sendItemBags(player);
+//                                Service.getInstance().sendMoney(player);
+//                            } else {
+//                                Service.getInstance().sendThongBao(player, "Bạn không đủ Hồng ngọc để chơi.");
+//                            }
+//                        } else {
+//                            Service.getInstance().sendThongBao(player, "Cược ít nhất 1.000 Hồng ngọc.");
+//                        }
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                        Service.getInstance().sendThongBao(player, "Lỗi.");
+//                        System.out.println("nnnnn2  ");
+//                    }
+
+                    Item thoivang = null;
+                    try {
+                        thoivang = InventoryService.gI().findItemBagByTemp(player, 457); // Tìm thỏi vàng
+                    } catch (Exception ignored) {
+                    }
                     int sotvxiu1 = Integer.valueOf(text[0]);
                     try {
-                        if (sotvxiu1 >= 1000 && sotvxiu1 <= 100000) {
-                            if (player.inventory.ruby >= sotvxiu1) {
-                                player.inventory.ruby -= sotvxiu1;
+                        if (sotvxiu1 >= 10 && sotvxiu1 <= 10_000) { // Điều kiện cược
+                            assert thoivang != null;
+                            if (thoivang.quantity >= sotvxiu1) { // Kiểm tra số lượng Thỏi vàng
+                                thoivang.quantity -= sotvxiu1;
                                 player.goldTai += sotvxiu1;
                                 TaiXiu.gI().goldTai += sotvxiu1;
-                                Service.getInstance().sendThongBao(player, "Bạn đã đặt " + Util.format(sotvxiu1) + " Hồng ngọc vào TÀI");
+                                Service.getInstance().sendThongBao(player, "Bạn đã đặt " + Util.format(sotvxiu1) + " Thỏi vàng vào TÀI");
                                 TaiXiu.gI().addPlayerTai(player);
                                 InventoryService.gI().sendItemBags(player);
                                 Service.getInstance().sendMoney(player);
                             } else {
-                                Service.getInstance().sendThongBao(player, "Bạn không đủ Hồng ngọc để chơi.");
+                                Service.getInstance().sendThongBao(player, "Bạn không đủ Thỏi vàng để chơi.");
                             }
                         } else {
-                            Service.getInstance().sendThongBao(player, "Cược ít nhất 10.000 Hồng ngọc.");
+                            Service.getInstance().sendThongBao(player, "Cược tối thiểu 10 Thỏi vàng - tối đa 10.000 Thỏi vàng.");
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
                         Service.getInstance().sendThongBao(player, "Lỗi.");
-                        System.out.println("nnnnn2  ");
                     }
                     break;
 
                 case XIU_taixiu:
+
+//                    int sotvxiu2 = Integer.valueOf(text[0]);
+//                    try {
+//                        if (sotvxiu2 >= 1_000 && sotvxiu2 <= 1_000_000) {
+//                            if (player.inventory.ruby >= sotvxiu2) {
+//                                player.inventory.ruby -= sotvxiu2;
+//                                player.goldXiu += sotvxiu2;
+//                                TaiXiu.gI().goldXiu += sotvxiu2;
+//                                Service.getInstance().sendThongBao(player, "Bạn đã đặt " + Util.format(sotvxiu2) + " Hồng ngọc vào XỈU");
+//                                TaiXiu.gI().addPlayerXiu(player);
+//                                InventoryService.gI().sendItemBags(player);
+//                                Service.getInstance().sendMoney(player);
+//                            } else {
+//                                Service.getInstance().sendThongBao(player, "Bạn không đủ Hồng ngọc để chơi.");
+//                            }
+//                        } else {
+//                            Service.getInstance().sendThongBao(player, "Cược ít nhất 1.000 Hồng ngọc.");
+//                        }
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                        Service.getInstance().sendThongBao(player, "Lỗi.");
+//                        System.out.println("nnnnn2  ");
+//                    }
+                    Item thoivangXIU = null;
+                    try {
+                        thoivangXIU = InventoryService.gI().findItemBagByTemp(player, 457); // Tìm thỏi vàng
+                    } catch (Exception ignored) {
+                    }
                     int sotvxiu2 = Integer.valueOf(text[0]);
                     try {
-                        if (sotvxiu2 >= 1000 && sotvxiu2 <= 100000) {
-                            if (player.inventory.ruby >= sotvxiu2) {
-                                player.inventory.ruby -= sotvxiu2;
+                        if (sotvxiu2 >= 10 && sotvxiu2 <= 10_000) { // Điều kiện cược
+                            assert thoivangXIU != null;
+                            if (thoivangXIU.quantity >= sotvxiu2) { // Kiểm tra số lượng Thỏi vàng
+                                thoivangXIU.quantity -= sotvxiu2;
                                 player.goldXiu += sotvxiu2;
                                 TaiXiu.gI().goldXiu += sotvxiu2;
-                                Service.getInstance().sendThongBao(player, "Bạn đã đặt " + Util.format(sotvxiu2) + " Hồng ngọc vào XỈU");
+                                Service.getInstance().sendThongBao(player, "Bạn đã đặt " + Util.format(sotvxiu2) + " Thỏi vàng vào XỈU");
                                 TaiXiu.gI().addPlayerXiu(player);
                                 InventoryService.gI().sendItemBags(player);
                                 Service.getInstance().sendMoney(player);
                             } else {
-                                Service.getInstance().sendThongBao(player, "Bạn không đủ Hồng ngọc để chơi.");
+                                Service.getInstance().sendThongBao(player, "Bạn không đủ Thỏi vàng để chơi.");
                             }
                         } else {
-                            Service.getInstance().sendThongBao(player, "Cược ít nhất 20.000 - 100.000 Hồng ngọc ");
+                            Service.getInstance().sendThongBao(player, "Cược tối thiểu 10 Thỏi vàng - tối đa 10.000 Thỏi vàng.");
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
                         Service.getInstance().sendThongBao(player, "Lỗi.");
-                        System.out.println("nnnnn2  ");
                     }
                     break;
                 case CHON_SO_MAY_MAN:
@@ -457,10 +562,10 @@ public class Input {
                         } else if (player.getSession().vnd >= goldTrade2) {
                             PlayerDAO.subVnd(player, goldTrade2);
                             player.tongnap += goldTrade2;
-                            Item Xuvang = ItemService.gI().createNewItem((short) 1535, (kmnap2 * (goldTrade2 / 100)));
+                            Item Xuvang = ItemService.gI().createNewItem((short) 1535, (kmnap2 * (goldTrade2 / 200)));
                             InventoryService.gI().addItemBag(player, Xuvang, 9999);
                             InventoryService.gI().sendItemBags(player);
-                            Service.getInstance().sendThongBao(player, "Bạn nhận được " + Util.format((kmnap2 * (goldTrade2 / 100)))
+                            Service.getInstance().sendThongBao(player, "Bạn nhận được " + Util.format((kmnap2 * (goldTrade2 / 200)))
                                     + " " + Xuvang.template.name);
                         } else {
                             Service.getInstance().sendThongBao(player, "|7|Số Coin của bạn là " + player.getSession().vnd + " không đủ để quy "
@@ -501,7 +606,7 @@ public class Input {
     public void createFormGiftCode(Player pl) {
         createForm(pl, GIFT_CODE, "Mã quà tặng", new SubInput("Nhập mã quà tặng", ANY));
     }
-    
+
     public void createGiftMember(Player pl) {
         createForm(pl, GIFT_MEMBER, "Mã quà tặng", new SubInput("Nhập mã quà tặng", ANY));
     }
@@ -555,15 +660,24 @@ public class Input {
 
     public void createFormBuffDanhHieu(Player pl) {
         createForm(pl, BUFF_DANH_HIEU, "Tặng Danh Hiệu", new SubInput("Tên người chơi", ANY),
-                 new SubInput("Danh hiệu: 1.Đại thần 2.Cần thủ 3.Tuổi thơ 4.Thợ ngọc 5.Ai mà xinh thế", ANY), new SubInput("Số Ngày", ANY));
+                new SubInput("Danh hiệu: 1.Đại thần 2.Cần thủ 3.Tuổi thơ 4.Thợ ngọc 5.Ai mà xinh thế", ANY), new SubInput("Số Ngày", ANY));
     }
 
+    // tài xỉu hồng ngọc
+//    public void TAI_taixiu(Player pl) {
+//        createForm(pl, TAI_taixiu, "Chọn số hồng ngọc đặt Tài", new SubInput("Số Hồng ngọc cược", ANY));//????
+//    }
+//
+//    public void XIU_taixiu(Player pl) {
+//        createForm(pl, XIU_taixiu, "Chọn số hồng ngọc đặt Xỉu", new SubInput("Số Hồng ngọc cược", ANY));//????
+//    }
+    // tải xỉu thỏi vàng
     public void TAI_taixiu(Player pl) {
-        createForm(pl, TAI_taixiu, "Chọn số hồng ngọc đặt Tài", new SubInput("Số Hồng ngọc cược", ANY));//????
+        createForm(pl, TAI_taixiu, "Chọn số thỏi vàng đặt Tài", new SubInput("Số thỏi vàng cược", ANY));//????
     }
 
     public void XIU_taixiu(Player pl) {
-        createForm(pl, XIU_taixiu, "Chọn số hồng ngọc đặt Xỉu", new SubInput("Số Hồng ngọc cược", ANY));//????
+        createForm(pl, XIU_taixiu, "Chọn số thỏi vàng đặt Xỉu", new SubInput("Số thỏi vàng cược", ANY));//????
     }
 
     public void ChonSo(Player pl) {

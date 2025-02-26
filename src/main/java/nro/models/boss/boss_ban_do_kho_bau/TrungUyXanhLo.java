@@ -21,7 +21,7 @@ import nro.services.Service;
 
 /**
  *
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  */
 public class TrungUyXanhLo extends BossBanDoKhoBau {
 
@@ -79,9 +79,9 @@ public class TrungUyXanhLo extends BossBanDoKhoBau {
     @Override
     public void rewards(Player pl) {
         int a = 0;
-        int b = 5;
-        for (int i = 0; i < 2; i++) {
-            ItemMap itemMap = new ItemMap(this.zone, 16, 1,
+//        int b = 5;
+        for (int i = 0; i <= 20; i++) {
+            ItemMap itemMap = new ItemMap(this.zone, 457, 1,
                     this.location.x + a, this.zone.map.yPhysicInTop(this.location.x, this.location.y - 24), -1);
             Service.getInstance().dropItemMap(this.zone, itemMap);
             a += 15;

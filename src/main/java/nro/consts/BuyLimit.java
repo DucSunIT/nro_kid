@@ -1,7 +1,7 @@
 package nro.consts;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  */
 public class BuyLimit {
     public static final int DA_NANG_CAP_LV1 = 0;

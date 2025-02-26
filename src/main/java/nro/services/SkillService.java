@@ -29,7 +29,7 @@ import nro.models.player.SkillSpecial;
 import nro.models.player.TestDame;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class SkillService {

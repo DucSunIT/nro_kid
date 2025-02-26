@@ -8,7 +8,7 @@ import nro.utils.Log;
 import nro.utils.Util;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  */
 public class ThienXinHang extends BossDHVT {
 

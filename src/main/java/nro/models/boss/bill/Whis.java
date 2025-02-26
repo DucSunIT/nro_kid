@@ -17,7 +17,7 @@ import nro.utils.Util;
 
 /**
  *
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  *
  */
@@ -48,20 +48,20 @@ public class Whis extends Boss {
         ItemMap itemMap = null;
         int x = this.location.x;
         int y = this.zone.map.yPhysicInTop(x, this.location.y - 24);
-        if (Util.isTrue(1, 50)) {
-            int[] set1 = {562, 564, 566, 561};
+        if (Util.isTrue(1, 100)) {
+            int[] set1 = {562, 564, 566, 561}; // găng thần
             itemMap = new ItemMap(this.zone, set1[Util.nextInt(0, set1.length - 1)], 1, x, y, pl.id);
             RewardService.gI().initBaseOptionClothes(itemMap.itemTemplate.id, itemMap.itemTemplate.type, itemMap.options);
             RewardService.gI().initStarOption(itemMap, new RewardService.RatioStar[]{
                 new RewardService.RatioStar((byte) 1, 1, 2),
                 new RewardService.RatioStar((byte) 2, 1, 3),
                 new RewardService.RatioStar((byte) 3, 1, 4),
-                new RewardService.RatioStar((byte) 4, 1, 5),
-                new RewardService.RatioStar((byte) 5, 1, 6),
-                new RewardService.RatioStar((byte) 6, 1, 7),
-                new RewardService.RatioStar((byte) 7, 1, 8)
+                new RewardService.RatioStar((byte) 4, 1, 10),
+                new RewardService.RatioStar((byte) 5, 1, 20),
+                new RewardService.RatioStar((byte) 6, 1, 30),
+                new RewardService.RatioStar((byte) 7, 1, 40)
             });
-        } else if (Util.isTrue(1, 30)) {
+        } else if (Util.isTrue(1, 50)) {
             int[] set2 = {555, 556, 563, 557, 558, 565, 559, 567, 560};
             itemMap = new ItemMap(this.zone, set2[Util.nextInt(0, set2.length - 1)], 1, x, y, pl.id);
             RewardService.gI().initBaseOptionClothes(itemMap.itemTemplate.id, itemMap.itemTemplate.type, itemMap.options);
@@ -69,16 +69,16 @@ public class Whis extends Boss {
                 new RewardService.RatioStar((byte) 1, 1, 2),
                 new RewardService.RatioStar((byte) 2, 1, 3),
                 new RewardService.RatioStar((byte) 3, 1, 4),
-                new RewardService.RatioStar((byte) 4, 1, 5),
-                new RewardService.RatioStar((byte) 5, 1, 6),
-                new RewardService.RatioStar((byte) 6, 1, 7),
-                new RewardService.RatioStar((byte) 7, 1, 8)
+                new RewardService.RatioStar((byte) 4, 1, 10),
+                new RewardService.RatioStar((byte) 5, 1, 20),
+                new RewardService.RatioStar((byte) 6, 1, 30),
+                new RewardService.RatioStar((byte) 7, 1, 40)
             });
 
         } else if (Util.isTrue(1, 10)) {
-            itemMap = new ItemMap(this.zone, 15, 1, x, y, pl.id);
-        } else if (Util.isTrue(1, 5)) {
             itemMap = new ItemMap(this.zone, 16, 1, x, y, pl.id);
+        } else if (Util.isTrue(1, 5)) {
+            itemMap = new ItemMap(this.zone, 17, 1, x, y, pl.id);
         }
         if (Manager.EVENT_SEVER == 4 && itemMap == null) {
             itemMap = new ItemMap(this.zone, ConstItem.LIST_ITEM_NLSK_TET_2023[Util.nextInt(0, ConstItem.LIST_ITEM_NLSK_TET_2023.length - 1)], 1, x, y, pl.id);

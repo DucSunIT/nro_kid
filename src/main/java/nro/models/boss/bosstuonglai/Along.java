@@ -18,7 +18,7 @@ import nro.services.SkillService;
 import nro.utils.SkillUtil;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class Along extends Boss {

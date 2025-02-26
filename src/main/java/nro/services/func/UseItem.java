@@ -37,7 +37,7 @@ import nro.models.boss.BossManager;
 import nro.models.npc.specialnpc.MabuEgg;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class UseItem {
@@ -461,6 +461,13 @@ public class UseItem {
                     case 1526: //hộp cải trang Hit
                         OpenHit(pl, item);
                         break;
+                    case 1562:
+                        OpenHopTanThu(pl, item);
+                        break;
+                    case 1560:
+                        // hộp quà valentine
+                        OpenValentine(pl, item);
+                        break;
                     case 2006:
                         Input.gI().createFormChangeNameByItem(pl);
                         break;
@@ -642,7 +649,6 @@ public class UseItem {
     /**
      * *********NEW PET NRO KID********************
      */
-
     private void OpenNguyenLieu(Player pl, Item item) {
         if (InventoryService.gI().getCountEmptyBag(pl) > 0) {
             short[] thuong = {1506, 1507};
@@ -709,6 +715,96 @@ public class UseItem {
         }
     }
 
+    // open hộp quà valentine
+    private void OpenValentine(Player pl, Item item) {
+        if (InventoryService.gI().getCountEmptyBag(pl) > 0) {
+            // Danh sách vật phẩm cần thêm
+            Object[][] itemsData = {
+                {(short) 1463, new int[][]{{50, 35}, {77, 35}, {103, 35}, {101, 30}, {93, 3}, {30, 1}}, 1},
+                {(short) 16, new int[][]{{30, 1}}, 10},
+                {(short) 573, new int[][]{{30, 1}}, 10},
+                {(short) 574, new int[][]{{30, 1}}, 10}
+            };
+
+            for (Object[] data : itemsData) {
+                Item newItem = ItemService.gI().createNewItem((short) data[0]);
+                for (int[] opt : (int[][]) data[1]) {
+                    newItem.itemOptions.add(new ItemOption(opt[0], opt[1]));
+                }
+                newItem.quantity = (int) data[2];
+
+                InventoryService.gI().addItemBag(pl, newItem, newItem.quantity);
+                Service.getInstance().sendThongBao(pl, "Bạn đã nhận được " + newItem.template.name);
+            }
+
+            // Trừ vật phẩm Valentine
+            InventoryService.gI().subQuantityItemsBag(pl, item, 1);
+            InventoryService.gI().sendItemBags(pl);
+        } else {
+            Service.getInstance().sendThongBao(pl, "Hàng trang đã đầy");
+        }
+    }
+    // end hộp quà valentine
+
+    // open hộp quà tân thủ
+    private void OpenHopTanThu(Player pl, Item item) {
+        // Bộ đồ theo hành tinh (gender)
+        short[] setTD = {0, 6, 21, 27, 12, 1196}; // Trái Đất (gender == 0)
+        short[] setNM = {1, 7, 28, 22, 12, 1196}; // Namếc (gender == 1)
+        short[] setXD = {2, 8, 23, 29, 12, 1196}; // Xayda (gender == 2)
+
+        // Chọn đồ theo hành tinh của người chơi
+        short[] doTanThu = (pl.gender == 0) ? setTD : (pl.gender == 1) ? setNM : setXD;
+
+        // Kiểm tra xem túi đồ có đủ chỗ không
+        if (InventoryService.gI().getCountEmptyBag(pl) >= doTanThu.length) {
+            for (short id : doTanThu) {
+                Item it = ItemService.gI().createNewItem(id);
+
+                // Gán option riêng cho từng món
+                switch (id) {
+                    case 0, 1, 2: // Áo
+                        it.itemOptions.add(new ItemOption(47, 2)); // giap
+                        break;
+                    case 6, 7, 8: // Quần
+                        it.itemOptions.add(new ItemOption(6, 20)); // hp
+                        break;
+                    case 21, 28, 23: // Găng tay
+                        it.itemOptions.add(new ItemOption(0, 3)); // Attack
+                        break;
+                    case 27, 22, 29: // Giày
+                        it.itemOptions.add(new ItemOption(7, 15)); // ki
+                        break;
+                    case 12: // Rada (dùng chung cho 3 hành tinh)
+                        it.itemOptions.add(new ItemOption(14, 1)); // cm
+                        break;
+                    case 1196:
+                        it.itemOptions.add(new ItemOption(50, 30)); //sd
+                        it.itemOptions.add(new ItemOption(77, 30)); //hp
+                        it.itemOptions.add(new ItemOption(103, 30)); //ki
+                        break;
+                }
+                if (id != 1196) {
+                    it.itemOptions.add(new ItemOption(107, 8));
+                    it.itemOptions.add(new ItemOption(102, 8));
+                    it.itemOptions.add(new ItemOption(101, 40));
+                }
+                it.itemOptions.add(new ItemOption(93, 3));
+
+                // Thêm vào túi đồ
+                InventoryService.gI().addItemBag(pl, it, 1);
+                Service.getInstance().sendThongBao(pl, "Bạn đã nhận được " + it.template.name);
+            }
+
+            // Trừ số lượng hộp tân thủ sau khi mở
+            InventoryService.gI().subQuantityItemsBag(pl, item, 1);
+            InventoryService.gI().sendItemBags(pl);
+        } else {
+            Service.getInstance().sendThongBao(pl, "Hành trang không đủ chỗ trống để nhận cả bộ đồ!");
+        }
+    }
+
+    // end hộp quà tân thủ
     private void openphapsu(Player pl, Item item) {
         if (InventoryService.gI().getCountEmptyBag(pl) > 0) {
             short[] manh = {1232, 1233, 1234};

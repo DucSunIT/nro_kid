@@ -9,7 +9,7 @@ import nro.utils.Util;
 
 /**
  *
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  *
  */
@@ -21,7 +21,7 @@ public class SuperBrolyRed extends FutureBoss {
 
     @Override
     public void rewards(Player pl) {
-        if (Util.isTrue(50, 100)) {
+        if (Util.isTrue(1, 2)) {
             this.dropItemReward(568, (int) pl.id);
             generalRewards(pl);
         }

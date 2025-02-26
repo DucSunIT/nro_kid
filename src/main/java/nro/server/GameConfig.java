@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  */
 @Setter
 @Getter

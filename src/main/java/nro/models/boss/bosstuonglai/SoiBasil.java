@@ -18,7 +18,7 @@ import nro.services.SkillService;
 import nro.utils.SkillUtil;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class SoiBasil extends Boss {
@@ -73,7 +73,7 @@ public class SoiBasil extends Boss {
             switch (tempId) {
                 case ConstItem.CAI_TRANG_SOI_BASIL:
                     itemMap.options.add(new ItemOption(50, Util.nextInt(30, 40)));
-                    itemMap.options.add(new ItemOption(77, Util.nextInt(80, 110)));
+                    itemMap.options.add(new ItemOption(77, Util.nextInt(80, 100)));
                     itemMap.options.add(new ItemOption(103, Util.nextInt(30, 40)));
                     itemMap.options.add(new ItemOption(93, 3));
                     itemMap.options.add(new ItemOption(30, 1));
@@ -88,7 +88,7 @@ public class SoiBasil extends Boss {
                 case ConstItem.CAI_TRANG_SOI_BERGAMO:
                     itemMap.options.add(new ItemOption(50, Util.nextInt(30, 40)));
                     itemMap.options.add(new ItemOption(77, Util.nextInt(30, 40)));
-                    itemMap.options.add(new ItemOption(103, Util.nextInt(80, 110)));
+                    itemMap.options.add(new ItemOption(103, Util.nextInt(80, 100)));
                     itemMap.options.add(new ItemOption(93, 3));
                     itemMap.options.add(new ItemOption(30, 1));
                     break;

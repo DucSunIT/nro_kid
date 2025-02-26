@@ -411,16 +411,65 @@ public class Controller {
                         UseItem.gI().doItem(player, _msg);
                     }
                     break;
+//                case -91:
+//                    if (player != null) {
+//                        switch (player.iDMark.getTypeChangeMap()) {
+//                            case ConstMap.CHANGE_CAPSULE:
+//                                UseItem.gI().choseMapCapsule(player, _msg.reader().readByte());
+//                                break;
+//                            case ConstMap.CHANGE_BLACK_BALL:
+//                                BlackBallWar.gI().changeMap(player, _msg.reader().readByte());
+//                                break;
+//                        }
+//                    }
+//                    break;
                 case -91:
                     if (player != null) {
-                        switch (player.iDMark.getTypeChangeMap()) {
-                            case ConstMap.CHANGE_CAPSULE:
-                                UseItem.gI().choseMapCapsule(player, _msg.reader().readByte());
-                                break;
-                            case ConstMap.CHANGE_BLACK_BALL:
-                                BlackBallWar.gI().changeMap(player, _msg.reader().readByte());
-                                break;
+                        try {
+                            // Đọc giá trị index từ _msg
+                            byte index = _msg.reader().readByte();
+
+                            // Lấy loại đổi map của người chơi
+                            int typeChangeMap = player.iDMark.getTypeChangeMap();
+
+                            switch (typeChangeMap) {
+                                case ConstMap.CHANGE_CAPSULE:
+                                    if (index >= 0) {
+                                        try {
+                                            UseItem.gI().choseMapCapsule(player, index);
+                                        } catch (ArrayIndexOutOfBoundsException ex) {
+                                            System.out.println("Lỗi: Index không hợp lệ trong CHANGE_CAPSULE - index: " + index);
+                                        }
+                                    } else {
+                                        System.out.println("Lỗi: Index âm không hợp lệ trong CHANGE_CAPSULE: " + index);
+                                    }
+                                    break;
+
+                                case ConstMap.CHANGE_BLACK_BALL:
+                                    if (index >= 0) {
+                                        try {
+                                            BlackBallWar.gI().changeMap(player, index);
+                                        } catch (ArrayIndexOutOfBoundsException ex) {
+                                            System.out.println("Lỗi: Index không hợp lệ trong CHANGE_BLACK_BALL - index: " + index);
+                                        }
+                                    } else {
+                                        System.out.println("Lỗi: Index âm không hợp lệ trong CHANGE_BLACK_BALL: " + index);
+                                    }
+                                    break;
+
+                                default:
+                                    System.out.println("Lỗi: TypeChangeMap không hợp lệ: " + typeChangeMap);
+                                    break;
+                            }
+                        } catch (IOException e) {
+                            System.out.println("Lỗi khi đọc index từ _msg: " + e.getMessage());
+                            e.printStackTrace();
+                        } catch (Exception e) {
+                            System.out.println("Lỗi không mong muốn: " + e.getMessage());
+                            e.printStackTrace();
                         }
+                    } else {
+                        System.out.println("Lỗi: Player null khi xử lý -91");
                     }
                     break;
                 case -39:
@@ -451,11 +500,37 @@ public class Controller {
                         Service.getInstance().chat(player, text);
                     }
                     break;
+//                case 32:
+//                    if (player != null) {
+//                        int npcId = _msg.reader().readShort();
+//                        int select = _msg.reader().readByte();
+//                        MenuController.getInstance().doSelectMenu(player, npcId, select);
+//                    }
+//                    break;
                 case 32:
                     if (player != null) {
-                        int npcId = _msg.reader().readShort();
-                        int select = _msg.reader().readByte();
-                        MenuController.getInstance().doSelectMenu(player, npcId, select);
+                        try {
+                            int npcId = _msg.reader().readShort();
+                            int select = _msg.reader().readByte();
+
+                            // Kiểm tra giá trị hợp lệ
+                            if (npcId < 0) {
+                                System.out.println("Lỗi: npcId không hợp lệ: " + npcId);
+                                break;
+                            }
+
+                            if (select < 0) {
+                                System.out.println("Lỗi: select không hợp lệ: " + select);
+                                break;
+                            }
+
+                            System.out.println("NpcId: " + npcId + ", Select: " + select); // Debug log
+
+                            MenuController.getInstance().doSelectMenu(player, npcId, select);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            System.out.println("Lỗi khi đọc dữ liệu từ _msg.");
+                        }
                     }
                     break;
                 case 33:
@@ -475,12 +550,22 @@ public class Controller {
                         Service.getInstance().attackMob(player, (int) (_msg.reader().readByte()));
                     }
                     break;
-                case -60:
-                    if (player != null) {
-                        int playerId = _msg.reader().readInt();
-                        Service.getInstance().attackPlayer(player, playerId);
+//                case -60:
+//                    if (player != null) {
+//                        int playerId = _msg.reader().readInt();
+//                        Service.getInstance().attackPlayer(player, playerId);
+//                    }
+//                    break;
+                case -60: { // Tấn công người chơi
+                    if (_msg.reader().available() < 4) {
+                        System.err.println("Lỗi: Không đủ dữ liệu để tấn công người chơi!");
+                        break;
                     }
+
+                    int playerId = _msg.reader().readInt();
+                    Service.getInstance().attackPlayer(player, playerId);
                     break;
+                }
                 case -27:
                     _session.sendSessionKey();
                     break;

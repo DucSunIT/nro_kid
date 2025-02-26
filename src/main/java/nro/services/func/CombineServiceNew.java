@@ -23,7 +23,7 @@ import nro.data.ItemData;
 import nro.server.Manager;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class CombineServiceNew {

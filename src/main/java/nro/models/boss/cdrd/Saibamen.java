@@ -17,7 +17,7 @@ import nro.utils.Util;
 
 /**
  *
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  */
 public class Saibamen extends CBoss {
 

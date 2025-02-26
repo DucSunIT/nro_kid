@@ -18,7 +18,7 @@ import nro.utils.Util;
 import nro.models.boss.cell.XenBoHung;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  */
 public class Drabula_Tang5 extends BossMabuWar {
 

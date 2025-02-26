@@ -25,7 +25,7 @@ import java.util.List;
 import nro.data.ItemData;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class Trade {

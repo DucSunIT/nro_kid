@@ -5,7 +5,7 @@ import nro.models.skill.Skill;
 import lombok.Builder;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class BossData {
@@ -49,7 +49,7 @@ public class BossData {
 
     @Builder
     public BossData(String name, byte gender, byte typeDame, byte typeHp, int dame, long[][] hp,
-                    short[] outfit, short[] mapJoin, int[][] skillTemp, int secondsRest) {
+            short[] outfit, short[] mapJoin, int[][] skillTemp, int secondsRest) {
         this.name = name;
         this.gender = gender;
         this.typeDame = typeDame;
@@ -63,7 +63,7 @@ public class BossData {
     }
 
     public BossData(String name, byte gender, byte typeDame, byte typeHp, int dame, long[][] hp,
-                    short[] outfit, short[] mapJoin, int[][] skillTemp, int secondsRest, boolean joinMapIdle) {
+            short[] outfit, short[] mapJoin, int[][] skillTemp, int secondsRest, boolean joinMapIdle) {
         this.name = name;
         this.gender = gender;
         this.typeDame = typeDame;
@@ -78,7 +78,7 @@ public class BossData {
     }
 
     public BossData(String name, byte gender, byte typeDame, byte typeHp, int dame, long[][] hp,
-                    short[] outfit, short[] mapJoin, int[][] skillTemp, int secondsRest, int timeDelayLeaveMap) {
+            short[] outfit, short[] mapJoin, int[][] skillTemp, int secondsRest, int timeDelayLeaveMap) {
         this.name = name;
         this.gender = gender;
         this.typeDame = typeDame;
@@ -93,7 +93,7 @@ public class BossData {
     }
 
     public BossData(String name, byte gender, byte typeDame, byte typeHp, int dame, long[][] hp,
-                    short[] outfit, short[] mapJoin, int[][] skillTemp, int secondsRest, boolean joinMapIdle, int timeDelayLeaveMap) {
+            short[] outfit, short[] mapJoin, int[][] skillTemp, int secondsRest, boolean joinMapIdle, int timeDelayLeaveMap) {
         this.name = name;
         this.gender = gender;
         this.typeDame = typeDame;
@@ -117,13 +117,13 @@ public class BossData {
             1, //dame
             new long[][]{{100, 1000}, {1000, 100000}, {100000, 1000000}, {1000000, 2000000}}, //hp
             new short[]{291, 292, 293}, //outfit
-//            new short[]{5, 6, 27, 28, 29, 30, 13, 10, 31, 32, 33, 34, 20, 19, 35, 36, 37, 38},
+            //            new short[]{5, 6, 27, 28, 29, 30, 13, 10, 31, 32, 33, 34, 20, 19, 35, 36, 37, 38},
             new short[]{5},//map join
             new int[][]{ //skill
-                    {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
-                    {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
-                    {Skill.TAI_TAO_NANG_LUONG, 1, 15000}, {Skill.TAI_TAO_NANG_LUONG, 3, 25000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
-                    {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
+                {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
+                {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
+                {Skill.TAI_TAO_NANG_LUONG, 1, 15000}, {Skill.TAI_TAO_NANG_LUONG, 3, 25000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
+                {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
             },
             -1 //số giây nghỉ
     );
@@ -138,11 +138,11 @@ public class BossData {
             new short[]{294, 295, 296}, //outfit
             new short[]{5, 6, 27, 28, 29, 30, 13, 10, 31, 32, 33, 34, 20, 19, 35, 36, 37, 38}, //map join
             new int[][]{ //skill
-                    {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
-                    {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
-                    {Skill.ANTOMIC, 3, 1200}, {Skill.ANTOMIC, 5, 1700}, {Skill.ANTOMIC, 7, 2000},
-                    {Skill.MASENKO, 1, 800}, {Skill.MASENKO, 5, 1300}, {Skill.MASENKO, 6, 1500},
-                    {Skill.TAI_TAO_NANG_LUONG, 1, 15000}, {Skill.TAI_TAO_NANG_LUONG, 3, 25000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
+                {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
+                {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
+                {Skill.ANTOMIC, 3, 1200}, {Skill.ANTOMIC, 5, 1700}, {Skill.ANTOMIC, 7, 2000},
+                {Skill.MASENKO, 1, 800}, {Skill.MASENKO, 5, 1300}, {Skill.MASENKO, 6, 1500},
+                {Skill.TAI_TAO_NANG_LUONG, 1, 15000}, {Skill.TAI_TAO_NANG_LUONG, 3, 25000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
             },
             _15_PHUT
     );
@@ -158,19 +158,17 @@ public class BossData {
             new short[]{5, 6, 27, 28, 29, 30, 13, 10, 31, 32, 33, 34, 20, 19, 35, 36, 37, 38}, //map join
             //            new short[]{14}, //map join
             new int[][]{ //skill
-                    {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
-                    {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
-                    {Skill.ANTOMIC, 3, 1200}, {Skill.ANTOMIC, 5, 1700}, {Skill.ANTOMIC, 7, 2000},
-                    {Skill.MASENKO, 1, 800}, {Skill.MASENKO, 5, 1300}, {Skill.MASENKO, 6, 1500},
-                    {Skill.TAI_TAO_NANG_LUONG, 1, 15000}, {Skill.TAI_TAO_NANG_LUONG, 3, 25000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
-                    {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
+                {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
+                {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
+                {Skill.ANTOMIC, 3, 1200}, {Skill.ANTOMIC, 5, 1700}, {Skill.ANTOMIC, 7, 2000},
+                {Skill.MASENKO, 1, 800}, {Skill.MASENKO, 5, 1300}, {Skill.MASENKO, 6, 1500},
+                {Skill.TAI_TAO_NANG_LUONG, 1, 15000}, {Skill.TAI_TAO_NANG_LUONG, 3, 25000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
+                {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
             },
             _5_GIAY
     );
 
-
     //--------------------------------------------------------------------------Boss hải tặc
-
     public static final BossData LUFFY = new BossData(
             "Luffy", //name
             ConstPlayer.TRAI_DAT, //gender
@@ -181,7 +179,7 @@ public class BossData {
             new short[]{582, 583, 584}, //outfit
             new short[]{137}, //map join
             new int[][]{ //skill
-                    {Skill.GALICK, 7, 1000}, {Skill.GALICK, 6, 1000}, {Skill.GALICK, 5, 1000}, {Skill.GALICK, 4, 1000}
+                {Skill.GALICK, 7, 1000}, {Skill.GALICK, 6, 1000}, {Skill.GALICK, 5, 1000}, {Skill.GALICK, 4, 1000}
             },
             _1_PHUT, true
     );
@@ -196,7 +194,7 @@ public class BossData {
             new short[]{585, 586, 587}, //outfit
             new short[]{137}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 7, 1000}, {Skill.DRAGON, 6, 1000}, {Skill.DRAGON, 5, 1000}, {Skill.DRAGON, 4, 1000}
+                {Skill.DRAGON, 7, 1000}, {Skill.DRAGON, 6, 1000}, {Skill.DRAGON, 5, 1000}, {Skill.DRAGON, 4, 1000}
             },
             _1_PHUT, true
     );
@@ -211,7 +209,7 @@ public class BossData {
             new short[]{588, 589, 590}, //outfit
             new short[]{137}, //map join
             new int[][]{ //skill
-                    {Skill.DEMON, 7, 1000}, {Skill.DEMON, 6, 1000}, {Skill.DEMON, 5, 1000}, {Skill.DEMON, 4, 1000}
+                {Skill.DEMON, 7, 1000}, {Skill.DEMON, 6, 1000}, {Skill.DEMON, 5, 1000}, {Skill.DEMON, 4, 1000}
             },
             _1_PHUT, true
     );
@@ -226,9 +224,9 @@ public class BossData {
             new short[]{597, 598, 599}, //outfit
             new short[]{136}, //map join
             new int[][]{ //skill
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 1, 1000},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 1, 1000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 1, 1000},},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 1, 1000},
+                {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 1, 1000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 1, 1000},},
             _1_PHUT, true
     );
 
@@ -242,8 +240,8 @@ public class BossData {
             new short[]{594, 595, 596}, //outfit
             new short[]{136}, //map join
             new int[][]{ //skill
-                    {Skill.DEMON, 7, 1000}, {Skill.DEMON, 6, 1000}, {Skill.DEMON, 5, 1000}, {Skill.DEMON, 4, 1000},
-                    {Skill.ANTOMIC, 7, 5000}
+                {Skill.DEMON, 7, 1000}, {Skill.DEMON, 6, 1000}, {Skill.DEMON, 5, 1000}, {Skill.DEMON, 4, 1000},
+                {Skill.ANTOMIC, 7, 5000}
             },
             _1_PHUT, true
     );
@@ -258,7 +256,7 @@ public class BossData {
             new short[]{591, 592, 593}, //outfit
             new short[]{136}, //map join
             new int[][]{ //skill
-                    {Skill.DEMON, 7, 1000}, {Skill.DEMON, 6, 1000}, {Skill.DEMON, 5, 1000}, {Skill.DEMON, 4, 1000}
+                {Skill.DEMON, 7, 1000}, {Skill.DEMON, 6, 1000}, {Skill.DEMON, 5, 1000}, {Skill.DEMON, 4, 1000}
             },
             _1_PHUT, true
     );
@@ -273,7 +271,7 @@ public class BossData {
             new short[]{600, 601, 602}, //outfit
             new short[]{138}, //map join
             new int[][]{ //skill
-                    {Skill.DEMON, 7, 1000}, {Skill.DEMON, 6, 1000}, {Skill.DEMON, 5, 1000}, {Skill.DEMON, 4, 1000}
+                {Skill.DEMON, 7, 1000}, {Skill.DEMON, 6, 1000}, {Skill.DEMON, 5, 1000}, {Skill.DEMON, 4, 1000}
             },
             _1_PHUT, true
     );
@@ -288,7 +286,7 @@ public class BossData {
             new short[]{606, 607, 608}, //outfit
             new short[]{138}, //map join
             new int[][]{ //skill
-                    {Skill.DEMON, 7, 1000}, {Skill.DEMON, 6, 1000}, {Skill.DEMON, 5, 1000}, {Skill.DEMON, 4, 1000}
+                {Skill.DEMON, 7, 1000}, {Skill.DEMON, 6, 1000}, {Skill.DEMON, 5, 1000}, {Skill.DEMON, 4, 1000}
             },
             _1_PHUT, true
     );
@@ -303,9 +301,9 @@ public class BossData {
             new short[]{135, 136, 137}, //outfit
             new short[]{62}, //map join
             new int[][]{ //skill
-                    {Skill.DEMON, 1, 520}, {Skill.DEMON, 2, 500}, {Skill.DEMON, 3, 480}, {Skill.DEMON, 4, 460}, {Skill.DEMON, 5, 440}, {Skill.DEMON, 6, 420}, {Skill.DEMON, 7, 400},
-                    {Skill.KAMEJOKO, 2, 1500},
-                    {Skill.THAI_DUONG_HA_SAN, 3, 15000}, {Skill.THAI_DUONG_HA_SAN, 7, 30000}
+                {Skill.DEMON, 1, 520}, {Skill.DEMON, 2, 500}, {Skill.DEMON, 3, 480}, {Skill.DEMON, 4, 460}, {Skill.DEMON, 5, 440}, {Skill.DEMON, 6, 420}, {Skill.DEMON, 7, 400},
+                {Skill.KAMEJOKO, 2, 1500},
+                {Skill.THAI_DUONG_HA_SAN, 3, 15000}, {Skill.THAI_DUONG_HA_SAN, 7, 30000}
             },
             _1_PHUT
     );
@@ -320,7 +318,7 @@ public class BossData {
             new short[]{603, 604, 605}, //outfit
             new short[]{138}, //map join
             new int[][]{ //skill
-                    {Skill.DEMON, 7, 1000}, {Skill.DEMON, 6, 1000}, {Skill.DEMON, 5, 1000}, {Skill.DEMON, 4, 1000}
+                {Skill.DEMON, 7, 1000}, {Skill.DEMON, 6, 1000}, {Skill.DEMON, 5, 1000}, {Skill.DEMON, 4, 1000}
             },
             _1_PHUT, true
     );
@@ -336,7 +334,7 @@ public class BossData {
             new short[]{141, 142, 143}, //outfit
             new short[]{59}, //map join
             new int[][]{ //skill
-                    {Skill.DEMON, 1, 520}, {Skill.DEMON, 2, 500}, {Skill.DEMON, 3, 480}, {Skill.DEMON, 4, 460}, {Skill.DEMON, 5, 440}, {Skill.DEMON, 6, 420}, {Skill.DEMON, 7, 400}
+                {Skill.DEMON, 1, 520}, {Skill.DEMON, 2, 500}, {Skill.DEMON, 3, 480}, {Skill.DEMON, 4, 460}, {Skill.DEMON, 5, 440}, {Skill.DEMON, 6, 420}, {Skill.DEMON, 7, 400}
             },
             _1_PHUT
     );
@@ -351,9 +349,9 @@ public class BossData {
             new short[]{135, 136, 137}, //outfit
             new short[]{62}, //map join
             new int[][]{ //skill
-                    {Skill.DEMON, 1, 520}, {Skill.DEMON, 2, 500}, {Skill.DEMON, 3, 480}, {Skill.DEMON, 4, 460}, {Skill.DEMON, 5, 440}, {Skill.DEMON, 6, 420}, {Skill.DEMON, 7, 400},
-                    {Skill.KAMEJOKO, 2, 1500},
-                    {Skill.THAI_DUONG_HA_SAN, 3, 15000}, {Skill.THAI_DUONG_HA_SAN, 7, 30000}
+                {Skill.DEMON, 1, 520}, {Skill.DEMON, 2, 500}, {Skill.DEMON, 3, 480}, {Skill.DEMON, 4, 460}, {Skill.DEMON, 5, 440}, {Skill.DEMON, 6, 420}, {Skill.DEMON, 7, 400},
+                {Skill.KAMEJOKO, 2, 1500},
+                {Skill.THAI_DUONG_HA_SAN, 3, 15000}, {Skill.THAI_DUONG_HA_SAN, 7, 30000}
             },
             _1_PHUT
     );
@@ -368,10 +366,10 @@ public class BossData {
             new short[]{129, 130, 131}, //outfit
             new short[]{55}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 300}, {Skill.DRAGON, 3, 500},
-                    {Skill.DEMON, 1, 100}, {Skill.DEMON, 2, 300}, {Skill.DEMON, 3, 500},
-                    {Skill.GALICK, 1, 100},
-                    {Skill.MASENKO, 1, 100}, {Skill.MASENKO, 2, 100}
+                {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 300}, {Skill.DRAGON, 3, 500},
+                {Skill.DEMON, 1, 100}, {Skill.DEMON, 2, 300}, {Skill.DEMON, 3, 500},
+                {Skill.GALICK, 1, 100},
+                {Skill.MASENKO, 1, 100}, {Skill.MASENKO, 2, 100}
             },
             _1_PHUT
     );
@@ -386,9 +384,9 @@ public class BossData {
             new short[]{123, 124, 125}, //outfit
             new short[]{54}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 100},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.GALICK, 1, 100}
+                {Skill.DRAGON, 1, 100},
+                {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+                {Skill.GALICK, 1, 100}
             },
             _1_PHUT
     );
@@ -403,9 +401,9 @@ public class BossData {
             new short[]{123, 124, 125}, //outfit
             new short[]{54}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 100},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.GALICK, 1, 100}
+                {Skill.DRAGON, 1, 100},
+                {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+                {Skill.GALICK, 1, 100}
             },
             _1_PHUT
     );
@@ -420,9 +418,9 @@ public class BossData {
             new short[]{138, 139, 140}, //outfit
             new short[]{57}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.GALICK, 1, 100}
+                {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
+                {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+                {Skill.GALICK, 1, 100}
             },
             _1_PHUT
     );
@@ -438,9 +436,9 @@ public class BossData {
             new short[]{228, 229, 230}, //outfit
             new short[]{100}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.GALICK, 1, 100}
+                {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
+                {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+                {Skill.GALICK, 1, 100}
             },
             _5_PHUT
     );
@@ -455,9 +453,9 @@ public class BossData {
             new short[]{231, 232, 233}, //outfit
             new short[]{100}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.GALICK, 1, 100}
+                {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
+                {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+                {Skill.GALICK, 1, 100}
             },
             _1_PHUT
     );
@@ -472,9 +470,9 @@ public class BossData {
             new short[]{234, 235, 236}, //outfit
             new short[]{100}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.GALICK, 1, 100}
+                {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
+                {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+                {Skill.GALICK, 1, 100}
             },
             _1_PHUT
     );
@@ -490,11 +488,11 @@ public class BossData {
             new short[]{234, 235, 236}, //outfit
             new short[]{103}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.GALICK, 1, 100},
-                    {Skill.THAI_DUONG_HA_SAN, 5, 45000},
-                    {Skill.TU_SAT, 7, 100}
+                {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
+                {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+                {Skill.GALICK, 1, 100},
+                {Skill.THAI_DUONG_HA_SAN, 5, 45000},
+                {Skill.TU_SAT, 7, 100}
             },
             _5_PHUT, true
     );
@@ -509,9 +507,9 @@ public class BossData {
             new short[]{264, 265, 266}, //outfit
             new short[]{103}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.GALICK, 1, 100}
+                {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
+                {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+                {Skill.GALICK, 1, 100}
             },
             _1_PHUT
     );
@@ -526,9 +524,9 @@ public class BossData {
             new short[]{234, 235, 236}, //outfit
             new short[]{103}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.GALICK, 1, 100}
+                {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
+                {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+                {Skill.GALICK, 1, 100}
             },
             _1_PHUT
     );
@@ -544,9 +542,9 @@ public class BossData {
             new short[]{159, 160, 161}, //outfit
             new short[]{68, 69, 70, 71, 72}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _1_PHUT
     );
@@ -560,9 +558,9 @@ public class BossData {
             new short[]{165, 166, 167}, //outfit
             new short[]{64, 65, 63, 66, 67}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _1_PHUT
     );
@@ -576,10 +574,10 @@ public class BossData {
             new short[]{162, 163, 164}, //outfit
             new short[]{73, 74, 75, 76, 77}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _1_PHUT
     );
@@ -595,10 +593,10 @@ public class BossData {
             new short[]{317, 318, 319}, //outfit
             new short[]{105, 106, 107, 108, 109, 110}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _5_PHUT
     );
@@ -613,12 +611,48 @@ public class BossData {
             new short[]{320, 321, 322}, //outfit
             new short[]{105, 106, 107, 108, 109, 110}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
-            _5_GIAY
+            _1_GIAY
+    );
+
+    public static final BossData BABY_VEGETA = new BossData(
+            "Bây by Vegeta %1", //name
+            ConstPlayer.XAYDA, //gender
+            Boss.DAME_NORMAL, //type dame
+            Boss.HP_NORMAL, //type hp
+            120000, //dame
+            new long[][]{{10_000_000_000L}}, //hp
+            new short[]{1563, 1564, 1565}, //outfit
+            new short[]{105, 106, 107, 108, 109, 110}, //map join
+            new int[][]{ //skill
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
+            },
+            _15_PHUT
+    );
+
+    public static final BossData BABY_KHI = new BossData(
+            "Bây by khỉ đột %1", //name
+            ConstPlayer.XAYDA, //gender
+            Boss.DAME_NORMAL, //type dame
+            Boss.HP_NORMAL, //type hp
+            120000, //dame
+            new long[][]{{15_000_000_000L}}, //hp
+            new short[]{1566, 1567, 1568}, //outfit
+            new short[]{105, 106, 107, 108, 109, 110}, //map join
+            new int[][]{ //skill
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
+            },
+            _10_PHUT
     );
 
     //--------------------------------------------------------------------------Tiểu đội sát thủ
@@ -632,10 +666,10 @@ public class BossData {
             new short[]{168, 169, 170}, //outfit
             new short[]{82, 83, 79}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _1_PHUT
     );
@@ -649,10 +683,10 @@ public class BossData {
             new short[]{174, 175, 176}, //outfit
             new short[]{82, 83, 79}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _1_PHUT, true
     );
@@ -666,10 +700,10 @@ public class BossData {
             new short[]{171, 172, 173}, //outfit
             new short[]{82, 83, 79}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _1_PHUT, true
     );
@@ -683,10 +717,10 @@ public class BossData {
             new short[]{177, 178, 179}, //outfit
             new short[]{82, 83, 79}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _1_PHUT, true
     );
@@ -700,10 +734,10 @@ public class BossData {
             new short[]{180, 181, 182}, //outfit
             new short[]{82, 83, 79}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _5_PHUT, true
     );
@@ -719,10 +753,10 @@ public class BossData {
             new short[]{183, 184, 185}, //outfit
             new short[]{80}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _5_PHUT
     );
@@ -737,10 +771,10 @@ public class BossData {
             new short[]{186, 187, 188}, //outfit
             new short[]{80}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _5_GIAY
     );
@@ -755,10 +789,10 @@ public class BossData {
             new short[]{189, 190, 191}, //outfit
             new short[]{80}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _5_GIAY
     );
@@ -774,10 +808,10 @@ public class BossData {
             new short[]{249, 250, 251}, //outfit
             new short[]{93, 94, 96}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _1_PHUT
     );
@@ -792,10 +826,10 @@ public class BossData {
             new short[]{255, 256, 257}, //outfit
             new short[]{93, 94, 96}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _5_PHUT,
             true
@@ -810,10 +844,10 @@ public class BossData {
             new short[]{252, 253, 254}, //outfit
             new short[]{82, 83, 79}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _1_PHUT, true
     );
@@ -828,10 +862,10 @@ public class BossData {
             new short[]{246, 247, 248}, //outfit
             new short[]{82, 83, 79}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _1_PHUT, true
     );
@@ -845,10 +879,10 @@ public class BossData {
             new short[]{261, 262, 263}, //outfit
             new short[]{82, 83, 79}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _1_PHUT, true
     );
@@ -862,10 +896,10 @@ public class BossData {
             new short[]{237, 238, 239}, //outfit
             new short[]{82, 83, 79}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _1_PHUT, true
     );
@@ -879,10 +913,10 @@ public class BossData {
             new short[]{240, 241, 242}, //outfit
             new short[]{82, 83, 79}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _1_PHUT
     );
@@ -897,10 +931,10 @@ public class BossData {
             new short[]{243, 244, 245}, //outfit
             new short[]{97, 98, 99}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _5_PHUT, true
     );
@@ -916,10 +950,10 @@ public class BossData {
             new short[]{838, 839, 840}, //outfit
             new short[]{154}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _15_PHUT
     );
@@ -934,10 +968,10 @@ public class BossData {
             new short[]{508, 509, 510}, //outfit
             new short[]{154}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _10_GIAY, true
     );
@@ -952,10 +986,10 @@ public class BossData {
             new short[]{530, 531, 532}, //outfit
             new short[]{166}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _30_PHUT
     );
@@ -970,10 +1004,10 @@ public class BossData {
             new short[]{511, 512, 513}, //outfit
             new short[]{166}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _10_GIAY, true
     );
@@ -989,10 +1023,10 @@ public class BossData {
             new short[]{1024, 1025, 1026}, //outfit
             new short[]{163}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _10_PHUT
     );
@@ -1007,10 +1041,10 @@ public class BossData {
             new short[]{1021, 1022, 1023}, //outfit
             new short[]{163}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _1_PHUT
     );
@@ -1025,10 +1059,10 @@ public class BossData {
             new short[]{1095, 1096, 1097}, //outfit
             new short[]{7, 43}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _5_PHUT
     );
@@ -1043,10 +1077,10 @@ public class BossData {
             new short[]{1101, 1102, 1103}, //outfit
             new short[]{14, 44}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _5_PHUT
     );
@@ -1061,10 +1095,10 @@ public class BossData {
             new short[]{1098, 1099, 1100}, //outfit
             new short[]{0, 42}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.GALICK, 1, 1000}
             },
             _5_PHUT
     );
@@ -1079,12 +1113,12 @@ public class BossData {
             new short[]{553, 880, 881}, //outfit
             new short[]{105, 106, 107, 108, 109, 110}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 7, 5000},
-                    {Skill.THAI_DUONG_HA_SAN, 5, 50000},
-                    {Skill.ANTOMIC, 7, 2000},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 7, 5000},
+                {Skill.THAI_DUONG_HA_SAN, 5, 50000},
+                {Skill.ANTOMIC, 7, 2000},
+                {Skill.GALICK, 1, 1000}
             },
-            _1_PHUT
+            _15_PHUT
     );
     public static final BossData ZAMAS_TOI_THUONG = new BossData(
             "Thần Zamas Tối Thượng", //name
@@ -1096,12 +1130,12 @@ public class BossData {
             new short[]{903, 904, 905}, //outfit
             new short[]{105, 106, 107, 108, 109, 110}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 7, 3000},
-                    {Skill.THAI_DUONG_HA_SAN, 5, 50000},
-                    {Skill.ANTOMIC, 7, 1000},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 7, 3000},
+                {Skill.THAI_DUONG_HA_SAN, 5, 50000},
+                {Skill.ANTOMIC, 7, 1000},
+                {Skill.GALICK, 1, 1000}
             },
-            _1_PHUT
+            _10_PHUT
     );
 
     public static final BossData BONG_BANG = new BossData(
@@ -1114,10 +1148,10 @@ public class BossData {
             new short[]{1451, 1452, 1453}, //outfit
             new short[]{211}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 7, 3000},
-                    {Skill.THAI_DUONG_HA_SAN, 5, 50000},
-                    {Skill.ANTOMIC, 7, 1000},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 7, 3000},
+                {Skill.THAI_DUONG_HA_SAN, 5, 50000},
+                {Skill.ANTOMIC, 7, 1000},
+                {Skill.GALICK, 1, 1000}
             },
             _15_PHUT
     );
@@ -1132,31 +1166,32 @@ public class BossData {
             new short[]{745, 746, 747}, //outfit
             new short[]{212}, //map join
             new int[][]{ //skill
-                    {Skill.LIEN_HOAN, 5, 300},
-                    {Skill.THAI_DUONG_HA_SAN, 5, 50000},
-                    {Skill.ANTOMIC, 7, 1000},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.LIEN_HOAN, 5, 300},
+                {Skill.THAI_DUONG_HA_SAN, 5, 50000},
+                {Skill.ANTOMIC, 7, 1000},
+                {Skill.GALICK, 1, 1000}
             },
             _10_PHUT
     );
 
     public static final BossData ITACHI = new BossData(
-            "Itachi", //name
+            "Itachi Nè", //name
             ConstPlayer.TRAI_DAT, //gender
             Boss.DAME_NORMAL, //type dame
             Boss.HP_NORMAL, //type hp
             3000000, //dame
-            new long[][]{{1000000000000L}}, //hp
+            new long[][]{{6_999_999_999_999L}}, //hp
             new short[]{1472, 1473, 1474}, //outfit
             new short[]{212}, //map join
             new int[][]{ //skill
-                    {Skill.LIEN_HOAN, 5, 300},
-                    {Skill.THAI_DUONG_HA_SAN, 5, 20000},
-                    {Skill.TAI_TAO_NANG_LUONG, 5, 10000},
-                    {Skill.ANTOMIC, 7, 1000},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.LIEN_HOAN, 7, 300},
+                {Skill.THAI_DUONG_HA_SAN, 7, 20000},
+                {Skill.TAI_TAO_NANG_LUONG, 7, 50000},
+                {Skill.ANTOMIC, 7, 1000},
+                {Skill.GALICK, 1, 1000},
+                {Skill.DE_TRUNG, 7, 15000}
             },
-            _30_PHUT
+            _15_PHUT
     );
 
     public static final BossData ALONG = new BossData(
@@ -1169,9 +1204,9 @@ public class BossData {
             new short[]{1418, 1419, 1420}, //outfit
             new short[]{218}, //map join
             new int[][]{ //skill
-                    {Skill.LIEN_HOAN, 5, 300},
-                    {Skill.ANTOMIC, 7, 1000},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.LIEN_HOAN, 5, 300},
+                {Skill.ANTOMIC, 7, 1000},
+                {Skill.GALICK, 1, 1000}
             },
             _30_PHUT
     );
@@ -1186,9 +1221,9 @@ public class BossData {
             new short[]{1421, 1422, 1423}, //outfit
             new short[]{217}, //map join
             new int[][]{ //skill
-                    {Skill.LIEN_HOAN, 5, 300},
-                    {Skill.ANTOMIC, 7, 1000},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.LIEN_HOAN, 5, 300},
+                {Skill.ANTOMIC, 7, 1000},
+                {Skill.GALICK, 1, 1000}
             },
             _15_PHUT
     );
@@ -1203,10 +1238,10 @@ public class BossData {
             new short[]{1541, 1542, 1543}, //outfit
             new short[]{212}, //map join
             new int[][]{ //skill
-                    {Skill.LIEN_HOAN, 5, 300},
-                    {Skill.THAI_DUONG_HA_SAN, 5, 20000},
-                    {Skill.ANTOMIC, 7, 1000},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.LIEN_HOAN, 5, 300},
+                {Skill.THAI_DUONG_HA_SAN, 5, 20000},
+                {Skill.ANTOMIC, 7, 1000},
+                {Skill.GALICK, 1, 1000}
             },
             _30_PHUT
     );
@@ -1221,9 +1256,9 @@ public class BossData {
             new short[]{891, 892, 893}, //outfit
             new short[]{211}, //map join
             new int[][]{ //skill
-                    {Skill.LIEN_HOAN, 5, 300},
-                    {Skill.ANTOMIC, 7, 1000},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.LIEN_HOAN, 5, 300},
+                {Skill.ANTOMIC, 7, 1000},
+                {Skill.GALICK, 1, 1000}
             },
             _30_PHUT
     );
@@ -1238,10 +1273,10 @@ public class BossData {
             new short[]{897, 898, 899}, //outfit
             new short[]{211}, //map join
             new int[][]{ //skill
-                    {Skill.LIEN_HOAN, 5, 300},
-                    {Skill.THAI_DUONG_HA_SAN, 5, 20000},
-                    {Skill.ANTOMIC, 7, 1000},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.LIEN_HOAN, 5, 300},
+                {Skill.THAI_DUONG_HA_SAN, 5, 20000},
+                {Skill.ANTOMIC, 7, 1000},
+                {Skill.GALICK, 1, 1000}
             },
             _15_PHUT
     );
@@ -1256,9 +1291,9 @@ public class BossData {
             new short[]{1409, 1410, 1411}, //outfit
             new short[]{0, 7, 14}, //map join
             new int[][]{ //skill
-                    {Skill.LIEN_HOAN, 5, 300},
-                    {Skill.ANTOMIC, 7, 1000},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.LIEN_HOAN, 5, 300},
+                {Skill.ANTOMIC, 7, 1000},
+                {Skill.GALICK, 1, 1000}
             },
             _30_PHUT
     );
@@ -1273,11 +1308,11 @@ public class BossData {
             new short[]{838, 839, 840}, //outfit
             new short[]{92, 93, 94, 96, 97, 98, 99, 100}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
-                    {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
-                    {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
-                    {Skill.THAI_DUONG_HA_SAN, 4, 10000},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.DRAGON, 1, 1000}, {Skill.DRAGON, 2, 2000}, {Skill.DRAGON, 3, 3000}, {Skill.DRAGON, 7, 7000},
+                {Skill.ANTOMIC, 1, 1000}, {Skill.ANTOMIC, 2, 1200}, {Skill.ANTOMIC, 4, 1500}, {Skill.ANTOMIC, 5, 1700},
+                {Skill.MASENKO, 1, 1000}, {Skill.MASENKO, 2, 1200}, {Skill.MASENKO, 4, 1500}, {Skill.MASENKO, 5, 1700},
+                {Skill.THAI_DUONG_HA_SAN, 4, 10000},
+                {Skill.GALICK, 1, 1000}
             },
             _10_PHUT
     );
@@ -1291,10 +1326,10 @@ public class BossData {
             new short[]{1213, 1214, 1215}, //outfit
             new short[]{105, 106, 107, 108, 109, 110}, //map join
             new int[][]{ //skill
-                    {Skill.LIEN_HOAN, 6, 300},
-                    {Skill.ANTOMIC, 5, 1700},
-                    {Skill.THAI_DUONG_HA_SAN, 5, 30000},
-                    {Skill.MASENKO, 5, 1700}
+                {Skill.LIEN_HOAN, 6, 300},
+                {Skill.ANTOMIC, 5, 1700},
+                {Skill.THAI_DUONG_HA_SAN, 5, 30000},
+                {Skill.MASENKO, 5, 1700}
             },
             _10_PHUT
     );
@@ -1308,10 +1343,10 @@ public class BossData {
             new short[]{1050, 1051, 1052}, //outfit
             new short[]{92, 93, 94}, //map join
             new int[][]{ //skill
-                    {Skill.LIEN_HOAN, 3, 500}, {Skill.LIEN_HOAN, 4, 1000}, {Skill.LIEN_HOAN, 5, 1500},
-                    {Skill.KAMEJOKO, 4, 3000}, {Skill.KAMEJOKO, 5, 4000}, {Skill.KAMEJOKO, 7, 7000},
-                    {Skill.DICH_CHUYEN_TUC_THOI, 4, 10000},
-                    {Skill.THAI_DUONG_HA_SAN, 5, 30000}
+                {Skill.LIEN_HOAN, 3, 500}, {Skill.LIEN_HOAN, 4, 1000}, {Skill.LIEN_HOAN, 5, 1500},
+                {Skill.KAMEJOKO, 4, 3000}, {Skill.KAMEJOKO, 5, 4000}, {Skill.KAMEJOKO, 7, 7000},
+                {Skill.DICH_CHUYEN_TUC_THOI, 4, 10000},
+                {Skill.THAI_DUONG_HA_SAN, 5, 30000}
             },
             _5_PHUT
     );
@@ -1325,12 +1360,12 @@ public class BossData {
             new short[]{1074, 1075, 1076}, //outfit
             new short[]{155}, //map join
             new int[][]{ //skill
-                    {Skill.LIEN_HOAN, 7, 500},
-                    {Skill.THAI_DUONG_HA_SAN, 5, 15000},
-                    {Skill.ANTOMIC, 7, 1000},
-                    {Skill.GALICK, 1, 1000}
+                {Skill.LIEN_HOAN, 7, 500},
+                {Skill.THAI_DUONG_HA_SAN, 5, 15000},
+                {Skill.ANTOMIC, 7, 1000},
+                {Skill.GALICK, 1, 1000}
             },
-            _30_GIAY
+            _30_PHUT
     );
 
     //
@@ -1404,12 +1439,12 @@ public class BossData {
             new short[]{550, 551, 552}, //outfit
             new short[]{92, 93, 94}, //map join
             new int[][]{ //skill
-                    {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
-                    {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
-                    {Skill.ANTOMIC, 3, 1200}, {Skill.ANTOMIC, 5, 1700}, {Skill.ANTOMIC, 7, 2000},
-                    {Skill.MASENKO, 1, 800}, {Skill.MASENKO, 5, 1300}, {Skill.MASENKO, 6, 1500},
-                    {Skill.TAI_TAO_NANG_LUONG, 1, 5000}, {Skill.TAI_TAO_NANG_LUONG, 3, 10000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
-                    {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
+                {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
+                {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
+                {Skill.ANTOMIC, 3, 1200}, {Skill.ANTOMIC, 5, 1700}, {Skill.ANTOMIC, 7, 2000},
+                {Skill.MASENKO, 1, 800}, {Skill.MASENKO, 5, 1300}, {Skill.MASENKO, 6, 1500},
+                {Skill.TAI_TAO_NANG_LUONG, 1, 5000}, {Skill.TAI_TAO_NANG_LUONG, 3, 10000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
+                {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
             },
             _5_PHUT
     );
@@ -1424,12 +1459,12 @@ public class BossData {
             new short[]{553, 551, 552}, //outfit
             new short[]{92, 93, 94}, //map join
             new int[][]{ //skill
-                    {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
-                    {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
-                    {Skill.ANTOMIC, 3, 1200}, {Skill.ANTOMIC, 5, 1700}, {Skill.ANTOMIC, 7, 2000},
-                    {Skill.MASENKO, 1, 800}, {Skill.MASENKO, 5, 1300}, {Skill.MASENKO, 6, 1500},
-                    {Skill.TAI_TAO_NANG_LUONG, 1, 5000}, {Skill.TAI_TAO_NANG_LUONG, 3, 10000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
-                    {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
+                {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
+                {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
+                {Skill.ANTOMIC, 3, 1200}, {Skill.ANTOMIC, 5, 1700}, {Skill.ANTOMIC, 7, 2000},
+                {Skill.MASENKO, 1, 800}, {Skill.MASENKO, 5, 1300}, {Skill.MASENKO, 6, 1500},
+                {Skill.TAI_TAO_NANG_LUONG, 1, 5000}, {Skill.TAI_TAO_NANG_LUONG, 3, 10000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
+                {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
             },
             _1_PHUT
     );
@@ -1483,12 +1518,12 @@ public class BossData {
             new short[]{1493, 1494, 1495}, //outfit
             new short[]{5, 6, 27, 28, 29, 30, 13, 10, 31, 32, 33, 34, 20, 19, 35, 36, 37, 38}, //map join
             new int[][]{ //skill
-                    {Skill.DEMON, 7, 450}, {Skill.DEMON, 7, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 7, 500}, {Skill.GALICK, 7, 480},
-                    {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 7, 1800}, {Skill.KAMEJOKO, 7, 1500}, {Skill.KAMEJOKO, 7, 1000},
-                    {Skill.ANTOMIC, 7, 1200}, {Skill.ANTOMIC, 7, 1700}, {Skill.ANTOMIC, 7, 2000},
-                    {Skill.MASENKO, 7, 800}, {Skill.MASENKO, 7, 1300}, {Skill.MASENKO, 7, 1500},
-                    {Skill.TAI_TAO_NANG_LUONG, 7, 5000}, {Skill.TAI_TAO_NANG_LUONG, 7, 10000}, {Skill.TAI_TAO_NANG_LUONG, 7, 25000},
-                    {Skill.TAI_TAO_NANG_LUONG, 7, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
+                {Skill.DEMON, 7, 450}, {Skill.DEMON, 7, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 7, 500}, {Skill.GALICK, 7, 480},
+                {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 7, 1800}, {Skill.KAMEJOKO, 7, 1500}, {Skill.KAMEJOKO, 7, 1000},
+                {Skill.ANTOMIC, 7, 1200}, {Skill.ANTOMIC, 7, 1700}, {Skill.ANTOMIC, 7, 2000},
+                {Skill.MASENKO, 7, 800}, {Skill.MASENKO, 7, 1300}, {Skill.MASENKO, 7, 1500},
+                {Skill.TAI_TAO_NANG_LUONG, 7, 5000}, {Skill.TAI_TAO_NANG_LUONG, 7, 10000}, {Skill.TAI_TAO_NANG_LUONG, 7, 25000},
+                {Skill.TAI_TAO_NANG_LUONG, 7, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
             },
             _15_PHUT
     );
@@ -1504,13 +1539,13 @@ public class BossData {
             .outfit(new short[]{297, 298, 299})
             .mapJoin(new short[]{})
             .skillTemp(new int[][]{
-                    {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
-                    {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
-                    {Skill.ANTOMIC, 3, 1200}, {Skill.ANTOMIC, 5, 1700}, {Skill.ANTOMIC, 7, 2000},
-                    {Skill.MASENKO, 1, 800}, {Skill.MASENKO, 5, 1300}, {Skill.MASENKO, 6, 1500},
-                    {Skill.TAI_TAO_NANG_LUONG, 1, 5000}, {Skill.TAI_TAO_NANG_LUONG, 3, 10000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
-                    {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
-            })
+        {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
+        {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
+        {Skill.ANTOMIC, 3, 1200}, {Skill.ANTOMIC, 5, 1700}, {Skill.ANTOMIC, 7, 2000},
+        {Skill.MASENKO, 1, 800}, {Skill.MASENKO, 5, 1300}, {Skill.MASENKO, 6, 1500},
+        {Skill.TAI_TAO_NANG_LUONG, 1, 5000}, {Skill.TAI_TAO_NANG_LUONG, 3, 10000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
+        {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
+    })
             .secondsRest(_5_PHUT)
             .build();
 
@@ -1524,11 +1559,11 @@ public class BossData {
             .outfit(new short[]{297, 298, 299})
             .mapJoin(new short[]{})
             .skillTemp(new int[][]{
-                    {Skill.DEMON, 3, 450}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
-                    {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
-                    {Skill.ANTOMIC, 3, 1200},
-                    {Skill.TAI_TAO_NANG_LUONG, 1, 25000}
-            })
+        {Skill.DEMON, 3, 450}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
+        {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
+        {Skill.ANTOMIC, 3, 1200},
+        {Skill.TAI_TAO_NANG_LUONG, 1, 25000}
+    })
             .secondsRest(_30_GIAY)
             .build();
 
@@ -1542,10 +1577,10 @@ public class BossData {
             .outfit(new short[]{427, 428, 429})
             .mapJoin(new short[]{127})
             .skillTemp(new int[][]{
-                    {Skill.DEMON, 1, 5000},
-                    {Skill.TAI_TAO_NANG_LUONG, 1, 5000}, {Skill.TAI_TAO_NANG_LUONG, 3, 10000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
-                    {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
-            })
+        {Skill.DEMON, 1, 5000},
+        {Skill.TAI_TAO_NANG_LUONG, 1, 5000}, {Skill.TAI_TAO_NANG_LUONG, 3, 10000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
+        {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
+    })
             .secondsRest(_30_GIAY)
             .build();
 
@@ -1559,11 +1594,11 @@ public class BossData {
             .outfit(new short[]{439, 440, 441})
             .mapJoin(new short[]{})
             .skillTemp(new int[][]{
-                    {Skill.DEMON, 3, 450}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
-                    {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
-                    {Skill.ANTOMIC, 3, 1200},
-                    {Skill.TAI_TAO_NANG_LUONG, 1, 25000}
-            })
+        {Skill.DEMON, 3, 450}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
+        {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
+        {Skill.ANTOMIC, 3, 1200},
+        {Skill.TAI_TAO_NANG_LUONG, 1, 25000}
+    })
             .secondsRest(_30_GIAY)
             .build();
 
@@ -1577,10 +1612,10 @@ public class BossData {
             .outfit(new short[]{439, 440, 441})
             .mapJoin(new short[]{127})
             .skillTemp(new int[][]{
-                    {Skill.DEMON, 1, 5000},
-                    {Skill.TAI_TAO_NANG_LUONG, 1, 5000}, {Skill.TAI_TAO_NANG_LUONG, 3, 10000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
-                    {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
-            })
+        {Skill.DEMON, 1, 5000},
+        {Skill.TAI_TAO_NANG_LUONG, 1, 5000}, {Skill.TAI_TAO_NANG_LUONG, 3, 10000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
+        {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
+    })
             .secondsRest(_30_GIAY)
             .build();
 
@@ -1594,12 +1629,12 @@ public class BossData {
             .outfit(new short[]{427, 428, 429})
             .mapJoin(new short[]{})
             .skillTemp(new int[][]{
-                    {Skill.DEMON, 3, 450}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
-                    {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
-                    {Skill.ANTOMIC, 3, 1200},
-                    {Skill.QUA_CAU_KENH_KHI, 7, 1200},
-                    {Skill.TAI_TAO_NANG_LUONG, 1, 25000}
-            })
+        {Skill.DEMON, 3, 450}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
+        {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
+        {Skill.ANTOMIC, 3, 1200},
+        {Skill.QUA_CAU_KENH_KHI, 7, 1200},
+        {Skill.TAI_TAO_NANG_LUONG, 1, 25000}
+    })
             .secondsRest(_30_GIAY)
             .build();
 
@@ -1613,13 +1648,13 @@ public class BossData {
             .outfit(new short[]{418, 419, 420})
             .mapJoin(new short[]{114})
             .skillTemp(new int[][]{
-                    {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
-                    {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
-                    {Skill.ANTOMIC, 3, 1200}, {Skill.ANTOMIC, 5, 1700}, {Skill.ANTOMIC, 7, 2000},
-                    {Skill.MASENKO, 1, 800}, {Skill.MASENKO, 5, 1300}, {Skill.MASENKO, 6, 1500},
-                    {Skill.TAI_TAO_NANG_LUONG, 1, 5000}, {Skill.TAI_TAO_NANG_LUONG, 3, 10000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
-                    {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
-            })
+        {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
+        {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
+        {Skill.ANTOMIC, 3, 1200}, {Skill.ANTOMIC, 5, 1700}, {Skill.ANTOMIC, 7, 2000},
+        {Skill.MASENKO, 1, 800}, {Skill.MASENKO, 5, 1300}, {Skill.MASENKO, 6, 1500},
+        {Skill.TAI_TAO_NANG_LUONG, 1, 5000}, {Skill.TAI_TAO_NANG_LUONG, 3, 10000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
+        {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
+    })
             .secondsRest(_30_GIAY)
             .build();
 
@@ -1633,13 +1668,13 @@ public class BossData {
             .outfit(new short[]{418, 419, 420})
             .mapJoin(new short[]{119})
             .skillTemp(new int[][]{
-                    {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
-                    {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
-                    {Skill.ANTOMIC, 3, 1200}, {Skill.ANTOMIC, 5, 1700}, {Skill.ANTOMIC, 7, 2000},
-                    {Skill.MASENKO, 1, 800}, {Skill.MASENKO, 5, 1300}, {Skill.MASENKO, 6, 1500},
-                    {Skill.TAI_TAO_NANG_LUONG, 1, 5000}, {Skill.TAI_TAO_NANG_LUONG, 3, 10000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
-                    {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
-            })
+        {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
+        {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
+        {Skill.ANTOMIC, 3, 1200}, {Skill.ANTOMIC, 5, 1700}, {Skill.ANTOMIC, 7, 2000},
+        {Skill.MASENKO, 1, 800}, {Skill.MASENKO, 5, 1300}, {Skill.MASENKO, 6, 1500},
+        {Skill.TAI_TAO_NANG_LUONG, 1, 5000}, {Skill.TAI_TAO_NANG_LUONG, 3, 10000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
+        {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
+    })
             .secondsRest(_30_GIAY)
             .build();
 
@@ -1653,13 +1688,13 @@ public class BossData {
             .outfit(new short[]{418, 419, 420})
             .mapJoin(new short[]{120})
             .skillTemp(new int[][]{
-                    {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
-                    {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
-                    {Skill.ANTOMIC, 3, 1200}, {Skill.ANTOMIC, 5, 1700}, {Skill.ANTOMIC, 7, 2000},
-                    {Skill.MASENKO, 1, 800}, {Skill.MASENKO, 5, 1300}, {Skill.MASENKO, 6, 1500},
-                    {Skill.TAI_TAO_NANG_LUONG, 1, 5000}, {Skill.TAI_TAO_NANG_LUONG, 3, 10000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
-                    {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
-            })
+        {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
+        {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
+        {Skill.ANTOMIC, 3, 1200}, {Skill.ANTOMIC, 5, 1700}, {Skill.ANTOMIC, 7, 2000},
+        {Skill.MASENKO, 1, 800}, {Skill.MASENKO, 5, 1300}, {Skill.MASENKO, 6, 1500},
+        {Skill.TAI_TAO_NANG_LUONG, 1, 5000}, {Skill.TAI_TAO_NANG_LUONG, 3, 10000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
+        {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
+    })
             .secondsRest(_5_PHUT)
             .build();
 
@@ -1673,13 +1708,13 @@ public class BossData {
             .outfit(new short[]{451, 452, 453})
             .mapJoin(new short[]{115})
             .skillTemp(new int[][]{
-                    {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
-                    {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
-                    {Skill.ANTOMIC, 3, 1200}, {Skill.ANTOMIC, 5, 1700}, {Skill.ANTOMIC, 7, 2000},
-                    {Skill.MASENKO, 1, 800}, {Skill.MASENKO, 5, 1300}, {Skill.MASENKO, 6, 1500},
-                    {Skill.TAI_TAO_NANG_LUONG, 1, 5000}, {Skill.TAI_TAO_NANG_LUONG, 3, 10000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
-                    {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
-            })
+        {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
+        {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
+        {Skill.ANTOMIC, 3, 1200}, {Skill.ANTOMIC, 5, 1700}, {Skill.ANTOMIC, 7, 2000},
+        {Skill.MASENKO, 1, 800}, {Skill.MASENKO, 5, 1300}, {Skill.MASENKO, 6, 1500},
+        {Skill.TAI_TAO_NANG_LUONG, 1, 5000}, {Skill.TAI_TAO_NANG_LUONG, 3, 10000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
+        {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
+    })
             .secondsRest(_30_GIAY)
             .build();
 
@@ -1693,13 +1728,13 @@ public class BossData {
             .outfit(new short[]{451, 452, 453})
             .mapJoin(new short[]{117})
             .skillTemp(new int[][]{
-                    {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
-                    {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
-                    {Skill.ANTOMIC, 3, 1200}, {Skill.ANTOMIC, 5, 1700}, {Skill.ANTOMIC, 7, 2000},
-                    {Skill.MASENKO, 1, 800}, {Skill.MASENKO, 5, 1300}, {Skill.MASENKO, 6, 1500},
-                    {Skill.TAI_TAO_NANG_LUONG, 1, 5000}, {Skill.TAI_TAO_NANG_LUONG, 3, 10000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
-                    {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
-            })
+        {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
+        {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
+        {Skill.ANTOMIC, 3, 1200}, {Skill.ANTOMIC, 5, 1700}, {Skill.ANTOMIC, 7, 2000},
+        {Skill.MASENKO, 1, 800}, {Skill.MASENKO, 5, 1300}, {Skill.MASENKO, 6, 1500},
+        {Skill.TAI_TAO_NANG_LUONG, 1, 5000}, {Skill.TAI_TAO_NANG_LUONG, 3, 10000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
+        {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
+    })
             .secondsRest(_30_GIAY)
             .build();
 
@@ -1713,13 +1748,13 @@ public class BossData {
             .outfit(new short[]{103, 16, 17})
             .mapJoin(new short[]{119})
             .skillTemp(new int[][]{
-                    {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
-                    {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
-                    {Skill.ANTOMIC, 3, 1200}, {Skill.ANTOMIC, 5, 1700}, {Skill.ANTOMIC, 7, 2000},
-                    {Skill.MASENKO, 1, 800}, {Skill.MASENKO, 5, 1300}, {Skill.MASENKO, 6, 1500},
-                    {Skill.TAI_TAO_NANG_LUONG, 1, 5000}, {Skill.TAI_TAO_NANG_LUONG, 3, 10000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
-                    {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
-            })
+        {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
+        {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
+        {Skill.ANTOMIC, 3, 1200}, {Skill.ANTOMIC, 5, 1700}, {Skill.ANTOMIC, 7, 2000},
+        {Skill.MASENKO, 1, 800}, {Skill.MASENKO, 5, 1300}, {Skill.MASENKO, 6, 1500},
+        {Skill.TAI_TAO_NANG_LUONG, 1, 5000}, {Skill.TAI_TAO_NANG_LUONG, 3, 10000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
+        {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
+    })
             .secondsRest(_30_GIAY)
             .build();
 
@@ -1733,13 +1768,13 @@ public class BossData {
             .outfit(new short[]{101, 1, 2})
             .mapJoin(new short[]{119})
             .skillTemp(new int[][]{
-                    {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
-                    {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
-                    {Skill.ANTOMIC, 3, 1200}, {Skill.ANTOMIC, 5, 1700}, {Skill.ANTOMIC, 7, 2000},
-                    {Skill.MASENKO, 1, 800}, {Skill.MASENKO, 5, 1300}, {Skill.MASENKO, 6, 1500},
-                    {Skill.TAI_TAO_NANG_LUONG, 1, 5000}, {Skill.TAI_TAO_NANG_LUONG, 3, 10000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
-                    {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
-            })
+        {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
+        {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
+        {Skill.ANTOMIC, 3, 1200}, {Skill.ANTOMIC, 5, 1700}, {Skill.ANTOMIC, 7, 2000},
+        {Skill.MASENKO, 1, 800}, {Skill.MASENKO, 5, 1300}, {Skill.MASENKO, 6, 1500},
+        {Skill.TAI_TAO_NANG_LUONG, 1, 5000}, {Skill.TAI_TAO_NANG_LUONG, 3, 10000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
+        {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
+    })
             .secondsRest(_30_GIAY)
             .build();
 
@@ -1753,13 +1788,13 @@ public class BossData {
             .outfit(new short[]{415, 416, 417})
             .mapJoin(new short[]{118})
             .skillTemp(new int[][]{
-                    {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
-                    {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
-                    {Skill.ANTOMIC, 3, 1200}, {Skill.ANTOMIC, 5, 1700}, {Skill.ANTOMIC, 7, 2000},
-                    {Skill.MASENKO, 1, 800}, {Skill.MASENKO, 5, 1300}, {Skill.MASENKO, 6, 1500},
-                    {Skill.TAI_TAO_NANG_LUONG, 1, 5000}, {Skill.TAI_TAO_NANG_LUONG, 3, 10000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
-                    {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
-            })
+        {Skill.DEMON, 3, 450}, {Skill.DEMON, 6, 400}, {Skill.DRAGON, 7, 650}, {Skill.DRAGON, 1, 500}, {Skill.GALICK, 5, 480},
+        {Skill.KAMEJOKO, 7, 2000}, {Skill.KAMEJOKO, 6, 1800}, {Skill.KAMEJOKO, 4, 1500}, {Skill.KAMEJOKO, 2, 1000},
+        {Skill.ANTOMIC, 3, 1200}, {Skill.ANTOMIC, 5, 1700}, {Skill.ANTOMIC, 7, 2000},
+        {Skill.MASENKO, 1, 800}, {Skill.MASENKO, 5, 1300}, {Skill.MASENKO, 6, 1500},
+        {Skill.TAI_TAO_NANG_LUONG, 1, 5000}, {Skill.TAI_TAO_NANG_LUONG, 3, 10000}, {Skill.TAI_TAO_NANG_LUONG, 5, 25000},
+        {Skill.TAI_TAO_NANG_LUONG, 6, 30000}, {Skill.TAI_TAO_NANG_LUONG, 7, 50000}
+    })
             .secondsRest(_30_GIAY)
             .build();
 
@@ -1773,10 +1808,10 @@ public class BossData {
             .outfit(new short[]{2000, 2001, 2002})
             .mapJoin(new short[]{99})
             .skillTemp(new int[][]{
-                    {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.GALICK, 1, 100}
-            })
+        {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
+        {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+        {Skill.GALICK, 1, 100}
+    })
             .secondsRest(_5_PHUT)
             .build();
 
@@ -1786,14 +1821,14 @@ public class BossData {
             .typeDame(Boss.DAME_NORMAL)
             .typeHp(Boss.HP_NORMAL)
             .dame(400000)
-            .hp(new long[][]{{500000000}})
+            .hp(new long[][]{{500_000}})
             .outfit(new short[]{394, 395, 396})
             .mapJoin(new short[]{129})
             .skillTemp(new int[][]{
-                    {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.GALICK, 1, 100}
-            })
+        {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
+        {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+        {Skill.GALICK, 1, 100}
+    })
             .secondsRest(_1_PHUT)
             .build();
 
@@ -1803,14 +1838,14 @@ public class BossData {
             .typeDame(Boss.DAME_NORMAL)
             .typeHp(Boss.HP_NORMAL)
             .dame(500000)
-            .hp(new long[][]{{1000000000}})
+            .hp(new long[][]{{1_000_000}})
             .outfit(new short[]{400, 401, 402})
             .mapJoin(new short[]{129})
             .skillTemp(new int[][]{
-                    {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.GALICK, 1, 100}
-            })
+        {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
+        {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+        {Skill.GALICK, 1, 100}
+    })
             .secondsRest(_1_PHUT)
             .build();
 
@@ -1820,14 +1855,14 @@ public class BossData {
             .typeDame(Boss.DAME_NORMAL)
             .typeHp(Boss.HP_NORMAL)
             .dame(600000)
-            .hp(new long[][]{{1000000000}})
+            .hp(new long[][]{{5_000_000}})
             .outfit(new short[]{359, 360, 361})
             .mapJoin(new short[]{129})
             .skillTemp(new int[][]{
-                    {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.GALICK, 1, 100}
-            })
+        {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
+        {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+        {Skill.GALICK, 1, 100}
+    })
             .secondsRest(_1_PHUT)
             .build();
 
@@ -1837,14 +1872,14 @@ public class BossData {
             .typeDame(Boss.DAME_NORMAL)
             .typeHp(Boss.HP_NORMAL)
             .dame(650000)
-            .hp(new long[][]{{1000000000}})
+            .hp(new long[][]{{10_000_000}})
             .outfit(new short[]{362, 363, 364})
             .mapJoin(new short[]{129})
             .skillTemp(new int[][]{
-                    {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.GALICK, 1, 100}
-            })
+        {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
+        {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+        {Skill.GALICK, 1, 100}
+    })
             .secondsRest(_1_PHUT)
             .build();
 
@@ -1854,14 +1889,14 @@ public class BossData {
             .typeDame(Boss.DAME_NORMAL)
             .typeHp(Boss.HP_NORMAL)
             .dame(700000)
-            .hp(new long[][]{{5000000000L}})
+            .hp(new long[][]{{20_000_000}})
             .outfit(new short[]{365, 366, 367})
             .mapJoin(new short[]{129})
             .skillTemp(new int[][]{
-                    {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.GALICK, 1, 100}
-            })
+        {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
+        {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+        {Skill.GALICK, 1, 100}
+    })
             .secondsRest(_1_PHUT)
             .build();
 
@@ -1871,14 +1906,14 @@ public class BossData {
             .typeDame(Boss.DAME_NORMAL)
             .typeHp(Boss.HP_NORMAL)
             .dame(705000)
-            .hp(new long[][]{{10000000000L}})
+            .hp(new long[][]{{50_000_000}})
             .outfit(new short[]{371, 372, 373})
             .mapJoin(new short[]{129})
             .skillTemp(new int[][]{
-                    {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.GALICK, 1, 100}
-            })
+        {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
+        {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+        {Skill.GALICK, 1, 100}
+    })
             .secondsRest(_1_PHUT)
             .build();
 
@@ -1888,14 +1923,14 @@ public class BossData {
             .typeDame(Boss.DAME_NORMAL)
             .typeHp(Boss.HP_NORMAL)
             .dame(800000)
-            .hp(new long[][]{{20000000000L}})
+            .hp(new long[][]{{100_000_000}})
             .outfit(new short[]{92, 93, 94})
             .mapJoin(new short[]{129})
             .skillTemp(new int[][]{
-                    {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.GALICK, 1, 100}
-            })
+        {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
+        {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+        {Skill.GALICK, 1, 100}
+    })
             .secondsRest(_1_PHUT)
             .build();
 
@@ -1905,14 +1940,14 @@ public class BossData {
             .typeDame(Boss.DAME_NORMAL)
             .typeHp(Boss.HP_NORMAL)
             .dame(900000)
-            .hp(new long[][]{{30000000000L}})
+            .hp(new long[][]{{500_000_000}})
             .outfit(new short[]{374, 375, 376})
             .mapJoin(new short[]{129})
             .skillTemp(new int[][]{
-                    {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.GALICK, 1, 100}
-            })
+        {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
+        {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+        {Skill.GALICK, 1, 100}
+    })
             .secondsRest(_1_PHUT)
             .build();
 
@@ -1922,14 +1957,14 @@ public class BossData {
             .typeDame(Boss.DAME_NORMAL)
             .typeHp(Boss.HP_NORMAL)
             .dame(1000000)
-            .hp(new long[][]{{50000000000L}})
+            .hp(new long[][]{{1_000_000_000}})
             .outfit(new short[]{356, 357, 358})
             .mapJoin(new short[]{129})
             .skillTemp(new int[][]{
-                    {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.GALICK, 1, 100}
-            })
+        {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
+        {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+        {Skill.GALICK, 1, 100}
+    })
             .secondsRest(_1_PHUT)
             .build();
 
@@ -1939,14 +1974,14 @@ public class BossData {
             .typeDame(Boss.DAME_NORMAL)
             .typeHp(Boss.HP_NORMAL)
             .dame(1500000)
-            .hp(new long[][]{{80000000000L}})
+            .hp(new long[][]{{10_000_000_000L}})
             .outfit(new short[]{368, 369, 370})
             .mapJoin(new short[]{129})
             .skillTemp(new int[][]{
-                    {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.THAI_DUONG_HA_SAN, 1, 15000}
-            })
+        {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
+        {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+        {Skill.THAI_DUONG_HA_SAN, 1, 15000}
+    })
             .secondsRest(_1_PHUT)
             .build();
 
@@ -1960,10 +1995,10 @@ public class BossData {
             .outfit(new short[]{368, 369, 370})
             .mapJoin(new short[]{129})
             .skillTemp(new int[][]{
-                    {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.THAI_DUONG_HA_SAN, 1, 15000}
-            })
+        {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
+        {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+        {Skill.THAI_DUONG_HA_SAN, 1, 15000}
+    })
             .secondsRest(_1_PHUT)
             .build();
     public static final BossData LIU_LIU = BossData.builder()
@@ -1972,14 +2007,14 @@ public class BossData {
             .typeDame(Boss.DAME_NORMAL)
             .typeHp(Boss.HP_NORMAL)
             .dame(2000000)
-            .hp(new long[][]{{100000000000L}})
+            .hp(new long[][]{{50_000_000_000L}})
             .outfit(new short[]{397, 398, 399})
             .mapJoin(new short[]{129})
             .skillTemp(new int[][]{
-                    {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.GALICK, 1, 100}
-            })
+        {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
+        {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+        {Skill.GALICK, 1, 100}
+    })
             .secondsRest(_1_PHUT)
             .build();
 
@@ -1993,9 +2028,9 @@ public class BossData {
             new short[]{462, 463, 464}, //outfit
             new short[]{124}, //map join
             new int[][]{ //skill
-                    {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.GALICK, 1, 100}
+                {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
+                {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+                {Skill.GALICK, 1, 100}
             },
             _5_PHUT
     );
@@ -2010,10 +2045,10 @@ public class BossData {
             .outfit(new short[]{465, 466, 467})
             .mapJoin(new short[]{124})
             .skillTemp(new int[][]{
-                    {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.GALICK, 1, 100}
-            })
+        {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
+        {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+        {Skill.GALICK, 1, 100}
+    })
             .secondsRest(_5_PHUT)
             .build();
 
@@ -2027,10 +2062,10 @@ public class BossData {
             .outfit(new short[]{502, 503, 504})
             .mapJoin(new short[]{6})
             .skillTemp(new int[][]{
-                    {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.GALICK, 1, 100}
-            })
+        {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
+        {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+        {Skill.GALICK, 1, 100}
+    })
             .secondsRest(_5_PHUT)
             .build();
 
@@ -2040,15 +2075,15 @@ public class BossData {
             .typeDame(Boss.DAME_NORMAL)
             .typeHp(Boss.HP_NORMAL)
             .dame(500000)
-            .hp(new long[][]{{1500000000}})
+            .hp(new long[][]{{1_500_000_000}})
             .outfit(new short[]{2024, 2025, 2026})
-            .mapJoin(new short[]{155})
+            .mapJoin(new short[]{105, 106, 107, 108, 109, 110})
             .skillTemp(new int[][]{
-                    {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.GALICK, 1, 100}
-            })
-            .secondsRest(_5_PHUT)
+        {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
+        {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+        {Skill.GALICK, 1, 100}
+    })
+            .secondsRest(_10_PHUT)
             .build();
 
     public static final BossData CUMBER2 = BossData.builder()
@@ -2057,15 +2092,15 @@ public class BossData {
             .typeDame(Boss.DAME_NORMAL)
             .typeHp(Boss.HP_NORMAL)
             .dame(500000)
-            .hp(new long[][]{{2000000000}})
+            .hp(new long[][]{{2_500_000_000L}})
             .outfit(new short[]{2027, 2028, 2029})
-            .mapJoin(new short[]{155})
+            .mapJoin(new short[]{105, 106, 107, 108, 109, 110})
             .skillTemp(new int[][]{
-                    {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
-                    {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
-                    {Skill.GALICK, 1, 100}
-            })
-            .secondsRest(_1_PHUT)
+        {Skill.DRAGON, 1, 100}, {Skill.DRAGON, 2, 200}, {Skill.DRAGON, 3, 300}, {Skill.DRAGON, 7, 700},
+        {Skill.KAMEJOKO, 1, 1000}, {Skill.KAMEJOKO, 2, 1200}, {Skill.KAMEJOKO, 5, 1500}, {Skill.KAMEJOKO, 7, 1700},
+        {Skill.GALICK, 1, 100}
+    })
+            .secondsRest(_15_PHUT)
             .build();
 
 }

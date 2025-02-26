@@ -13,7 +13,7 @@ import nro.utils.Util;
 
 /**
  *
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  *
  */
@@ -92,11 +92,11 @@ public abstract class BossDoanhTrai extends Boss {
 
     @Override
     public void rewards(Player pl) {
-        if (Util.isTrue(1, 5)) {
-            ItemMap itemMap = new ItemMap(this.zone, 611, 1, this.location.x, this.zone.map.yPhysicInTop(this.location.x, 100), -1);
-            Service.getInstance().dropItemMap(this.zone, itemMap);
-        }
-        int[] nro = {17, 18, 19, 20};
+//        if (Util.isTrue(1, 5)) {
+//            ItemMap itemMap = new ItemMap(this.zone, 611, 1, this.location.x, this.zone.map.yPhysicInTop(this.location.x, 100), -1);
+//            Service.getInstance().dropItemMap(this.zone, itemMap);
+//        }
+        int[] nro = {16,17, 18, 19, 20};
         ItemMap itemMap = new ItemMap(this.zone, nro[Util.nextInt(0, nro.length - 1)], 1,
                 this.location.x, this.zone.map.yPhysicInTop(this.location.x, 100), -1);
         Service.getInstance().dropItemMap(this.zone, itemMap);

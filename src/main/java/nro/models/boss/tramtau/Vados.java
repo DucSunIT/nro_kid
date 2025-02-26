@@ -21,7 +21,7 @@ import nro.utils.Util;
 
 /**
  *
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  *
  */
@@ -49,10 +49,10 @@ public class Vados extends Boss {
     public void rewards(Player pl) {
         ItemMap itemMap = null;
         int y = this.zone.map.yPhysicInTop(this.location.x, this.location.y - 24);
-        if (Util.isTrue(20, 100)) {
+        if (Util.isTrue(1, 10)) {
             int[] set1 = {650, 651, 652, 653, 654, 655, 657, 658, 659, 660, 661, 662};
             itemMap = new ItemMap(ratiItemHuyDiet(zone, set1[Util.nextInt(0, set1.length - 1)], 1, this.location.x - 20, this.location.y, pl.id));
-        } else if (Util.isTrue(10, 100)) {
+        } else if (Util.isTrue(1, 50)) {
             itemMap = new ItemMap(ratiItemHuyDiet(zone, 656, 1, this.location.x - 20, this.location.y, pl.id));
         } else {
             int[] set2 = {16, 15};

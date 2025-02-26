@@ -18,7 +18,7 @@ import nro.services.SkillService;
 import nro.utils.SkillUtil;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class ZamasToiThuong extends Boss {
@@ -64,8 +64,8 @@ public class ZamasToiThuong extends Boss {
     @Override
     public void rewards(Player pl) {
         // Cải trang thỏ
-        int[] tempIds1 = new int[]{874, 898, 725};
-        int[] tempIds2 = new int[]{17, 16};
+        int[] tempIds1 = new int[]{874, 898, 725}; // rùa con, ctrang zamasu, siêu thần thuỷ
+        int[] tempIds2 = new int[]{17, 16}; // ngọc rồng 3s, 4s
 
         int tempId = -1;
         if (Util.isTrue(1, 10)) {
@@ -79,17 +79,17 @@ public class ZamasToiThuong extends Boss {
             ItemMap itemMap = new ItemMap(this.zone, tempId, 1,
                     pl.location.x, this.zone.map.yPhysicInTop(pl.location.x, pl.location.y - 24), pl.id);
             if (tempId == ConstItem.CAI_TRANG_ZAMASU) {
-                itemMap.options.add(new ItemOption(50, Util.nextInt(20, 35)));
-                itemMap.options.add(new ItemOption(77, Util.nextInt(30, 40)));
-                itemMap.options.add(new ItemOption(103, Util.nextInt(30, 40)));
-                itemMap.options.add(new ItemOption(101, Util.nextInt(100, 200)));
+                itemMap.options.add(new ItemOption(50, Util.nextInt(1, 35)));
+                itemMap.options.add(new ItemOption(77, Util.nextInt(1, 40)));
+                itemMap.options.add(new ItemOption(103, Util.nextInt(1, 40)));
+                itemMap.options.add(new ItemOption(101, Util.nextInt(1, 50)));
                 itemMap.options.add(new ItemOption(93, Util.nextInt(1, 3)));
                 itemMap.options.add(new ItemOption(30, 1));
             } else if (tempId == 898) {
-                itemMap.options.add(new ItemOption(77, Util.nextInt(20, 40)));
-                itemMap.options.add(new ItemOption(103, Util.nextInt(20, 40)));
-                itemMap.options.add(new ItemOption(50, Util.nextInt(20, 40)));
-                itemMap.options.add(new ItemOption(117, Util.nextInt(20, 30)));
+                itemMap.options.add(new ItemOption(77, Util.nextInt(1, 40)));
+                itemMap.options.add(new ItemOption(103, Util.nextInt(1, 40)));
+                itemMap.options.add(new ItemOption(50, Util.nextInt(1, 40)));
+                itemMap.options.add(new ItemOption(117, Util.nextInt(1, 30)));
                 itemMap.options.add(new ItemOption(93, Util.nextInt(1, 3)));
                 itemMap.options.add(new ItemOption(30, 1));
             }

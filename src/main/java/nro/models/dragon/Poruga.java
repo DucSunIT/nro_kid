@@ -14,7 +14,7 @@ import nro.services.Service;
 import java.io.DataOutputStream;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  */
 
 public class Poruga extends AbsDragon {

@@ -10,7 +10,7 @@ import nro.services.func.ChangeMapService;
 import nro.utils.Util;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  */
 public class MartialCongressService {
 

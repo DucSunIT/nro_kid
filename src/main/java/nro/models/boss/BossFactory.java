@@ -30,7 +30,7 @@ import nro.services.MapService;
 import org.apache.log4j.Logger;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 NROLOVE 💖
  */
 public class BossFactory {
@@ -160,14 +160,17 @@ public class BossFactory {
     public static final byte THAN_TAI_NM = -115;
 
     public static final byte BROLY_TEST = -116;
+    public static final byte BABY_VEGETA = -117;
+    public static final byte BABY_KHI = -118;
+
     private static final Logger logger = Logger.getLogger(BossFactory.class);
 
     public static final int[] MAP_APPEARED_QILIN = {
-        ConstMap.LANG_ARU, ConstMap.LANG_MORI, ConstMap.LANG_KAKAROT, ConstMap.DOI_HOA_CUC, ConstMap.DOI_NAM_TIM, ConstMap.DOI_HOANG,
-        ConstMap.LANG_PLANT, ConstMap.RUNG_NGUYEN_SINH,
-        ConstMap.RUNG_CO, ConstMap.RUNG_THONG_XAYDA, ConstMap.RUNG_DA, ConstMap.THUNG_LUNG_DEN, ConstMap.BO_VUC_DEN, ConstMap.THANH_PHO_VEGETA,
-        ConstMap.THUNG_LUNG_TRE, ConstMap.RUNG_NAM, ConstMap.RUNG_BAMBOO, ConstMap.RUNG_XUONG, ConstMap.RUNG_DUONG_XI, ConstMap.NAM_KAME,
-        ConstMap.DAO_BULONG, ConstMap.DONG_KARIN, ConstMap.THI_TRAN_MOORI, ConstMap.THUNG_LUNG_MAIMA, ConstMap.NUI_HOA_TIM, ConstMap.NUI_HOA_VANG
+            ConstMap.LANG_ARU, ConstMap.LANG_MORI, ConstMap.LANG_KAKAROT, ConstMap.DOI_HOA_CUC, ConstMap.DOI_NAM_TIM, ConstMap.DOI_HOANG,
+            ConstMap.LANG_PLANT, ConstMap.RUNG_NGUYEN_SINH,
+            ConstMap.RUNG_CO, ConstMap.RUNG_THONG_XAYDA, ConstMap.RUNG_DA, ConstMap.THUNG_LUNG_DEN, ConstMap.BO_VUC_DEN, ConstMap.THANH_PHO_VEGETA,
+            ConstMap.THUNG_LUNG_TRE, ConstMap.RUNG_NAM, ConstMap.RUNG_BAMBOO, ConstMap.RUNG_XUONG, ConstMap.RUNG_DUONG_XI, ConstMap.NAM_KAME,
+            ConstMap.DAO_BULONG, ConstMap.DONG_KARIN, ConstMap.THI_TRAN_MOORI, ConstMap.THUNG_LUNG_MAIMA, ConstMap.NUI_HOA_TIM, ConstMap.NUI_HOA_VANG
     };
 
     private BossFactory() {
@@ -179,46 +182,53 @@ public class BossFactory {
         new Thread(() -> {
             try {
 //                createBoss(THAN_TAI);
-//                createBoss(NGO_KHONG);
-//                createBoss(CUMBER);
-                createBoss(BULMA);
-                createBoss(CHICHITHO);
-                createBoss(POCTHO);
+////                createBoss(NGO_KHONG);
+////                createBoss(CUMBER);
+////                createBoss(BULMA);
+////                createBoss(CHICHITHO);
+////                createBoss(POCTHO);
                 createBoss(BLACKGOKU);
                 createBoss(CHILL);
-                createBoss(WHIS);
-                createBoss(VADOS);
                 createBoss(COOLER);
+                createBoss(CUMBER);
+                createBoss(CUMBER2);
+                createBoss(BABY_VEGETA);
+                createBoss(BABY_KHI);
                 createBoss(XEN_BO_HUNG);
+                createBoss(ANDROID_20);
+                createBoss(KINGKONG);
+                createBoss(XEN_BO_HUNG_1);
+                createBoss(XEN_MAX);
                 createBoss(KUKU);
                 createBoss(MAP_DAU_DINH);
                 createBoss(RAMBO);
                 createBoss(TIEU_DOI_TRUONG);
                 createBoss(FIDE_DAI_CA_1);
-                createBoss(ANDROID_20);
-                createBoss(KINGKONG);
-                createBoss(XEN_BO_HUNG_1);
-                createBoss(XEN_MAX);
                 createBoss(SUPER_BLACK_ROSE);
                 createBoss(ZAMAS_TOI_THUONG);
                 createBoss(BONG_BANG);
                 createBoss(SOI_BASIL);
                 createBoss(SANTA_CLAUS);
                 createBoss(WHIS_DETU);
+                createBoss(WHIS);
+                createBoss(VADOS);
                 createBoss(RONG_DEN);
                 createBoss(ZENO);
                 createBoss(GOKU_SUPER);
-//                createBoss(ITACHI);
+////                createBoss(ITACHI);
                 createBoss(ZAMAS_ZOMBIE);
-//                createBoss(LUFFY_GEAR5);
-//                createBoss(KAIDO);
-//                createBoss(LUFFY_THAN_NIKA);
-//                createBoss(QILIN);
-//                createBoss(ALONG);
-//                createBoss(MIHAWK);
-                for (int i = 0; i < 5; i++) {
-                    createBoss(SUPER_BROLY);
-                }
+////                createBoss(LUFFY_GEAR5);
+////                createBoss(KAIDO);
+////                createBoss(LUFFY_THAN_NIKA);
+////                createBoss(QILIN);
+////                createBoss(ALONG);
+////                createBoss(MIHAWK);
+                createBoss(FIDEGOLD);
+                createBoss(SUPER_BROLY);
+                createBoss(ITACHI);
+////                for (int i = 0; i < 5; i++) {
+////                    createBoss(SUPER_BROLY);
+////                }
                 for (Map map : Manager.MAPS) {
                     if (map != null && !map.zones.isEmpty()) {
                         if (!map.isMapOffline && map.type == ConstMap.MAP_NORMAL
@@ -316,161 +326,62 @@ public class BossFactory {
     }
 
     public static Boss createBoss(byte bossId) throws Exception {
-        Boss boss = null;
-        switch (bossId) {
-            case BROLY:
-                boss = new Broly();
-                break;
-            case SUPER_BROLY:
-                boss = new SuperBroly();
-                break;
-            case XEN_BO_HUNG_1:
-                boss = new XenBoHung1();
-                break;
-            case XEN_BO_HUNG_2:
-                boss = new XenBoHung2();
-                break;
-            case XEN_BO_HUNG_HOAN_THIEN:
-                boss = new XenBoHungHoanThien();
-                break;
-            case XEN_BO_HUNG:
-                boss = new XenBoHung();
-                break;
-            case XEN_CON:
-                boss = new XenCon();
-                break;
-            case SIEU_BO_HUNG:
-                boss = new SieuBoHung();
-                break;
-            case KUKU:
-                boss = new Kuku();
-                break;
-            case MAP_DAU_DINH:
-                boss = new MapDauDinh();
-                break;
-            case RAMBO:
-                boss = new Rambo();
-                break;
-            case COOLER:
-                boss = new Cooler();
-                break;
-            case COOLER2:
-                boss = new Cooler2();
-                break;
-            case SO4:
-                boss = new So4();
-                break;
-            case SO3:
-                boss = new So3();
-                break;
-            case SO2:
-                boss = new So2();
-                break;
-            case SO1:
-                boss = new So1();
-                break;
-            case TIEU_DOI_TRUONG:
-                boss = new TieuDoiTruong();
-                break;
-            case FIDE_DAI_CA_1:
-                boss = new FideDaiCa1();
-                break;
-            case FIDE_DAI_CA_2:
-                boss = new FideDaiCa2();
-                break;
-            case FIDE_DAI_CA_3:
-                boss = new FideDaiCa3();
-                break;
-            case ANDROID_19:
-                boss = new Android19();
-                break;
-            case ANDROID_20:
-                boss = new Android20();
-                break;
-            case SUPER_BROLY_RED:
-                boss = new SuperBrolyRed();
-                break;
-            case POC:
-                boss = new Poc();
-                break;
-            case PIC:
-                boss = new Pic();
-                break;
-            case KINGKONG:
-                boss = new KingKong();
-                break;
-            case WHIS:
-                boss = new Whis();
-                break;
-            case BILL:
-                boss = new Bill();
-                break;
-            case VADOS:
-                boss = new Vados();
-                break;
-            case CHAMPA:
-                boss = new Champa();
-                break;
-            case CHILL:
-                boss = new Chill();
-                break;
-            case CHILL2:
-                boss = new Chill2();
-                break;
-            case BULMA:
-                boss = new BULMA();
-                break;
-            case POCTHO:
-                boss = new POCTHO();
-                break;
-            case CHICHITHO:
-                boss = new CHICHITHO();
-                break;
-            case SUPER_BLACK_ROSE:
-                boss = new BLACKROSE();
-                break;
-            case ZAMAS_TOI_THUONG:
-                boss = new ZamasToiThuong();
-                break;
-            case BONG_BANG:
-                boss = new BongBang();
-                break;
-            case SOI_BASIL:
-                boss = new SoiBasil();
-                break;
-            case ITACHI:
-                boss = new Itachi();
-                break;
+        Boss boss = switch (bossId) {
+            case BROLY -> new Broly();
+            case SUPER_BROLY -> new SuperBroly();
+            case SUPER_BROLY_RED -> new SuperBrolyRed();
+            case XEN_BO_HUNG_1 -> new XenBoHung1();
+            case XEN_BO_HUNG_2 -> new XenBoHung2();
+            case XEN_BO_HUNG_HOAN_THIEN -> new XenBoHungHoanThien();
+            case XEN_BO_HUNG -> new XenBoHung();
+            case XEN_CON -> new XenCon();
+            case SIEU_BO_HUNG -> new SieuBoHung();
+            case KUKU -> new Kuku();
+            case MAP_DAU_DINH -> new MapDauDinh();
+            case RAMBO -> new Rambo();
+            case COOLER -> new Cooler();
+            case COOLER2 -> new Cooler2();
+            case SO4 -> new So4();
+            case SO3 -> new So3();
+            case SO2 -> new So2();
+            case SO1 -> new So1();
+            case TIEU_DOI_TRUONG -> new TieuDoiTruong();
+            case FIDE_DAI_CA_1 -> new FideDaiCa1();
+            case FIDE_DAI_CA_2 -> new FideDaiCa2();
+            case FIDE_DAI_CA_3 -> new FideDaiCa3();
+            case ANDROID_19 -> new Android19();
+            case ANDROID_20 -> new Android20();
+            case POC -> new Poc();
+            case PIC -> new Pic();
+            case KINGKONG -> new KingKong();
+            case WHIS -> new Whis();
+            case BILL -> new Bill();
+            case VADOS -> new Vados();
+            case CHAMPA -> new Champa();
+            case CHILL -> new Chill();
+            case CHILL2 -> new Chill2();
+            case BULMA -> new BULMA();
+            case POCTHO -> new POCTHO();
+            case CHICHITHO -> new CHICHITHO();
+            case SUPER_BLACK_ROSE -> new BLACKROSE();
+            case ZAMAS_TOI_THUONG -> new ZamasToiThuong();
+            case BONG_BANG -> new BongBang();
+            case SOI_BASIL -> new SoiBasil();
+            case ITACHI -> new Itachi();
 //            case ALONG:
 //                boss = new Along();
 //                break;
 //            case MIHAWK:
 //                boss = new Mihawk();
 //                break;
-            case ZAMAS_ZOMBIE:
-                boss = new ZamasZombie();
-                break;
-            case LUFFY_GEAR5:
-                boss = new LuffyGear5();
-                break;
-            case KAIDO:
-                boss = new Kaido();
-                break;
-            case LUFFY_THAN_NIKA:
-                boss = new LuffyThanNika();
-                break;
-            case GOKU_SUPER:
-                boss = new GokuSuper();
-                break;
-            case WHIS_DETU:
-                boss = new WhisDetu();
-                break;
-            case ZENO:
-                boss = new ZenoDetu();
-                break;
-            case RONG_DEN:
-                boss = new RongDen();
-                break;
+            case ZAMAS_ZOMBIE -> new ZamasZombie();
+            case LUFFY_GEAR5 -> new LuffyGear5();
+            case KAIDO -> new Kaido();
+            case LUFFY_THAN_NIKA -> new LuffyThanNika();
+            case GOKU_SUPER -> new GokuSuper();
+            case WHIS_DETU -> new WhisDetu();
+            case ZENO -> new ZenoDetu();
+            case RONG_DEN -> new RongDen();
 //             case BROLYDEN:
 //                boss = new Brolyden();
 //                break;
@@ -480,34 +391,19 @@ public class BossFactory {
 //             case BROLYVANG:
 //                boss = new Brolyvang();
 //                break;
-            case BLACKGOKU:
-                boss = new Blackgoku();
-                break;
-            case SUPERBLACKGOKU:
-                boss = new Superblackgoku();
-                break;
-            case MABU_MAP:
-                boss = new Mabu_Tang6();
-                break;
-            case XEN_MAX:
-                boss = new XenMax();
-                break;
-            case NGO_KHONG:
-                boss = new NgoKhong();
-                break;
-            case BAT_GIOI:
-                boss = new BatGioi();
-                break;
-            case FIDEGOLD:
-                boss = new FideGold();
-                break;
-            case CUMBER:
-                boss = new Cumber();
-                break;
-            case CUMBER2:
-                boss = new SuperCumber();
-                break;
-        }
+            case BLACKGOKU -> new Blackgoku();
+            case SUPERBLACKGOKU -> new Superblackgoku();
+            case MABU_MAP -> new Mabu_Tang6();
+            case XEN_MAX -> new XenMax();
+            case NGO_KHONG -> new NgoKhong();
+            case BAT_GIOI -> new BatGioi();
+            case FIDEGOLD -> new FideGold();
+            case CUMBER -> new Cumber();
+            case CUMBER2 -> new SuperCumber();
+            case BABY_VEGETA -> new BabyVegeta();
+            case BABY_KHI -> new BabyKhi();
+            default -> null;
+        };
         return boss;
     }
 

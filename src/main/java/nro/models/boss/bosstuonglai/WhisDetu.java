@@ -18,7 +18,7 @@ import nro.services.SkillService;
 import nro.utils.SkillUtil;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class WhisDetu extends Boss {
@@ -63,7 +63,7 @@ public class WhisDetu extends Boss {
 
     @Override
     public void rewards(Player pl) {
-        if (Util.isTrue(10, 100)) {
+        if (Util.isTrue(1, 10)) {
             ItemMap itemMap = new ItemMap(this.zone, 1108, 1,
                     pl.location.x, this.zone.map.yPhysicInTop(pl.location.x, pl.location.y - 24), pl.id);
             Service.getInstance().dropItemMap(this.zone, itemMap);

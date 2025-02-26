@@ -68,7 +68,7 @@ import static nro.server.Manager.*;
 import static nro.services.func.SummonDragon.*;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class NpcFactory {
@@ -200,7 +200,7 @@ public class NpcFactory {
                                         quantity = Util.nextInt(1, 2);
                                     }
                                     int[] itemsNeed = {ConstItem.CHU_GIAI, ConstItem.CHU_KHAI,
-                                            ConstItem.CHU_PHONG, ConstItem.CHU_AN};
+                                        ConstItem.CHU_PHONG, ConstItem.CHU_AN};
                                     Random rd = new Random(); // Khởi tạo Random một lần
 
                                     for (int i = 0; i < itemsNeed.length; i++) { // Chạy vòng lặp trong khoảng hợp lệ
@@ -232,8 +232,8 @@ public class NpcFactory {
                             if (this.mapId == MapName.LANG_ARU) {
                                 this.createOtherMenu(player, ConstNpc.BASE_MENU,
                                         "|7|NGŨ HÀNH SƠN"
-                                                + "\n|2|A mi phò phò, thí chủ hãy giúp giải cứu đồ đệ của bần tăng đang bị phong ấn tại ngũ hành sơn."
-                                                + "\n|3|Tại đây sức mạnh dưới 16 Tỷ đánh quái được x2 TNSM",
+                                        + "\n|2|A mi phò phò, thí chủ hãy giúp giải cứu đồ đệ của bần tăng đang bị phong ấn tại ngũ hành sơn."
+                                        + "\n|3|Tại đây sức mạnh dưới 16 Tỷ đánh quái được x2 TNSM",
                                         "Đồng ý", "Từ chối");
                             }
                             if (this.mapId == MapName.NGU_HANH_SON_3) {
@@ -328,7 +328,7 @@ public class NpcFactory {
                                                     return;
                                                 }
                                                 int[] itemsNeed = {ConstItem.CHU_GIAI, ConstItem.CHU_KHAI,
-                                                        ConstItem.CHU_PHONG, ConstItem.CHU_AN};
+                                                    ConstItem.CHU_PHONG, ConstItem.CHU_AN};
                                                 List<Item> items = InventoryService.gI().getListItem(player, itemsNeed)
                                                         .stream().filter(i -> i.quantity >= 10)
                                                         .collect(Collectors.toList());
@@ -496,7 +496,7 @@ public class NpcFactory {
                                 if (this.mapId == 0) {
                                     this.createOtherMenu(player, ConstNpc.BASE_MENU,
                                             "Ta là người đang giữ rương quà cho ngươi, nếu có bất kì món quà nào hãy tới gặp ta để nhận."
-                                                    + "\n Nhớ nhận ngay để không bị mất khi có quà mới nhé!",
+                                            + "\n Nhớ nhận ngay để không bị mất khi có quà mới nhé!",
                                             "Rương\nQuà tặng", "Bảng\n xếp hạng", "Từ chối");
                                 }
                             }
@@ -522,16 +522,78 @@ public class NpcFactory {
                     };
 
                     break;
-                case ConstNpc.LY_TIEU_NUONG:
+//                case ConstNpc.LY_TIEU_NUONG:
+//                    npc = new Npc(mapId, status, cx, cy, tempId, avartar) {
+//                        @Override
+//                        public void openBaseMenu(Player player) {
+//                            if (canOpenNpc(player)) {
+//                                createOtherMenu(player, ConstNpc.BASE_MENU,
+//                                        "\b|8|Trò chơi Tài Xỉu đang được diễn ra\n\n|6|Thử vận may của bạn với trò chơi Tài Xỉu! Đặt cược và dự đoán đúng"
+//                                                + "\n kết quả, bạn sẽ được nhận thưởng lớn. Hãy tham gia ngay và\n cùng trải nghiệm sự hồi hộp, thú vị trong trò chơi này!"
+//                                                + "\n\n|7|(Điều kiện tham gia : Đã mở thành viên)\n\n|2|Đặt tối thiểu: 1.000 Hồng ngọc\n Tối đa: 100.000 Hồng ngọc"
+//                                                + "\n\n|7| Lưu ý : Thoát game khi chốt Kết quả sẽ MẤT Tiền cược và Tiền thưởng", "Thể lệ", "Tham gia");
+//                            }
+//                        }
+//
+//                        @Override
+//                        public void confirmMenu(Player player, int select) {
+//                            if (canOpenNpc(player)) {
+//                                if (player.iDMark.isBaseMenu()) {
+//                                    switch (select) {
+//                                        case 0:
+//                                            createOtherMenu(player, ConstNpc.IGNORE_MENU, "|5|Có 2 nhà cái Tài và Xĩu, bạn chỉ được chọn 1 nhà để tham gia"
+//                                                    + "\n\n|6|Sau khi kết thúc thời gian đặt cược. Hệ thống sẽ tung xí ngầu để biết kết quả Tài Xỉu"
+//                                                    + "\n\nNếu Tổng số 3 con xí ngầu <=10 : XỈU\nNếu Tổng số 3 con xí ngầu >10 : TÀI\nNếu 3 Xí ngầu cùng 1 số : TAM HOA (Nhà cái lụm hết)"
+//                                                    + "\n\n|7|Lưu ý: Số Hồng ngọc nhận được sẽ bị nhà cái lụm đi 20%. Trong quá trình diễn ra khi đặt cược nếu thoát game sẽ bị MẤT TIỀN ĐẶT CƯỢC", "Ok");
+//                                            break;
+//                                        case 1:
+//                                            String time = ((TaiXiu.gI().lastTimeEnd - System.currentTimeMillis()) / 1000) + " giây";
+//                                            if (TaiXiu.gI().baotri == false) {
+//                                                if (player.goldTai == 0 && player.goldXiu == 0) {
+//                                                    NpcService.gI().createMenuConMeo(player, ConstNpc.TAIXIU, 11039, "\n|7|---NHÀ CÁI TÀI XỈU---\n\n|3|Kết quả kì trước:  " + TaiXiu.gI().x + " : " + TaiXiu.gI().y + " : " + TaiXiu.gI().z
+//                                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Hồng ngọc"
+//                                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Hồng ngọc\n\n|5|Thời gian còn lại: " + time, "Cập nhập", "Theo TÀI", "Theo XỈU", "Đóng");
+//                                                } else if (player.goldTai > 0) {
+//                                                    NpcService.gI().createMenuConMeo(player, ConstNpc.TAIXIU, 11039, "\n|7|---NHÀ CÁI TÀI XỈU---\n\n|3|Kết quả kì trước:  " + TaiXiu.gI().x + " : " + TaiXiu.gI().y + " : " + TaiXiu.gI().z
+//                                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Hồng ngọc"
+//                                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Hồng ngọc\n\n|5|Thời gian còn lại: " + time + "\n\n|7|Bạn đã cược Tài : " + Util.format(player.goldTai) + " Hồng ngọc", "Cập nhập", "Đóng");
+//                                                } else {
+//                                                    NpcService.gI().createMenuConMeo(player, ConstNpc.TAIXIU, 11039, "\n|7|---NHÀ CÁI TÀI XỈU---\n\n|3|Kết quả kì trước:  " + TaiXiu.gI().x + " : " + TaiXiu.gI().y + " : " + TaiXiu.gI().z
+//                                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Hồng ngọc"
+//                                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Hồng ngọc\n\n|5|Thời gian còn lại: " + time + "\n\n|7|Bạn đã cược Xỉu : " + Util.format(player.goldXiu) + " Hồng ngọc", "Cập nhập", "Đóng");
+//                                                }
+//                                            } else {
+//                                                if (player.goldTai == 0 && player.goldXiu == 0) {
+//                                                    NpcService.gI().createMenuConMeo(player, ConstNpc.TAIXIU, 11039, "\n|7|---NHÀ CÁI TÀI XỈU---\n\n|3|Kết quả kì trước:  " + TaiXiu.gI().x + " : " + TaiXiu.gI().y + " : " + TaiXiu.gI().z
+//                                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Hồng ngọc"
+//                                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Hồng ngọc\n\n|5|Thời gian còn lại: " + time + "\n\n|7|Hệ thống sắp bảo trì", "Cập nhập", "Đóng");
+//                                                } else if (player.goldTai > 0) {
+//                                                    NpcService.gI().createMenuConMeo(player, ConstNpc.TAIXIU, 11039, "\n|7|---NHÀ CÁI TÀI XỈU---\n\n|3|Kết quả kì trước:  " + TaiXiu.gI().x + " : " + TaiXiu.gI().y + " : " + TaiXiu.gI().z
+//                                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Hồng ngọc"
+//                                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Hồng ngọc\n\n|5|Thời gian còn lại: " + time + "\n\n|7|Bạn đã cược Tài : " + Util.format(player.goldTai) + " Hồng ngọc" + "\n\n|7|Hệ thống sắp bảo trì", "Cập nhập", "Đóng");
+//                                                } else {
+//                                                    NpcService.gI().createMenuConMeo(player, ConstNpc.TAIXIU, 11039, "\n|7|---NHÀ CÁI TÀI-XỈU---\n\n|3|Kết quả kì trước:  " + TaiXiu.gI().x + " : " + TaiXiu.gI().y + " : " + TaiXiu.gI().z
+//                                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Hồng ngọc"
+//                                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Hồng ngọc\n\n|5|Thời gian còn lại: " + time + "\n\n|7|Bạn đã cược Xỉu : " + Util.format(player.goldXiu) + " Hồng ngọc" + "\n\n|7|Hệ thống sắp bảo trì", "Cập nhập", "Đóng");
+//                                                }
+//                                            }
+//                                            break;
+//                                    }
+//                                }
+//                            }
+//                        }
+//                    };
+//                    break;
+                case ConstNpc.CASINO_TAI_XIU:
                     npc = new Npc(mapId, status, cx, cy, tempId, avartar) {
                         @Override
                         public void openBaseMenu(Player player) {
                             if (canOpenNpc(player)) {
                                 createOtherMenu(player, ConstNpc.BASE_MENU,
                                         "\b|8|Trò chơi Tài Xỉu đang được diễn ra\n\n|6|Thử vận may của bạn với trò chơi Tài Xỉu! Đặt cược và dự đoán đúng"
-                                                + "\n kết quả, bạn sẽ được nhận thưởng lớn. Hãy tham gia ngay và\n cùng trải nghiệm sự hồi hộp, thú vị trong trò chơi này!"
-                                                + "\n\n|7|(Điều kiện tham gia : Đã mở thành viên)\n\n|2|Đặt tối thiểu: 1.000 Hồng ngọc\n Tối đa: 100.000 Hồng ngọc"
-                                                + "\n\n|7| Lưu ý : Thoát game khi chốt Kết quả sẽ MẤT Tiền cược và Tiền thưởng", "Thể lệ", "Tham gia");
+                                        + "\n kết quả, bạn sẽ được nhận thưởng lớn. Hãy tham gia ngay và\n cùng trải nghiệm sự hồi hộp, thú vị trong trò chơi này!"
+                                        + "\n\n|7|(Điều kiện tham gia : Đã mở thành viên)\n\n|2|Đặt tối thiểu: 10 Thỏi vàng\n Tối đa: 1.000 Thỏi vàng"
+                                        + "\n\n|7| Lưu ý : Thoát game khi chốt Kết quả sẽ MẤT Tiền cược và Tiền thưởng", "Thể lệ", "Tham gia");
                             }
                         }
 
@@ -541,42 +603,51 @@ public class NpcFactory {
                                 if (player.iDMark.isBaseMenu()) {
                                     switch (select) {
                                         case 0:
-                                            createOtherMenu(player, ConstNpc.IGNORE_MENU, "|5|Có 2 nhà cái Tài và Xĩu, bạn chỉ được chọn 1 nhà để tham gia"
+                                            createOtherMenu(player, ConstNpc.IGNORE_MENU, "|5|Có 2 nhà cái Tài và Xỉu, bạn chỉ được chọn 1 nhà để tham gia"
                                                     + "\n\n|6|Sau khi kết thúc thời gian đặt cược. Hệ thống sẽ tung xí ngầu để biết kết quả Tài Xỉu"
                                                     + "\n\nNếu Tổng số 3 con xí ngầu <=10 : XỈU\nNếu Tổng số 3 con xí ngầu >10 : TÀI\nNếu 3 Xí ngầu cùng 1 số : TAM HOA (Nhà cái lụm hết)"
-                                                    + "\n\n|7|Lưu ý: Số Hồng ngọc nhận được sẽ bị nhà cái lụm đi 20%. Trong quá trình diễn ra khi đặt cược nếu thoát game sẽ bị MẤT TIỀN ĐẶT CƯỢC", "Ok");
+                                                    + "\n\n|7|Lưu ý: Số Hồng ngọc nhận được sẽ bị nhà cái lụm đi 20%. Trong quá trình diễn ra khi đặt cược nếu thoát game sẽ bị MẤT TIỀN ĐẶT CƯỢC", "OK");
                                             break;
                                         case 1:
+                                            if (player.goldTai > 0 || player.goldXiu > 0) {
+                                                System.out.println("Player: " + player.name
+                                                        + " đã đặt cược: "
+                                                        + player.goldTai + " TÀI" + " Thỏi vàng "
+                                                        + player.goldXiu + " XỈU" + " Thỏi vàng ");
+
+                                            }
                                             String time = ((TaiXiu.gI().lastTimeEnd - System.currentTimeMillis()) / 1000) + " giây";
-                                            if (TaiXiu.gI().baotri == false) {
+                                            if (!TaiXiu.gI().baotri) {
                                                 if (player.goldTai == 0 && player.goldXiu == 0) {
                                                     NpcService.gI().createMenuConMeo(player, ConstNpc.TAIXIU, 11039, "\n|7|---NHÀ CÁI TÀI XỈU---\n\n|3|Kết quả kì trước:  " + TaiXiu.gI().x + " : " + TaiXiu.gI().y + " : " + TaiXiu.gI().z
-                                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Hồng ngọc"
-                                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Hồng ngọc\n\n|5|Thời gian còn lại: " + time, "Cập nhập", "Theo TÀI", "Theo XỈU", "Đóng");
+                                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Thỏi vàng"
+                                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Thỏi vàng\n\n|5|Thời gian còn lại: " + time, "Cập nhật", "Theo TÀI", "Theo XỈU", "Đóng");
                                                 } else if (player.goldTai > 0) {
                                                     NpcService.gI().createMenuConMeo(player, ConstNpc.TAIXIU, 11039, "\n|7|---NHÀ CÁI TÀI XỈU---\n\n|3|Kết quả kì trước:  " + TaiXiu.gI().x + " : " + TaiXiu.gI().y + " : " + TaiXiu.gI().z
-                                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Hồng ngọc"
-                                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Hồng ngọc\n\n|5|Thời gian còn lại: " + time + "\n\n|7|Bạn đã cược Tài : " + Util.format(player.goldTai) + " Hồng ngọc", "Cập nhập", "Đóng");
+                                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Thỏi vàng"
+                                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Thỏi vàng\n\n|5|Thời gian còn lại: " + time + "\n\n|7|Bạn đã cược Tài : " + Util.format(player.goldTai) + " Thỏi vàng", "Cập nhật", "Đóng");
                                                 } else {
                                                     NpcService.gI().createMenuConMeo(player, ConstNpc.TAIXIU, 11039, "\n|7|---NHÀ CÁI TÀI XỈU---\n\n|3|Kết quả kì trước:  " + TaiXiu.gI().x + " : " + TaiXiu.gI().y + " : " + TaiXiu.gI().z
-                                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Hồng ngọc"
-                                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Hồng ngọc\n\n|5|Thời gian còn lại: " + time + "\n\n|7|Bạn đã cược Xỉu : " + Util.format(player.goldXiu) + " Hồng ngọc", "Cập nhập", "Đóng");
+                                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Thỏi vàng"
+                                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Thỏi vàng\n\n|5|Thời gian còn lại: " + time + "\n\n|7|Bạn đã cược Xỉu : " + Util.format(player.goldXiu) + " Thỏi vàng", "Cập nhật", "Đóng");
                                                 }
+
                                             } else {
                                                 if (player.goldTai == 0 && player.goldXiu == 0) {
                                                     NpcService.gI().createMenuConMeo(player, ConstNpc.TAIXIU, 11039, "\n|7|---NHÀ CÁI TÀI XỈU---\n\n|3|Kết quả kì trước:  " + TaiXiu.gI().x + " : " + TaiXiu.gI().y + " : " + TaiXiu.gI().z
-                                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Hồng ngọc"
-                                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Hồng ngọc\n\n|5|Thời gian còn lại: " + time + "\n\n|7|Hệ thống sắp bảo trì", "Cập nhập", "Đóng");
+                                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Thỏi vàng"
+                                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Thỏi vàng\n\n|5|Thời gian còn lại: " + time + "\n\n|7|Hệ thống sắp bảo trì", "Cập nhật", "Đóng");
                                                 } else if (player.goldTai > 0) {
                                                     NpcService.gI().createMenuConMeo(player, ConstNpc.TAIXIU, 11039, "\n|7|---NHÀ CÁI TÀI XỈU---\n\n|3|Kết quả kì trước:  " + TaiXiu.gI().x + " : " + TaiXiu.gI().y + " : " + TaiXiu.gI().z
-                                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Hồng ngọc"
-                                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Hồng ngọc\n\n|5|Thời gian còn lại: " + time + "\n\n|7|Bạn đã cược Tài : " + Util.format(player.goldTai) + " Hồng ngọc" + "\n\n|7|Hệ thống sắp bảo trì", "Cập nhập", "Đóng");
+                                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Thỏi vàng"
+                                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Thỏi vàng\n\n|5|Thời gian còn lại: " + time + "\n\n|7|Bạn đã cược Tài : " + Util.format(player.goldTai) + " Thỏi vàng" + "\n\n|7|Hệ thống sắp bảo trì", "Cập nhật", "Đóng");
                                                 } else {
                                                     NpcService.gI().createMenuConMeo(player, ConstNpc.TAIXIU, 11039, "\n|7|---NHÀ CÁI TÀI-XỈU---\n\n|3|Kết quả kì trước:  " + TaiXiu.gI().x + " : " + TaiXiu.gI().y + " : " + TaiXiu.gI().z
-                                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Hồng ngọc"
-                                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Hồng ngọc\n\n|5|Thời gian còn lại: " + time + "\n\n|7|Bạn đã cược Xỉu : " + Util.format(player.goldXiu) + " Hồng ngọc" + "\n\n|7|Hệ thống sắp bảo trì", "Cập nhập", "Đóng");
+                                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Thỏi vàng"
+                                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Thỏi vàng\n\n|5|Thời gian còn lại: " + time + "\n\n|7|Bạn đã cược Xỉu : " + Util.format(player.goldXiu) + " Thỏi vàng" + "\n\n|7|Hệ thống sắp bảo trì", "Cập nhật", "Đóng");
                                                 }
                                             }
+
                                             break;
                                     }
                                 }
@@ -600,10 +671,10 @@ public class NpcFactory {
                                 String NamePl = stringBuilder.toString();
                                 createOtherMenu(player, ConstNpc.BASE_MENU,
                                         "Kết quả giải trước: " + SoMayMan.gI().SoGiaiTruoc
-                                                + "\nNgười trúng giải trước: " + NamePl
-                                                + "\nTham gia: " + SoMayMan.gI().PlayerThamGia.size() + " người"
-                                                + "\nĐoán trúng sẽ nhận thưởng 100.000 Hồng ngọc"
-                                                + "\nThời gian quay số: " + time, "1 số\n1.000 Hồng ngọc", "Hướng dẫn", "Đóng");
+                                        + "\nNgười trúng giải trước: " + NamePl
+                                        + "\nTham gia: " + SoMayMan.gI().PlayerThamGia.size() + " người"
+                                        + "\nĐoán trúng sẽ nhận thưởng 100.000 Hồng ngọc"
+                                        + "\nThời gian quay số: " + time, "1 số\n1.000 Hồng ngọc", "Hướng dẫn", "Đóng");
                             }
                         }
 
@@ -618,9 +689,9 @@ public class NpcFactory {
                                         case 1:
                                             createOtherMenu(player, ConstNpc.IGNORE_MENU,
                                                     "Sau khi hết thời gian đếm ngược"
-                                                            + "\nHệ thống sẽ quay số cho ra kết quả"
-                                                            + "\nNgười thắng sẽ nhận được 100.000 Hồng ngọc"
-                                                            + "\n(Mỗi 1 số dự đoán sẽ mất 1.000 Hồng ngọc)", "Ok");
+                                                    + "\nHệ thống sẽ quay số cho ra kết quả"
+                                                    + "\nNgười thắng sẽ nhận được 100.000 Hồng ngọc"
+                                                    + "\n(Mỗi 1 số dự đoán sẽ mất 1.000 Hồng ngọc)", "Ok");
                                             break;
                                     }
                                 }
@@ -657,18 +728,18 @@ public class NpcFactory {
                                             if (Manager.KHUYEN_MAI_NAP != 1) {
                                                 this.createOtherMenu(player, ConstNpc.QUY_DOI_TV,
                                                         "|7|QUY ĐỔI THỎI VÀNG"
-                                                                + "\n|6|Giới hạn đổi không quá 1.000.000 Coin"
-                                                                + "\n|1|Coin hiện còn : " + " " + Util.format(player.getSession().vnd)
-                                                                + "\n\n|5|Nhập 10.000 Coin được 50 Thỏi vàng"
-                                                                + "\n|3| Server đang x" + Manager.KHUYEN_MAI_NAP + " Quy đổi "
-                                                                + "(10.000 Coin = " + Util.format(Manager.KHUYEN_MAI_NAP * 50) + " Thỏi vàng)",
+                                                        + "\n|6|Giới hạn đổi không quá 1.000.000 Coin"
+                                                        + "\n|1|Coin hiện còn : " + " " + Util.format(player.getSession().vnd)
+                                                        + "\n\n|5|Nhập 10.000 Coin được 50 Thỏi vàng"
+                                                        + "\n|3| Server đang x" + Manager.KHUYEN_MAI_NAP + " Quy đổi "
+                                                        + "(10.000 Coin = " + Util.format(Manager.KHUYEN_MAI_NAP * 50) + " Thỏi vàng)",
                                                         "Đồng ý", "Từ chối");
                                             } else {
                                                 this.createOtherMenu(player, ConstNpc.QUY_DOI_TV,
                                                         "|7|QUY ĐỔI THỎI VÀNG"
-                                                                + "\n|6|Giới hạn đổi không quá 1.000.000 Coin"
-                                                                + "\n|1|Coin hiện còn : " + " " + Util.format(player.getSession().vnd)
-                                                                + "\n\n|5|Nhập 10.000 Coin được 50 Thỏi vàng",
+                                                        + "\n|6|Giới hạn đổi không quá 1.000.000 Coin"
+                                                        + "\n|1|Coin hiện còn : " + " " + Util.format(player.getSession().vnd)
+                                                        + "\n\n|5|Nhập 10.000 Coin được 50 Thỏi vàng",
                                                         "Đồng ý", "Từ chối");
                                             }
                                             break;
@@ -676,18 +747,18 @@ public class NpcFactory {
                                             if (Manager.KHUYEN_MAI_NAP != 1) {
                                                 this.createOtherMenu(player, ConstNpc.QUY_DOI_XU,
                                                         "|7|QUY ĐỔI XU VÀNG"
-                                                                + "\n|6|Giới hạn đổi không quá 1.000.000 Coin"
-                                                                + "\n|1|Coin hiện còn : " + " " + Util.format(player.getSession().vnd)
-                                                                + "\n\n|5|Nhập 10.000 Coin được 100 Xu vàng"
-                                                                + "\n|3| Server đang x" + Manager.KHUYEN_MAI_NAP + " Quy đổi "
-                                                                + "(10.000 Coin = " + Util.format(Manager.KHUYEN_MAI_NAP * 100) + " Xu vàng)",
+                                                        + "\n|6|Giới hạn đổi không quá 1.000.000 Coin"
+                                                        + "\n|1|Coin hiện còn : " + " " + Util.format(player.getSession().vnd)
+                                                        + "\n\n|5|Nhập 10.000 Coin được 100 Xu vàng"
+                                                        + "\n|3| Server đang x" + Manager.KHUYEN_MAI_NAP + " Quy đổi "
+                                                        + "(10.000 Coin = " + Util.format(Manager.KHUYEN_MAI_NAP * 100) + " Xu vàng)",
                                                         "Đồng ý", "Từ chối");
                                             } else {
                                                 this.createOtherMenu(player, ConstNpc.QUY_DOI_XU,
                                                         "|7|QUY ĐỔI XU VÀNG"
-                                                                + "\n|6|Giới hạn đổi không quá 1.000.000 Coin"
-                                                                + "\n|1|Coin hiện còn : " + " " + Util.format(player.getSession().vnd)
-                                                                + "\n\n|5|Nhập 10.000 Coin được 100 Xu vàng",
+                                                        + "\n|6|Giới hạn đổi không quá 1.000.000 Coin"
+                                                        + "\n|1|Coin hiện còn : " + " " + Util.format(player.getSession().vnd)
+                                                        + "\n\n|5|Nhập 10.000 Coin được 100 Xu vàng",
                                                         "Đồng ý", "Từ chối");
                                             }
                                             break;
@@ -711,13 +782,13 @@ public class NpcFactory {
                                                 if (player.clan.banDoKhoBau != null) {
                                                     this.createOtherMenu(player, ConstNpc.MENU_OPENED_DBKB,
                                                             "Bang hội của con đang đi tìm kho báu dưới biển cấp độ "
-                                                                    + player.clan.banDoKhoBau.level
-                                                                    + "\nCon có muốn đi theo không?",
+                                                            + player.clan.banDoKhoBau.level
+                                                            + "\nCon có muốn đi theo không?",
                                                             "Đồng ý", "Từ chối");
                                                 } else {
                                                     this.createOtherMenu(player, ConstNpc.MENU_OPEN_DBKB,
                                                             "Đây là bản đồ kho báu hải tặc tí hon\nCác con cứ yên tâm lên đường\n"
-                                                                    + "Ở đây có ta lo\nNhớ chọn cấp độ vừa sức mình nhé",
+                                                            + "Ở đây có ta lo\nNhớ chọn cấp độ vừa sức mình nhé",
                                                             "Chọn\ncấp độ", "Từ chối");
                                                 }
                                             } else {
@@ -729,11 +800,11 @@ public class NpcFactory {
                                                 case 1:
                                                     this.createOtherMenu(player, ConstNpc.MENU_OPEN_SUKIEN,
                                                             "Sự kiện Halloween chính thức tại Ngọc Rồng "
-                                                                    + Manager.SERVER_NAME + "\n"
-                                                                    + "Chuẩn bị x10 nguyên liệu Kẹo, Bánh Quy, Bí ngô để đổi Giỏ Kẹo cho ta nhé\n"
-                                                                    + "Nguyên Liệu thu thập bằng cách đánh quái tại các hành tinh được chỉ định\n"
-                                                                    + "Tích lũy 3 Giỏ Kẹo +  3 Vé mang qua đây ta sẽ cho con 1 Hộp Ma Quỷ\n"
-                                                                    + "Tích lũy 3 Giỏ Kẹo, 3 Hộp Ma Quỷ + 3 Vé \nmang qua đây ta sẽ cho con 1 hộp quà thú vị.",
+                                                            + Manager.SERVER_NAME + "\n"
+                                                            + "Chuẩn bị x10 nguyên liệu Kẹo, Bánh Quy, Bí ngô để đổi Giỏ Kẹo cho ta nhé\n"
+                                                            + "Nguyên Liệu thu thập bằng cách đánh quái tại các hành tinh được chỉ định\n"
+                                                            + "Tích lũy 3 Giỏ Kẹo +  3 Vé mang qua đây ta sẽ cho con 1 Hộp Ma Quỷ\n"
+                                                            + "Tích lũy 3 Giỏ Kẹo, 3 Hộp Ma Quỷ + 3 Vé \nmang qua đây ta sẽ cho con 1 hộp quà thú vị.",
                                                             "Đổi\nGiỏ Kẹo", "Đổi Hộp\nMa Quỷ", "Đổi Hộp\nQuà Halloween",
                                                             "Từ chối");
                                                     break;
@@ -748,17 +819,17 @@ public class NpcFactory {
                                                             + EVENT_COUNT_QUY_LAO_KAME % 999 + "/999";
                                                     this.createOtherMenu(player, ConstNpc.MENU_OPEN_SUKIEN,
                                                             at != null && !at.isExpired() ? text
-                                                                    + "\nToàn bộ máy chủ được nhân đôi số vàng rơi ra từ quái,thời gian còn lại "
-                                                                    + at.getTime() / 60 + " phút."
-                                                                    : text + "\nKhi tặng đủ 999 bông hoa toàn bộ máy chủ được nhân đôi số vàng rơi ra từ quái trong 60 phút",
+                                                            + "\nToàn bộ máy chủ được nhân đôi số vàng rơi ra từ quái,thời gian còn lại "
+                                                            + at.getTime() / 60 + " phút."
+                                                            : text + "\nKhi tặng đủ 999 bông hoa toàn bộ máy chủ được nhân đôi số vàng rơi ra từ quái trong 60 phút",
                                                             "Tặng 1\n Bông hoa", "Tặng\n10 Bông", "Tặng\n99 Bông",
                                                             "Đổi\nHộp quà");
                                                     break;
                                                 case 3:
                                                     this.createOtherMenu(player, ConstNpc.MENU_OPEN_SUKIEN,
                                                             "Sự kiên giáng sinh 2022 " + Manager.SERVER_NAME
-                                                                    + "\nKhi đội mũ len bất kì đánh quái sẽ có cơ hội nhận được kẹo giáng sinh"
-                                                                    + "\nĐem 99 kẹo giáng sinh tới đây để đổi 1 Vớ,tất giáng sinh\nChúc bạn một mùa giáng sinh vui vẻ",
+                                                            + "\nKhi đội mũ len bất kì đánh quái sẽ có cơ hội nhận được kẹo giáng sinh"
+                                                            + "\nĐem 99 kẹo giáng sinh tới đây để đổi 1 Vớ,tất giáng sinh\nChúc bạn một mùa giáng sinh vui vẻ",
                                                             "Đổi\nTất giáng sinh");
 
                                                     break;
@@ -767,19 +838,19 @@ public class NpcFactory {
                                                 case 4:
                                                     this.createOtherMenu(player, ConstNpc.MENU_OPEN_SUKIEN,
                                                             "|7|Sự kiên Tết nguyên đán 2025 " + Manager.SERVER_NAME
-                                                                    + "\n|2|Bạn đang có: " + player.event.getEventPoint() + " điểm sự kiện"
-                                                                    + "\n|5|-Thịt heo và Ba chỉ, Gạo Nếp: Map Nappa"
-                                                                    + "\n-Đỗ xanh, Lá dong và Lá chuối\nGia vị và Phụ gia: Bản đồ kho báu, Doanh trại"
-                                                                    + "\n|3|(Săn Boss có tỉ lệ rơi các vật phẩm trên)"
-                                                                    + "\n|1|Chúc bạn năm mới dui dẻ",
+                                                            + "\n|2|Bạn đang có: " + player.event.getEventPoint() + " điểm sự kiện"
+                                                            + "\n|5|-Thịt heo và Ba chỉ, Gạo Nếp: Map Nappa"
+                                                            + "\n-Đỗ xanh, Lá dong và Lá chuối\nGia vị và Phụ gia: Bản đồ kho báu, Doanh trại"
+                                                            + "\n|3|(Săn Boss có tỉ lệ rơi các vật phẩm trên)"
+                                                            + "\n|1|Chúc bạn năm mới dui dẻ",
                                                             "Nhận Lìxì", "Đổi Điểm\nSự Kiện");
                                                     break;
                                                 case 5:
                                                     this.createOtherMenu(player, ConstNpc.MENU_OPEN_SUKIEN,
                                                             "Sự kiện 8/3 chính thức tại Ngọc Rồng "
-                                                                    + Manager.SERVER_NAME + "\nBạn đang có: "
-                                                                    + player.event.getEventPoint()
-                                                                    + " điểm sự kiện\nChúc bạn chơi game dui dẻ",
+                                                            + Manager.SERVER_NAME + "\nBạn đang có: "
+                                                            + player.event.getEventPoint()
+                                                            + " điểm sự kiện\nChúc bạn chơi game dui dẻ",
                                                             "Tặng 1\n Bông hoa", "Tặng\n10 Bông", "Tặng\n99 Bông",
                                                             "Đổi Capsule");
                                                     break;
@@ -1026,9 +1097,9 @@ public class NpcFactory {
                             if (canOpenNpc(player)) {
                                 if (this.mapId == 113) {
                                     this.createOtherMenu(player, ConstNpc.BASE_MENU, "Đại hội võ thuật Siêu Hạng"
-                                                    + "\ndiễn ra 24/7 kể cả ngày lễ và chủ nhật"
-                                                    + "\nHãy thi đấu để khẳng định đẳng cấp của mình nhé"
-                                                    + "\n|7|(Chức năng đang bảo trì)",
+                                            + "\ndiễn ra 24/7 kể cả ngày lễ và chủ nhật"
+                                            + "\nHãy thi đấu để khẳng định đẳng cấp của mình nhé"
+                                            + "\n|7|(Chức năng đang bảo trì)",
                                             "Top 100\nCao thủ", "Nhận thưởng quà top", "Đấu ngay", "Về\nĐại Hội\nVõ Thuật");
                                 }
                             }
@@ -1160,9 +1231,9 @@ public class NpcFactory {
                                             "Hãy cùng khám phá Thế giới này nào\n"
                                                     .replaceAll("%1", player.gender == ConstPlayer.TRAI_DAT ? "Quy lão Kamê"
                                                             : player.gender == ConstPlayer.NAMEC ? "Trưởng lão Guru" : "Vua Vegeta")
-                                                    + "|7|Ta đang giữ tiền tiết kiệm của con "
-                                                    + player.getSession().vnd + " VND"
-                                                    + "\n\n|2| ***" + mtv + "***",
+                                            + "|7|Ta đang giữ tiền tiết kiệm của con "
+                                            + player.getSession().vnd + " VND"
+                                            + "\n\n|2| ***" + mtv + "***",
                                             "Đổi Mật Khẩu", "Giftcode", "Nhận đệ tử",
                                             "Khu vực\nLuyện tập", "Next NV", "Mở thành viên", "Quà mốc nạp", "Nhập Code\nriêng");//, "Mở thành viên", "Quà mốc nạp", 
                                 }
@@ -1238,17 +1309,17 @@ public class NpcFactory {
                                             if (player.getSession().actived) {
                                                 this.createOtherMenu(player, 53747,
                                                         "|7|MỞ THÀNH VIÊN"
-                                                                + "\n|5|Bạn đã là thành viên chính thức của Ngọc rồng Kid"
-                                                                + "\nĐã mở khóa chức năng Giao dịch và Chat thế giới"
-                                                                + "\n|4|Hãy tiếp tục nâng cao sức mạnh của mình lên nào",
+                                                        + "\n|5|Bạn đã là thành viên chính thức của Ngọc rồng Kid"
+                                                        + "\nĐã mở khóa chức năng Giao dịch và Chat thế giới"
+                                                        + "\n|4|Hãy tiếp tục nâng cao sức mạnh của mình lên nào",
                                                         "Ố kê");
                                             } else {
                                                 this.createOtherMenu(player, 1456,
                                                         "|7|MỞ THÀNH VIÊN"
-                                                                + "\n|5|Khi bạn trờ thành thành viên chính thức của Ngọc rồng Kid sẽ được mở khóa chức năng Giao dịch và Chat thế giới"
-                                                                + "\n|3|Giá Kích hoạt tài khoản: 15.000 Coin"
-                                                                + "\n|1|Coin hiện còn : " + " " + Util.format(player.getSession().vnd) + " Coin"
-                                                                + "\n|7|Bạn có chắc muốn Kích hoạt tài khoản không?",
+                                                        + "\n|5|Khi bạn trờ thành thành viên chính thức của Ngọc rồng Kid sẽ được mở khóa chức năng Giao dịch và Chat thế giới"
+                                                        + "\n|3|Giá Kích hoạt tài khoản: 15.000 Coin"
+                                                        + "\n|1|Coin hiện còn : " + " " + Util.format(player.getSession().vnd) + " Coin"
+                                                        + "\n|7|Bạn có chắc muốn Kích hoạt tài khoản không?",
                                                         "Đồng ý", "Từ chối");
                                             }
                                             break;
@@ -1256,15 +1327,15 @@ public class NpcFactory {
                                             // quà mốc nạp
                                             this.createOtherMenu(player, 1432,
                                                     "|7|QÙA MỐC NẠP"
-                                                            + "\n\n|1|Tích lũy đổi Coin của bạn là : " + Util.format(player.tongnap)
-                                                            + "\n\n|5|- Mốc 50k : 5 Bộ Ngọc rồng 1s, 10 item Cuồng Bạo"
-                                                            + "\n- Mốc 100k : 100 Hộp sách kỹ năng, 30 item Cuồng Bạo, 1 trứng đệ Berus"
-                                                            + "\n- Mốc 200k : 500 Hộp sách kỹ năng, 90 item Cuồng Bạo"
-                                                            + "\n- Mốc 500k : 1000 Hộp sách kỹ năng, 99 Máy dò Boss, 300 Hộp pháp sư, 10 rương Sao pha lê VIP, 1 trứng đệ Zeno"
-                                                            + "\n Mốc 1tr : Danh hiệu Thiên tử(Sử dụng cho Đệ tử), 30 Kẹo một mắt, 20 Đá Cầu vòng, 500 Hộp pháp sư, 20 Viên Ngọc rồng Siêu cấp, Hộp đồ kích hoạt thần linh"
-                                                            + "\n Mốc 2tr : 1000 Capsule Bạc, 2000 Capsule Vàng, 2000 Đá Hoàng Kim, 50 Viên Ngọc rồng Siêu cấp, Hộp đồ kích hoạt huỷ diệt"
-                                                            + "\n Mốc 5tr : 3000 Capsule Bạc, 5000 Capsule Vàng, 5000 Đá Hoàng Kim, 15.000 Thỏi vàng, Hộp đồ kích hoạt thiên sứ"
-                                                            + "\n\n|2|Mỗi mốc chỉ nhận được 1 lần !!!",
+                                                    + "\n\n|1|Tích lũy đổi Coin của bạn là : " + Util.format(player.tongnap)
+                                                    + "\n\n|5|- Mốc 50k : 5 Bộ Ngọc rồng 1s, 10 item Cuồng Bạo"
+                                                    + "\n- Mốc 100k : 100 Hộp sách kỹ năng, 30 item Cuồng Bạo, 1 trứng đệ Berus"
+                                                    + "\n- Mốc 200k : 500 Hộp sách kỹ năng, 90 item Cuồng Bạo"
+                                                    + "\n- Mốc 500k : 1000 Hộp sách kỹ năng, 99 Máy dò Boss, 300 Hộp pháp sư, 10 rương Sao pha lê VIP, 1 trứng đệ Zeno"
+                                                    + "\n Mốc 1tr : Danh hiệu Thiên tử(Sử dụng cho Đệ tử), 30 Kẹo một mắt, 20 Đá Cầu vòng, 500 Hộp pháp sư, 20 Viên Ngọc rồng Siêu cấp, Hộp đồ kích hoạt thần linh"
+                                                    + "\n Mốc 2tr : 1000 Capsule Bạc, 2000 Capsule Vàng, 2000 Đá Hoàng Kim, 50 Viên Ngọc rồng Siêu cấp, Hộp đồ kích hoạt huỷ diệt"
+                                                    + "\n Mốc 5tr : 3000 Capsule Bạc, 5000 Capsule Vàng, 5000 Đá Hoàng Kim, 15.000 Thỏi vàng, Hộp đồ kích hoạt thiên sứ"
+                                                    + "\n\n|2|Mỗi mốc chỉ nhận được 1 lần !!!",
                                                     "50k" + (player.mot == 0 ? "\n(Chưa nhận)" : "\n(Đã nhận)"),
                                                     "100k" + (player.hai == 0 ? "\n(Chưa nhận)" : "\n(Đã nhận)"),
                                                     "200k" + (player.ba == 0 ? "\n(Chưa nhận)" : "\n(Đã nhận)"),
@@ -1720,22 +1791,22 @@ public class NpcFactory {
                                     if (cm.role == Clan.LEADER) {
                                         this.createOtherMenu(pl, ConstNpc.BASE_MENU,
                                                 "Cần 1000 capsule bang [đang có " + clan.clanPoint
-                                                        + " capsule bang] để nâng cấp bang hội lên cấp "
-                                                        + (clan.level + 1) + "\n"
-                                                        + "+1 tối đa số lượng thành viên\n"
-                                                        + "|3|Cùng 1 thành viên trong bang đánh quái ở Lãnh địa bang hội để nhận được Capsule bang hội",
+                                                + " capsule bang] để nâng cấp bang hội lên cấp "
+                                                + (clan.level + 1) + "\n"
+                                                + "+1 tối đa số lượng thành viên\n"
+                                                + "|3|Cùng 1 thành viên trong bang đánh quái ở Lãnh địa bang hội để nhận được Capsule bang hội",
                                                 "Về\nĐảoKame", "Góp " + cm.memberPoint + " capsule", "Nâng cấp",
                                                 "Từ chối");
                                     } else {
                                         this.createOtherMenu(pl, ConstNpc.BASE_MENU, "Bạn đang có " + cm.memberPoint
-                                                        + " capsule bang,bạn có muốn đóng góp toàn bộ cho bang hội của mình không ?",
+                                                + " capsule bang,bạn có muốn đóng góp toàn bộ cho bang hội của mình không ?",
                                                 "Về\nĐảoKame", "Đồng ý", "Từ chối");
                                     }
                                 } else if (!TaskService.gI().checkDoneTaskTalkNpc(pl, this)) {
                                     if (pl.playerTask.taskMain.id == 7) {
                                         NpcService.gI().createTutorial(pl, this.avartar,
                                                 "Hãy lên đường cứu đứa bé nhà tôi\n"
-                                                        + "Chắc bây giờ nó đang sợ hãi lắm rồi");
+                                                + "Chắc bây giờ nó đang sợ hãi lắm rồi");
                                     } else {
                                         this.createOtherMenu(pl, ConstNpc.BASE_MENU,
                                                 "Tàu Vũ Trụ của ta có thể đưa cậu đến hành tinh khác chỉ trong 3 giây. Cậu muốn đi đâu?",
@@ -1816,7 +1887,7 @@ public class NpcFactory {
                                     if (pl.playerTask.taskMain.id == 7) {
                                         NpcService.gI().createTutorial(pl, this.avartar,
                                                 "Hãy lên đường cứu đứa bé nhà tôi\n"
-                                                        + "Chắc bây giờ nó đang sợ hãi lắm rồi");
+                                                + "Chắc bây giờ nó đang sợ hãi lắm rồi");
                                     } else {
                                         this.createOtherMenu(pl, ConstNpc.BASE_MENU,
                                                 "Tàu Vũ Trụ của ta có thể đưa cậu đến hành tinh khác chỉ trong 3 giây. Cậu muốn đi đâu?",
@@ -1858,7 +1929,7 @@ public class NpcFactory {
                                     if (pl.playerTask.taskMain.id == 7) {
                                         NpcService.gI().createTutorial(pl, this.avartar,
                                                 "Hãy lên đường cứu đứa bé nhà tôi\n"
-                                                        + "Chắc bây giờ nó đang sợ hãi lắm rồi");
+                                                + "Chắc bây giờ nó đang sợ hãi lắm rồi");
                                     } else {
                                         if (this.mapId == 19) {
 
@@ -1868,21 +1939,21 @@ public class NpcFactory {
                                                     this.createOtherMenu(pl, ConstNpc.MENU_FIND_KUKU,
                                                             "Đội quân của Fide đang ở Thung lũng Nappa, ta sẽ đưa ngươi đến đó",
                                                             "Đến chỗ\nKuku\n(" + Util.numberToMoney(COST_FIND_BOSS)
-                                                                    + " vàng)",
+                                                            + " vàng)",
                                                             "Đến Cold", "Đến\nNappa", "Từ chối");
                                                     break;
                                                 case ConstTask.TASK_19_1:
                                                     this.createOtherMenu(pl, ConstNpc.MENU_FIND_MAP_DAU_DINH,
                                                             "Đội quân của Fide đang ở Thung lũng Nappa, ta sẽ đưa ngươi đến đó",
                                                             "Đến chỗ\nMập đầu đinh\n("
-                                                                    + Util.numberToMoney(COST_FIND_BOSS) + " vàng)",
+                                                            + Util.numberToMoney(COST_FIND_BOSS) + " vàng)",
                                                             "Đến Cold", "Đến\nNappa", "Từ chối");
                                                     break;
                                                 case ConstTask.TASK_19_2:
                                                     this.createOtherMenu(pl, ConstNpc.MENU_FIND_RAMBO,
                                                             "Đội quân của Fide đang ở Thung lũng Nappa, ta sẽ đưa ngươi đến đó",
                                                             "Đến chỗ\nRambo\n(" + Util.numberToMoney(COST_FIND_BOSS)
-                                                                    + " vàng)",
+                                                            + " vàng)",
                                                             "Đến Cold", "Đến\nNappa", "Từ chối");
                                                     break;
                                                 default:
@@ -1898,7 +1969,7 @@ public class NpcFactory {
                                         } else {
                                             this.createOtherMenu(pl, ConstNpc.BASE_MENU,
                                                     "Tàu vũ trụ Xayda sử dụng công nghệ mới nhất, "
-                                                            + "có thể đưa ngươi đi bất kỳ đâu, chỉ cần trả tiền là được.",
+                                                    + "có thể đưa ngươi đi bất kỳ đâu, chỉ cần trả tiền là được.",
                                                     "Đến\nTrái Đất", "Đến\nNamếc", "Siêu thị");
                                         }
                                     }
@@ -1947,9 +2018,9 @@ public class NpcFactory {
                                                     } else {
                                                         Service.getInstance().sendThongBao(player,
                                                                 "Không đủ vàng, còn thiếu "
-                                                                        + Util.numberToMoney(
+                                                                + Util.numberToMoney(
                                                                         COST_FIND_BOSS - player.inventory.gold)
-                                                                        + " vàng");
+                                                                + " vàng");
                                                     }
                                                 }
                                                 break;
@@ -1973,9 +2044,9 @@ public class NpcFactory {
                                                     } else {
                                                         Service.getInstance().sendThongBao(player,
                                                                 "Không đủ vàng, còn thiếu "
-                                                                        + Util.numberToMoney(
+                                                                + Util.numberToMoney(
                                                                         COST_FIND_BOSS - player.inventory.gold)
-                                                                        + " vàng");
+                                                                + " vàng");
                                                     }
                                                 }
                                                 break;
@@ -1999,9 +2070,9 @@ public class NpcFactory {
                                                     } else {
                                                         Service.getInstance().sendThongBao(player,
                                                                 "Không đủ vàng, còn thiếu "
-                                                                        + Util.numberToMoney(
+                                                                + Util.numberToMoney(
                                                                         COST_FIND_BOSS - player.inventory.gold)
-                                                                        + " vàng");
+                                                                + " vàng");
                                                     }
                                                 }
                                                 break;
@@ -2034,7 +2105,7 @@ public class NpcFactory {
                             if (canOpenNpc(player)) {
                                 createOtherMenu(player, ConstNpc.BASE_MENU,
                                         "Xin chào, ta có một số vật phẩm đặt biệt cậu có muốn xem không?",
-                                        "Cửa hàng", "Tiệm\nVật phẩm", "Shop\n phụ kiện", "Shop Pet", "Xu Vàng", "Shop\nVIP KID", "Mở thành viên\nmiễn phí");
+                                        "Cửa hàng", "Tiệm\nVật phẩm", "Shop\n phụ kiện", "Shop Pet", "Xu Vàng", "Shop\nVIP KID", "Mở thành viên\nmiễn phí\nnv 26");
                             }
                         }
 
@@ -2101,7 +2172,7 @@ public class NpcFactory {
                                 else if (this.mapId == 153) {
                                     this.createOtherMenu(player, ConstNpc.BASE_MENU,
                                             "Theo ta, ta sẽ đưa ngươi đến Khu vực Thánh địa\nNơi đây ngươi sẽ truy tìm mảnh bông tai cấp 2 và Hồn bông tai để mở chỉ số Bông tai Cấp 3."
-                                                    + "\n|7|Ngươi có muốn đến đó không?", "Đến\nThánh địa", "Từ chối");
+                                            + "\n|7|Ngươi có muốn đến đó không?", "Đến\nThánh địa", "Từ chối");
                                 } else if (this.mapId == 156) {
                                     this.createOtherMenu(player, ConstNpc.BASE_MENU,
                                             "Người muốn trở về?", "Quay về", "Từ chối");
@@ -2215,7 +2286,7 @@ public class NpcFactory {
                                             case 2: //nâng cấp Chân mệnh
                                                 this.createOtherMenu(player, 8632,
                                                         "|7|ĐỘT PHÁ TRANG BỊ"
-                                                                + "\n\n|1|Ta sẽ giúp trang bị của ngươi mạnh hơn rất nhiều. Hãy lựa chọn để biết thêm thông tin chi tiết!!!",
+                                                        + "\n\n|1|Ta sẽ giúp trang bị của ngươi mạnh hơn rất nhiều. Hãy lựa chọn để biết thêm thông tin chi tiết!!!",
                                                         "Tinh ấn\ntrang bị",
                                                         "Pháp sư hoá\ntrang bị",
                                                         "Tẩy\npháp sư");
@@ -2223,9 +2294,9 @@ public class NpcFactory {
                                             case 3:
                                                 this.createOtherMenu(player, 12514,
                                                         "|7|NÂNG CẤP TRANG BỊ"
-                                                                + "\n|0|Ta sẽ nâng cấp Trang bị của con lên cấp cao hơn:"
-                                                                + "\n|5|- Nâng đồ Thần linh : nâng từ đồ Thần linh thành Đồ Hủy diệt"
-                                                                + "\n- Nâng đồ SKH Vip : cần 3 món Đồ Hủy diệt để nâng thành Set kích hoạt Vip hơn (Tỉ lệ ra đồ Thần linh SKH)",
+                                                        + "\n|0|Ta sẽ nâng cấp Trang bị của con lên cấp cao hơn:"
+                                                        + "\n|5|- Nâng đồ Thần linh : nâng từ đồ Thần linh thành Đồ Hủy diệt"
+                                                        + "\n- Nâng đồ SKH Vip : cần 3 món Đồ Hủy diệt để nâng thành Set kích hoạt Vip hơn (Tỉ lệ ra đồ Thần linh SKH)",
                                                         "Nâng đồ\nThần linh", "Nâng đồ\nSKH Vip");
                                                 break;
                                             case 4:
@@ -2237,9 +2308,9 @@ public class NpcFactory {
                                             case 6: //nâng cấp Chân mệnh
                                                 this.createOtherMenu(player, 5701,
                                                         "|7|CHÂN MỆNH"
-                                                                + "\n\n|5|Cần 100 Thỏi vàng để nhận Chân Mệnh cấp 1"
-                                                                + "\n|3| Lưu ý: Chỉ được nhận Chân mệnh 1 lần (Hành trang chỉ tồn tại 1 Chân mệnh)"
-                                                                + "\nNếu đã có Chân mệnh. Ta sẽ giúp ngươi nâng cấp bậc lên với các dòng chỉ số cao hơn",
+                                                        + "\n\n|5|Cần 100 Thỏi vàng để nhận Chân Mệnh cấp 1"
+                                                        + "\n|3| Lưu ý: Chỉ được nhận Chân mệnh 1 lần (Hành trang chỉ tồn tại 1 Chân mệnh)"
+                                                        + "\nNếu đã có Chân mệnh. Ta sẽ giúp ngươi nâng cấp bậc lên với các dòng chỉ số cao hơn",
                                                         "Nhận Chân mệnh", "Nâng cấp Chân mệnh", "Shop\nChân mệnh");
                                                 break;
                                         }
@@ -2366,7 +2437,7 @@ public class NpcFactory {
                                             case 0: // shop bùa
                                                 createOtherMenu(player, ConstNpc.MENU_OPTION_SHOP_BUA,
                                                         "Bùa của ta rất lợi hại, nhìn ngươi yếu đuối thế này, chắc muốn mua bùa để "
-                                                                + "mạnh mẽ à, mua không ta bán cho, xài rồi lại thích cho mà xem.",
+                                                        + "mạnh mẽ à, mua không ta bán cho, xài rồi lại thích cho mà xem.",
                                                         "Bùa\n1 giờ", "Bùa\n8 giờ", "Bùa\n1 tháng",
                                                         "Bùa\n  Đệ tử Mabư\n 1 giờ", "Đóng");
                                                 break;
@@ -2403,10 +2474,10 @@ public class NpcFactory {
                                                 if ((trangSachCu != null && trangSachCu.quantity >= 9999) && (biaSach != null && biaSach.quantity >= 1)) {
                                                     createOtherMenu(player, ConstNpc.DONG_THANH_SACH_CU,
                                                             "|2|Chế tạo Cuốn sách cũ\n"
-                                                                    + "|1|Trang sách cũ " + trangSachCu.quantity + "/9999\n"
-                                                                    + "Bìa sách " + biaSach.quantity + "/1\n"
-                                                                    + "Tỉ lệ thành công: 60%\n"
-                                                                    + "Thất bại mất 99 trang sách và 1 bìa sách", "Đồng ý", "Từ chối");
+                                                            + "|1|Trang sách cũ " + trangSachCu.quantity + "/9999\n"
+                                                            + "Bìa sách " + biaSach.quantity + "/1\n"
+                                                            + "Tỉ lệ thành công: 60%\n"
+                                                            + "Thất bại mất 99 trang sách và 1 bìa sách", "Đồng ý", "Từ chối");
                                                     break;
                                                 } else {
                                                     String NpcSay = "|2|Chế tạo Cuốn sách cũ\n";
@@ -2434,9 +2505,9 @@ public class NpcFactory {
                                                 if ((cuonSachCu != null && cuonSachCu.quantity >= 10) && (kimBam != null && kimBam.quantity >= 1)) {
                                                     createOtherMenu(player, ConstNpc.DOI_SACH_TUYET_KY,
                                                             "|2|Đổi sách tuyệt kỹ 1\n"
-                                                                    + "|1|Cuốn sách cũ " + cuonSachCu.quantity + "/10\n"
-                                                                    + "Kìm bấm giấy " + kimBam.quantity + "/1\n"
-                                                                    + "Tỉ lệ thành công: 60%\n", "Đồng ý", "Từ chối");
+                                                            + "|1|Cuốn sách cũ " + cuonSachCu.quantity + "/10\n"
+                                                            + "Kìm bấm giấy " + kimBam.quantity + "/1\n"
+                                                            + "Tỉ lệ thành công: 60%\n", "Đồng ý", "Từ chối");
                                                     break;
                                                 } else {
                                                     String NpcSay = "|2|Đổi sách Tuyệt kỹ 1\n";
@@ -2665,7 +2736,7 @@ public class NpcFactory {
                                             case CombineServiceNew.PHAN_RA_DO_THAN_LINH:
                                             case CombineServiceNew.NANG_CAP_SKH_VIP:
                                             case CombineServiceNew.MO_CHI_SO_BONG_TAI:
-                                                //START _ SÁCH TUYỆT KỸ//
+                                            //START _ SÁCH TUYỆT KỸ//
                                             case CombineServiceNew.GIAM_DINH_SACH:
                                             case CombineServiceNew.TAY_SACH:
                                             case CombineServiceNew.NANG_CAP_SACH_TUYET_KY:
@@ -2839,10 +2910,10 @@ public class NpcFactory {
                                 if (this.mapId == 0) {
                                     this.createOtherMenu(player, ConstNpc.BASE_MENU,
                                             "|7| KHU VỰC BOSS NHÂN BẢN"
-                                                    + "\n\n|6|Gô Tên, Calich và Monaka đang gặp chuyện ở hành tinh Potaufeu"
-                                                    + "\nĐánh bại những kẻ giả mạo ngươi sẽ nhận được những phần thưởng hấp dẫn"
-                                                    + "\n|3|Hạ Boss Nhân Bản sẽ nhận được Item Siêu cấp"
-                                                    + "\n|2|Hãy đến đó ngay",
+                                            + "\n\n|6|Gô Tên, Calich và Monaka đang gặp chuyện ở hành tinh Potaufeu"
+                                            + "\nĐánh bại những kẻ giả mạo ngươi sẽ nhận được những phần thưởng hấp dẫn"
+                                            + "\n|3|Hạ Boss Nhân Bản sẽ nhận được Item Siêu cấp"
+                                            + "\n|2|Hãy đến đó ngay",
                                             "Đến \nPotaufeu");
                                 } else {
                                     this.createOtherMenu(player, ConstNpc.BASE_MENU,
@@ -2882,7 +2953,7 @@ public class NpcFactory {
                                     if (player.zone instanceof ZSnakeRoad) {
                                         this.createOtherMenu(player, ConstNpc.BASE_MENU,
                                                 "Hãy cầm lấy hai hạt đậu cuối cùng ở đây\nCố giữ mình nhé "
-                                                        + player.name,
+                                                + player.name,
                                                 "Cảm ơn\nsư phụ");
                                     } else if (!TaskService.gI().checkDoneTaskTalkNpc(player, this)) {
                                         this.createOtherMenu(player, ConstNpc.BASE_MENU,
@@ -2920,9 +2991,9 @@ public class NpcFactory {
                                                                     + EVENT_COUNT_THAN_MEO % 999 + "/999";
                                                             this.createOtherMenu(player, ConstNpc.MENU_OPEN_SUKIEN,
                                                                     at != null && !at.isExpired() ? text
-                                                                            + "\nToàn bộ máy chủ được tăng 20% TNSM cho đệ tử khi đánh quái,thời gian còn lại "
-                                                                            + at.getTime() / 60 + " phút."
-                                                                            : text + "\nKhi tặng đủ 999 bông hoa toàn bộ máy chủ được tăng tăng 20% TNSM cho đệ tử trong 60 phút\n",
+                                                                    + "\nToàn bộ máy chủ được tăng 20% TNSM cho đệ tử khi đánh quái,thời gian còn lại "
+                                                                    + at.getTime() / 60 + " phút."
+                                                                    : text + "\nKhi tặng đủ 999 bông hoa toàn bộ máy chủ được tăng tăng 20% TNSM cho đệ tử trong 60 phút\n",
                                                                     "Tặng 1\n Bông hoa", "Tặng\n10 Bông",
                                                                     "Tặng\n99 Bông", "Đổi\nHộp quà");
                                                             break;
@@ -2947,13 +3018,13 @@ public class NpcFactory {
                                 if (this.mapId == 45) {
                                     if (!player.istrain) {
                                         this.createOtherMenu(player, ConstNpc.BASE_MENU, "Con đã mạnh hơn ta"
-                                                        + ", ta sẽ chỉ đường cho con đến Kaio để gặp thần Vũ Trụ Phương Bắc"
-                                                        + "\nNgài là thần cai quản vũ trụ này, hãy theo ngài ấy học võ công",
+                                                + ", ta sẽ chỉ đường cho con đến Kaio để gặp thần Vũ Trụ Phương Bắc"
+                                                + "\nNgài là thần cai quản vũ trụ này, hãy theo ngài ấy học võ công",
                                                 "Đăng ký tập tự động", "Đến Kaio", "Quay số\nmay mắn", getMenuSuKien(EVENT_SEVER));
                                     } else {
                                         this.createOtherMenu(player, ConstNpc.BASE_MENU, "Con đã mạnh hơn ta"
-                                                        + ", ta sẽ chỉ đường cho con đến Kaio để gặp thần Vũ Trụ Phương Bắc"
-                                                        + "\nNgài là thần cai quản vũ trụ này, hãy theo ngài ấy học võ công",
+                                                + ", ta sẽ chỉ đường cho con đến Kaio để gặp thần Vũ Trụ Phương Bắc"
+                                                + "\nNgài là thần cai quản vũ trụ này, hãy theo ngài ấy học võ công",
                                                 "Hủy đăng ký tập tự động", "Đến Kaio", "Quay số\nmay mắn", getMenuSuKien(EVENT_SEVER));
                                     }
                                 } else if (player.zone instanceof ZSnakeRoad) {
@@ -2975,7 +3046,7 @@ public class NpcFactory {
                                                 if (!player.istrain) {
                                                     this.createOtherMenu(player, ConstNpc.MENU_TRAIN_OFFLINE,
                                                             "Đăng ký để mỗi khi Offline quá 30 phút"
-                                                                    + ", con sẽ được tự động luyện tập với tốc độ " + player.getexp() + " sức mạnh mỗi phút",
+                                                            + ", con sẽ được tự động luyện tập với tốc độ " + player.getexp() + " sức mạnh mỗi phút",
                                                             "Hướng dẫn thêm", "Đồng ý 1 ngọc mỗi lần", "Không đồng ý");
                                                 } else {
                                                     player.istrain = false;
@@ -2989,10 +3060,10 @@ public class NpcFactory {
                                                 this.createOtherMenu(player, ConstNpc.MENU_CHOOSE_LUCKY_ROUND,
                                                         "Con muốn làm gì nào?", "Quay bằng\nvàng",
                                                         "Rương phụ\n("
-                                                                + (player.inventory.itemsBoxCrackBall.size()
-                                                                - InventoryService.gI().getCountEmptyListItem(
+                                                        + (player.inventory.itemsBoxCrackBall.size()
+                                                        - InventoryService.gI().getCountEmptyListItem(
                                                                 player.inventory.itemsBoxCrackBall))
-                                                                + " món)",
+                                                        + " món)",
                                                         "Xóa hết\ntrong rương", "Đóng");
                                                 break;
                                             case 3:
@@ -3008,9 +3079,9 @@ public class NpcFactory {
                                                                 + EVENT_COUNT_THUONG_DE % 999 + "/999";
                                                         this.createOtherMenu(player, ConstNpc.MENU_OPEN_SUKIEN,
                                                                 at != null && !at.isExpired() ? text
-                                                                        + "\nToàn bộ máy chủ được tăng 20% KI,thời gian còn lại "
-                                                                        + at.getTime() / 60 + " phút."
-                                                                        : text + "\nKhi tặng đủ 999 bông hoa toàn bộ máy chủ được tăng 20% Ki trong 60 phút\n",
+                                                                + "\nToàn bộ máy chủ được tăng 20% KI,thời gian còn lại "
+                                                                + at.getTime() / 60 + " phút."
+                                                                : text + "\nKhi tặng đủ 999 bông hoa toàn bộ máy chủ được tăng 20% Ki trong 60 phút\n",
                                                                 "Tặng 1\n Bông hoa", "Tặng\n10 Bông", "Tặng\n99 Bông",
                                                                 "Đổi\nHộp quà");
                                                         break;
@@ -3041,7 +3112,7 @@ public class NpcFactory {
                                                 NpcService.gI().createMenuConMeo(player,
                                                         ConstNpc.CONFIRM_REMOVE_ALL_ITEM_LUCKY_ROUND, this.avartar,
                                                         "Con có chắc muốn xóa hết vật phẩm trong rương phụ? Sau khi xóa "
-                                                                + "sẽ không thể khôi phục!",
+                                                        + "sẽ không thể khôi phục!",
                                                         "Đồng ý", "Hủy bỏ");
                                                 break;
                                         }
@@ -3102,9 +3173,9 @@ public class NpcFactory {
                                                                 + EVENT_COUNT_THAN_VU_TRU % 999 + "/999";
                                                         this.createOtherMenu(player, ConstNpc.MENU_OPEN_SUKIEN,
                                                                 at != null && !at.isExpired() ? text
-                                                                        + "\nToàn bộ máy chủ được tăng 20% HP,thời gian còn lại "
-                                                                        + at.getTime() / 60 + " phút."
-                                                                        : text + "\nKhi tặng đủ 999 bông hoa toàn bộ máy chủ được tăng 20% HP trong 60 phút\n",
+                                                                + "\nToàn bộ máy chủ được tăng 20% HP,thời gian còn lại "
+                                                                + at.getTime() / 60 + " phút."
+                                                                : text + "\nKhi tặng đủ 999 bông hoa toàn bộ máy chủ được tăng 20% HP trong 60 phút\n",
                                                                 "Tặng 1\n Bông hoa", "Tặng\n10 Bông", "Tặng\n99 Bông",
                                                                 "Đổi\nHộp quà");
                                                         break;
@@ -3149,7 +3220,7 @@ public class NpcFactory {
                                                             this.createOtherMenu(player,
                                                                     ConstNpc.MENU_ACCEPT_GO_TO_CDRD,
                                                                     "Con có chắc chắn muốn đến con đường rắn độc cấp độ "
-                                                                            + player.clan.snakeRoad.getLevel() + "?",
+                                                                    + player.clan.snakeRoad.getLevel() + "?",
                                                                     "Đồng ý", "Từ chối");
                                                         }
                                                     }
@@ -3239,20 +3310,20 @@ public class NpcFactory {
                                         if (!TaskService.gI().checkDoneTaskTalkNpc(player, this)) {
                                             this.createOtherMenu(player, ConstNpc.BASE_MENU,
                                                     "Bây giờ tôi sẽ bí mật...\n đuổi theo 2 tên đồ tể... \n"
-                                                            + "Quý vị nào muốn đi theo thì xin mời !",
+                                                    + "Quý vị nào muốn đi theo thì xin mời !",
                                                     "Ok", "Từ chối");
                                         }
                                     } else {
                                         if (!TaskService.gI().checkDoneTaskTalkNpc(player, this)) {
                                             this.createOtherMenu(player, ConstNpc.IGNORE_MENU,
                                                     "Vào lúc 12h tôi sẽ bí mật...\n đuổi theo 2 tên đồ tể... \n"
-                                                            + "Quý vị nào muốn đi theo thì xin mời !",
+                                                    + "Quý vị nào muốn đi theo thì xin mời !",
                                                     "Ok", "Từ chối");
                                         }
                                     }
                                 } else if (this.mapId == 154) {
                                     this.createOtherMenu(player, ConstNpc.BASE_MENU, "|3|Để đến được Hành tinh ngục tù yêu cầu mang 5 món đồ Hủy diệt"
-                                                    + "\n|1|Ta có thể giúp gì cho ngươi ?",
+                                            + "\n|1|Ta có thể giúp gì cho ngươi ?",
                                             "Về thánh địa", "Đến\nhành tinh\nngục tù", "Từ chối");
                                 } else if (this.mapId == 155 || this.mapId == 165) {
                                     this.createOtherMenu(player, ConstNpc.BASE_MENU, "Ta có thể giúp gì cho ngươi ?",
@@ -3261,13 +3332,13 @@ public class NpcFactory {
                                     if (MabuWar.gI().isTimeMabuWar()) {
                                         this.createOtherMenu(player, ConstNpc.BASE_MENU,
                                                 "Đừng vội xem thường Babyđây,ngay đến cha hắn là thần ma đạo sĩ\n"
-                                                        + "Bibiđây khi còn sống cũng phải sợ hắn đấy",
+                                                + "Bibiđây khi còn sống cũng phải sợ hắn đấy",
                                                 "Giải trừ\nphép thuật\n50Tr Vàng",
                                                 player.zone.map.mapId != 120 ? "Xuống\nTầng Dưới" : "Rời\nKhỏi đây");
                                     } else if (MabuWar14h.gI().isTimeMabuWar()) {
                                         createOtherMenu(player, ConstNpc.BASE_MENU, "Ta sẽ phù hộ cho ngươi bằng nguồn sức mạnh của Thần Kaiô"
-                                                        + "\n+1 triệu HP, +1 triệu MP, +10k Sức đánh"
-                                                        + "\nLưu ý: sức mạnh sẽ biến mất khi ngươi rời khỏi đây",
+                                                + "\n+1 triệu HP, +1 triệu MP, +10k Sức đánh"
+                                                + "\nLưu ý: sức mạnh sẽ biến mất khi ngươi rời khỏi đây",
                                                 "Phù hộ\n55 hồng ngọc", "Từ chối", "Về\nĐại Hội\nVõ Thuật");
                                     }
                                 } else {
@@ -3433,7 +3504,7 @@ public class NpcFactory {
                                 if (MapService.gI().isMapMabuWar(this.mapId)) {
                                     this.createOtherMenu(player, ConstNpc.BASE_MENU,
                                             "Đừng vội xem thường Babyđây,ngay đến cha hắn là thần ma đạo sĩ\n"
-                                                    + "Bibiđây khi còn sống cũng phải sợ hắn đấy",
+                                            + "Bibiđây khi còn sống cũng phải sợ hắn đấy",
                                             "Yểm bùa\n50Tr Vàng",
                                             player.zone.map.mapId != 120 ? "Xuống\nTầng Dưới" : "Rời\nKhỏi đây");
                                 } else {
@@ -3533,9 +3604,9 @@ public class NpcFactory {
                                     if (!player.clan.haveGoneDoanhTrai && player.clan.timeOpenDoanhTrai != 0) {
                                         createOtherMenu(player, ConstNpc.MENU_VAO_DT,
                                                 "Bang hội của ngươi đang đánh trại độc nhãn\n" + "Thời gian còn lại là "
-                                                        + TimeUtil.getSecondLeft(player.clan.timeOpenDoanhTrai,
+                                                + TimeUtil.getSecondLeft(player.clan.timeOpenDoanhTrai,
                                                         DoanhTrai.TIME_DOANH_TRAI / 1000)
-                                                        + ". Ngươi có muốn tham gia không?",
+                                                + ". Ngươi có muốn tham gia không?",
                                                 "Tham gia", "Không", "Hướng\ndẫn\nthêm");
                                     } else {
                                         List<Player> plSameClans = new ArrayList<>();
@@ -3560,23 +3631,23 @@ public class NpcFactory {
                                             } else if (player.clan.haveGoneDoanhTrai) {
                                                 createOtherMenu(player, ConstNpc.MENU_KHONG_CHO_VAO_DT,
                                                         "Bang hội của ngươi đã đi trại lúc "
-                                                                + Util.formatTime(player.clan.timeOpenDoanhTrai)
-                                                                + " hôm nay. Người mở\n" + "("
-                                                                + player.clan.playerOpenDoanhTrai.name
-                                                                + "). Hẹn ngươi quay lại vào ngày mai",
+                                                        + Util.formatTime(player.clan.timeOpenDoanhTrai)
+                                                        + " hôm nay. Người mở\n" + "("
+                                                        + player.clan.playerOpenDoanhTrai.name
+                                                        + "). Hẹn ngươi quay lại vào ngày mai",
                                                         "OK", "Hướng\ndẫn\nthêm");
 
                                             } else {
                                                 createOtherMenu(player, ConstNpc.MENU_CHO_VAO_DT,
                                                         "Hôm nay bang hội của ngươi chưa vào trại lần nào. Ngươi có muốn vào\n"
-                                                                + "không?\nĐể vào, ta khuyên ngươi nên có 3-4 người cùng bang đi cùng",
+                                                        + "không?\nĐể vào, ta khuyên ngươi nên có 3-4 người cùng bang đi cùng",
                                                         "Vào\n(miễn phí)", "Không", "Hướng\ndẫn\nthêm");
                                             }
                                         } else {
                                             createOtherMenu(player, ConstNpc.MENU_KHONG_CHO_VAO_DT,
                                                     "Ngươi phải có ít nhất 2 đồng đội cùng bang đứng gần mới có thể\nvào\n"
-                                                            + "tuy nhiên ta khuyên ngươi nên đi cùng với 3-4 người để khỏi chết.\n"
-                                                            + "Hahaha.",
+                                                    + "tuy nhiên ta khuyên ngươi nên đi cùng với 3-4 người để khỏi chết.\n"
+                                                    + "Hahaha.",
                                                     "OK", "Hướng\ndẫn\nthêm");
                                         }
                                     }
@@ -3662,9 +3733,9 @@ public class NpcFactory {
                                             } else {
                                                 Service.getInstance().sendThongBao(player,
                                                         "Bạn không đủ vàng để thực hiện, còn thiếu "
-                                                                + Util.numberToMoney(
+                                                        + Util.numberToMoney(
                                                                 (COST_AP_TRUNG_NHANH - player.inventory.gold))
-                                                                + " vàng");
+                                                        + " vàng");
                                             }
                                         }
                                         break;
@@ -3673,7 +3744,7 @@ public class NpcFactory {
                                             case 0:
                                                 this.createOtherMenu(player, ConstNpc.CONFIRM_OPEN_EGG,
                                                         "Bạn có chắc chắn cho trứng nở?\n"
-                                                                + "Đệ tử của bạn sẽ được thay thế bằng đệ Mabư",
+                                                        + "Đệ tử của bạn sẽ được thay thế bằng đệ Mabư",
                                                         "Đệ mabư\nTrái Đất", "Đệ mabư\nNamếc", "Đệ mabư\nXayda",
                                                         "Từ chối");
                                                 break;
@@ -3728,7 +3799,7 @@ public class NpcFactory {
                                             if (player.nPoint.limitPower < NPoint.MAX_LIMIT) {
                                                 this.createOtherMenu(player, ConstNpc.OPEN_POWER_MYSEFT,
                                                         "Ta sẽ truền năng lượng giúp con mở giới hạn sức mạnh của bản thân lên "
-                                                                + Util.numberToMoney(player.nPoint.getPowerNextLimit()),
+                                                        + Util.numberToMoney(player.nPoint.getPowerNextLimit()),
                                                         "Nâng ngay\n" + Util.numberToMoney(OpenPowerService.COST_SPEED_OPEN_LIMIT_POWER) + " vàng", "Đóng");
                                             } else {
                                                 this.createOtherMenu(player, ConstNpc.IGNORE_MENU,
@@ -3741,7 +3812,7 @@ public class NpcFactory {
                                                 if (player.pet.nPoint.limitPower < NPoint.MAX_LIMIT) {
                                                     this.createOtherMenu(player, ConstNpc.OPEN_POWER_PET,
                                                             "Ta sẽ truền năng lượng giúp con mở giới hạn sức mạnh của đệ tử lên "
-                                                                    + Util.numberToMoney(player.pet.nPoint.getPowerNextLimit()),
+                                                            + Util.numberToMoney(player.pet.nPoint.getPowerNextLimit()),
                                                             "Nâng ngay\n" + Util.numberToMoney(OpenPowerService.COST_SPEED_OPEN_LIMIT_POWER) + " vàng", "Đóng");
                                                 } else {
                                                     this.createOtherMenu(player, ConstNpc.IGNORE_MENU,
@@ -3756,19 +3827,19 @@ public class NpcFactory {
                                         case 2:
                                             this.createOtherMenu(player, ConstNpc.MENU_CHUYENSINH,
                                                     "|8| -- CHUYỂN SINH --"
-                                                            + "\n|3|Sức Mạnh Hiện Tại: \n"
-                                                            + Util.format(player.nPoint.power)
-                                                            + "\n|5| ----------------"
-                                                            + "\n Bạn sẽ được tái sinh ở một hành tinh khác bất kì"
-                                                            + "\n Các chiêu thức sẽ về cấp 1, Sức mạnh về 1 triệu 5"
-                                                            + "\n|1| Tái sinh càng nhiều SĐ,HP,KI càng cao"
-                                                            + "\n ----------------"
-                                                            + "\n|7| Yêu Cầu:"
-                                                            + "\n|2| Sức mạnh đạt 500 Tỷ"
-                                                            + "\n Có Skill " + player.tenskill9(player.gender)
-                                                            + "\n ----------------"
-                                                            + "\n|6| Có tỉ lệ thất bại !"
-                                                            + "\n Thất bại sẽ trừ đi Thỏi vàng và Giảm 10 Tỷ Sức mạnh",
+                                                    + "\n|3|Sức Mạnh Hiện Tại: \n"
+                                                    + Util.format(player.nPoint.power)
+                                                    + "\n|5| ----------------"
+                                                    + "\n Bạn sẽ được tái sinh ở một hành tinh khác bất kì"
+                                                    + "\n Các chiêu thức sẽ về cấp 1, Sức mạnh về 1 triệu 5"
+                                                    + "\n|1| Tái sinh càng nhiều SĐ,HP,KI càng cao"
+                                                    + "\n ----------------"
+                                                    + "\n|7| Yêu Cầu:"
+                                                    + "\n|2| Sức mạnh đạt 500 Tỷ"
+                                                    + "\n Có Skill " + player.tenskill9(player.gender)
+                                                    + "\n ----------------"
+                                                    + "\n|6| Có tỉ lệ thất bại !"
+                                                    + "\n Thất bại sẽ trừ đi Thỏi vàng và Giảm 10 Tỷ Sức mạnh",
                                                     "Chuyển sinh", "Thông tin\nchuyển sinh",
                                                     "Đóng");
                                             break;
@@ -3797,14 +3868,14 @@ public class NpcFactory {
                                             }
                                             this.createOtherMenu(player, ConstNpc.CHUYENSINH,
                                                     "|7|CHUYỂN SINH"
-                                                            + "\n\n|5|Bạn đang chuyển sinh : " + player.chuyensinh
-                                                            + " \nCấp tiếp theo với tỉ lệ : " + (100 - player.chuyensinh * 2)
-                                                            + "% \n Mức giá chuyển sinh : " + tvang + " Thỏi vàng \n\n|7|Bạn có muốn chuyển sinh ?",
+                                                    + "\n\n|5|Bạn đang chuyển sinh : " + player.chuyensinh
+                                                    + " \nCấp tiếp theo với tỉ lệ : " + (100 - player.chuyensinh * 2)
+                                                    + "% \n Mức giá chuyển sinh : " + tvang + " Thỏi vàng \n\n|7|Bạn có muốn chuyển sinh ?",
                                                     "Đồng ý", "Từ chối");
                                             break; // 
                                         case 1:
                                             int hp = 0,
-                                                    dame = 0;
+                                             dame = 0;
                                             if (player.chuyensinh > 0) {
                                                 if (player.chuyensinh <= 10) {
                                                     dame += (1750) * player.chuyensinh;
@@ -3950,7 +4021,7 @@ public class NpcFactory {
                                             } else {
                                                 Service.getInstance().sendThongBao(player,
                                                         "Bạn không đủ vàng để mở, còn thiếu "
-                                                                + Util.numberToMoney((OpenPowerService.COST_SPEED_OPEN_LIMIT_POWER - player.inventory.gold)) + " vàng");
+                                                        + Util.numberToMoney((OpenPowerService.COST_SPEED_OPEN_LIMIT_POWER - player.inventory.gold)) + " vàng");
                                             }
                                             break;
                                     }
@@ -3964,7 +4035,7 @@ public class NpcFactory {
                                         } else {
                                             Service.getInstance().sendThongBao(player,
                                                     "Bạn không đủ vàng để mở, còn thiếu "
-                                                            + Util.numberToMoney((OpenPowerService.COST_SPEED_OPEN_LIMIT_POWER - player.inventory.gold)) + " vàng");
+                                                    + Util.numberToMoney((OpenPowerService.COST_SPEED_OPEN_LIMIT_POWER - player.inventory.gold)) + " vàng");
                                         }
                                     }
                                 }
@@ -4057,7 +4128,7 @@ public class NpcFactory {
                                         if (now > BlackBallWar.TIME_OPEN && now < BlackBallWar.TIME_CLOSE) {
                                             this.createOtherMenu(player, ConstNpc.MENU_OPEN_BDW,
                                                     "Đường đến với ngọc rồng sao đen đã mở, "
-                                                            + "ngươi có muốn tham gia không?",
+                                                    + "ngươi có muốn tham gia không?",
                                                     "Hướng dẫn\nthêm", "Tham gia", "Từ chối");
                                         } else {
                                             String[] optionRewards = new String[7];
@@ -4250,9 +4321,9 @@ public class NpcFactory {
                                                                     + EVENT_COUNT_THAN_HUY_DIET % 999 + "/999";
                                                             this.createOtherMenu(player, ConstNpc.MENU_OPEN_SUKIEN,
                                                                     at != null && !at.isExpired() ? text
-                                                                            + "\nToàn bộ máy chủ được tăng 20% sức đánh,thời gian còn lại "
-                                                                            + at.getTime() / 60 + " phút."
-                                                                            : text + "\nKhi tặng đủ 999 bông toàn bộ máy chủ được tăng tăng 20% sức đánh trong 60 phút\n",
+                                                                    + "\nToàn bộ máy chủ được tăng 20% sức đánh,thời gian còn lại "
+                                                                    + at.getTime() / 60 + " phút."
+                                                                    : text + "\nKhi tặng đủ 999 bông toàn bộ máy chủ được tăng tăng 20% sức đánh trong 60 phút\n",
                                                                     "Tặng 1\n Bông hoa", "Tặng\n10 Bông",
                                                                     "Tặng\n99 Bông", "Đổi\nHộp quà");
                                                             break;
@@ -4285,9 +4356,9 @@ public class NpcFactory {
                                 if (this.mapId == 154) {
                                     this.createOtherMenu(player, ConstNpc.BASE_MENU,
                                             "|7|NÂNG CẤP ĐỒ THIÊN SỨ\n|6| Mang cho ta Công thức + Đá cầu vòng và 999 Mảnh thiên sứ ta sẽ chế tạo đồ Thiên sứ cho ngươi"
-                                                    + "\nĐồ Thiên sứ khi chế tạo sẽ random chỉ số 0-15%"
-                                                    + "\n|2|(Khi mang đủ 5 món Hủy diệt ngươi hãy theo Osin qua Hành tinh ngục tù tìm kiếm Mảnh thiên sứ và săn BOSS Thiên sứ để thu thập Đá cầu vòng)"
-                                                    + "\n|1| Ngươi có muốn nâng cấp không?",
+                                            + "\nĐồ Thiên sứ khi chế tạo sẽ random chỉ số 0-15%"
+                                            + "\n|2|(Khi mang đủ 5 món Hủy diệt ngươi hãy theo Osin qua Hành tinh ngục tù tìm kiếm Mảnh thiên sứ và săn BOSS Thiên sứ để thu thập Đá cầu vòng)"
+                                            + "\n|1| Ngươi có muốn nâng cấp không?",
                                             "Hướng dẫn", "Nâng Cấp \nĐồ Thiên Sứ", "Shop\n Thiên sứ", "Phân rã\nĐồ Thiên sứ", "Nâng SKH Thiên sứ");
                                 }
                             }
@@ -4526,11 +4597,11 @@ public class NpcFactory {
                                                 } else {
                                                     this.createOtherMenu(player, ConstNpc.MENU_OPTION_LEVEL_SIDE_TASK,
                                                             "|2|Khi hoàn thành các nhiệm vụ ngày nhận được các phần thưởng sau:"
-                                                                    + "\n|4|-Dễ : 5TV khóa + 1000 Hngọc"
-                                                                    + "\n-Bthường : 7TV khóa + 2000 Hngọc"
-                                                                    + "\n-Khó : 9TV khóa + 3000 Hngọc"
-                                                                    + "\n-Siêu khó : 10TV khóa + 4000 Hngọc"
-                                                                    + "\n|1|Tôi có vài nhiệm vụ theo cấp bậc, sức cậu có thể làm được cái nào?",
+                                                            + "\n|4|-Dễ : 5TV khóa + 1000 Hngọc"
+                                                            + "\n-Bthường : 7TV khóa + 2000 Hngọc"
+                                                            + "\n-Khó : 9TV khóa + 3000 Hngọc"
+                                                            + "\n-Siêu khó : 10TV khóa + 4000 Hngọc"
+                                                            + "\n|1|Tôi có vài nhiệm vụ theo cấp bậc, sức cậu có thể làm được cái nào?",
                                                             "Dễ", "Bình thường", "Khó", "Siêu khó", "Từ chối");
                                                 }
                                                 break;
@@ -4626,13 +4697,13 @@ public class NpcFactory {
                                     }
                                     if (soLuong >= 10000) {
                                         this.createOtherMenu(player, ConstNpc.BASE_MENU, "Bạn đang có " + soLuong
-                                                        + " bí kiếp.\n"
-                                                        + "Hãy kiếm đủ 10000 bí kiếp tôi sẽ dạy bạn cách dịch chuyển tức thời của người Yardart",
+                                                + " bí kiếp.\n"
+                                                + "Hãy kiếm đủ 10000 bí kiếp tôi sẽ dạy bạn cách dịch chuyển tức thời của người Yardart",
                                                 "Học dịch\nchuyển", "Đóng");
                                     } else {
                                         this.createOtherMenu(player, ConstNpc.BASE_MENU, "Bạn đang có " + soLuong
-                                                        + " bí kiếp.\n"
-                                                        + "Hãy kiếm đủ 10000 bí kiếp tôi sẽ dạy bạn cách dịch chuyển tức thời của người Yardart",
+                                                + " bí kiếp.\n"
+                                                + "Hãy kiếm đủ 10000 bí kiếp tôi sẽ dạy bạn cách dịch chuyển tức thời của người Yardart",
                                                 "Đóng");
                                     }
                                 }
@@ -4677,13 +4748,13 @@ public class NpcFactory {
                                     int goldchallenge = player.goldChallenge;
                                     if (player.levelWoodChest == 0) {
                                         menuselect = new String[]{
-                                                "Thi đấu\n" + Util.numberToMoney(goldchallenge) + " vàng",
-                                                "Về\nĐại Hội\nVõ Thuật"};
+                                            "Thi đấu\n" + Util.numberToMoney(goldchallenge) + " vàng",
+                                            "Về\nĐại Hội\nVõ Thuật"};
                                     } else {
                                         menuselect = new String[]{
-                                                "Thi đấu\n" + Util.numberToMoney(goldchallenge) + " vàng",
-                                                "Nhận thưởng\nRương cấp\n" + player.levelWoodChest,
-                                                "Về\nĐại Hội\nVõ Thuật"};
+                                            "Thi đấu\n" + Util.numberToMoney(goldchallenge) + " vàng",
+                                            "Nhận thưởng\nRương cấp\n" + player.levelWoodChest,
+                                            "Về\nĐại Hội\nVõ Thuật"};
                                     }
                                     this.createOtherMenu(player, ConstNpc.BASE_MENU,
                                             "Đại hội võ thuật lần thứ 23\nDiễn ra bất kể ngày đêm,ngày nghỉ ngày lễ\nPhần thưởng vô cùng quý giá\nNhanh chóng tham gia nào",
@@ -4723,9 +4794,9 @@ public class NpcFactory {
                                                             } else {
                                                                 Service.getInstance().sendThongBao(player,
                                                                         "Không đủ vàng, còn thiếu "
-                                                                                + Util.numberToMoney(goldchallenge
+                                                                        + Util.numberToMoney(goldchallenge
                                                                                 - player.inventory.gold)
-                                                                                + " vàng");
+                                                                        + " vàng");
                                                             }
                                                         } else {
                                                             Service.getInstance().sendThongBao(player,
@@ -4749,9 +4820,9 @@ public class NpcFactory {
                                                             } else {
                                                                 Service.getInstance().sendThongBao(player,
                                                                         "Không đủ vàng, còn thiếu "
-                                                                                + Util.numberToMoney(goldchallenge
+                                                                        + Util.numberToMoney(goldchallenge
                                                                                 - player.inventory.gold)
-                                                                                + " vàng");
+                                                                        + " vàng");
                                                             }
                                                         } else {
                                                             Service.getInstance().sendThongBao(player,
@@ -4806,10 +4877,10 @@ public class NpcFactory {
 //                                        "OK\nAD ĐẸP TRAI");
                                 this.createOtherMenu(player, ConstNpc.BASE_MENU,
                                         "Xin chào " + player.name + "\nTôi có thể giúp gì cho bạn"
-                                                + "\n|5|-Đổi Capsule Bạc : Cần 99 chữ Vạn Sự Như Ý 2024 và 2 Thiệp chúc tết"
-                                                + "\n-Đổi Túi vàng :  Cần 50 chữ Vạn Sự Như Ý 2024 và 1 Thiệp chúc tết"
-                                                + "\n-Danh hiệu Đại thần 1 Ngày (Chỉ số ngẫu nhiên) :  Cần 99 chữ Vạn Sự Như Ý 2024 và 10 Thiệp chúc tết"
-                                                + "\n-Danh hiệu Đại thần Vĩnh viễn (Chỉ số Max):  Cần 99 chữ Vạn Sự Như Ý 2024 và 99 Thiệp chúc tết + 2000 Thỏi vàng",
+                                        + "\n|5|-Đổi Capsule Bạc : Cần 99 chữ Vạn Sự Như Ý 2024 và 2 Thiệp chúc tết"
+                                        + "\n-Đổi Túi vàng :  Cần 50 chữ Vạn Sự Như Ý 2024 và 1 Thiệp chúc tết"
+                                        + "\n-Danh hiệu Đại thần 1 Ngày (Chỉ số ngẫu nhiên) :  Cần 99 chữ Vạn Sự Như Ý 2024 và 10 Thiệp chúc tết"
+                                        + "\n-Danh hiệu Đại thần Vĩnh viễn (Chỉ số Max):  Cần 99 chữ Vạn Sự Như Ý 2024 và 99 Thiệp chúc tết + 2000 Thỏi vàng",
                                         "Capsule 2024", "Túi vàng", "Danh hiệu 1 Ngày", "Danh hiệu Vĩnh viễn");
                             }
                         }
@@ -4977,12 +5048,12 @@ public class NpcFactory {
                             if (canOpenNpc(player)) {
                                 this.createOtherMenu(player, ConstNpc.BASE_MENU,
                                         "Xin chào " + player.name + "\nTôi là nồi nấu bánh\nTôi có thể giúp gì cho bạn"
-                                                + "\n|5|-Làm Bánh Tét: (99)Thịt ba chỉ, Gạo nếp, Đỗ xanh, Lá chuối"
-                                                + "\n-Làm Bánh Chưng: (99)Thịt Heo, Gạo nếp, Đỗ xanh, Lá dong"
-                                                + "\n-Nấu Bánh Tét: (1)Bánh tét, Phụ gia tạo màu, Gia vị tổng hộp"
-                                                + "\n-Nấu Bánh Chưng: (1)Bánh chưng, Phụ gia tạo màu, Gia vị tổng hộp"
-                                                + "\n-Đổi Hộp quà: (5)Bánh chưng Chín, Bánh tét Chín"
-                                                + "\n|3|(Làm bánh Thành công sẽ nhận 1 Điểm Sự kiện)",
+                                        + "\n|5|-Làm Bánh Tét: (99)Thịt ba chỉ, Gạo nếp, Đỗ xanh, Lá chuối"
+                                        + "\n-Làm Bánh Chưng: (99)Thịt Heo, Gạo nếp, Đỗ xanh, Lá dong"
+                                        + "\n-Nấu Bánh Tét: (1)Bánh tét, Phụ gia tạo màu, Gia vị tổng hộp"
+                                        + "\n-Nấu Bánh Chưng: (1)Bánh chưng, Phụ gia tạo màu, Gia vị tổng hộp"
+                                        + "\n-Đổi Hộp quà: (5)Bánh chưng Chín, Bánh tét Chín"
+                                        + "\n|3|(Làm bánh Thành công sẽ nhận 1 Điểm Sự kiện)",
                                         "Làm\nBánh Tét", "Làm\nBánh Chưng", getMenuLamBanh(player, 0),
                                         getMenuLamBanh(player, 1), "Đổi Hộp\nQuà Tết");
                             }
@@ -5193,13 +5264,13 @@ public class NpcFactory {
                         public void openBaseMenu(Player player) {
                             if (canOpenNpc(player)) {
                                 this.createOtherMenu(player, ConstNpc.BASE_MENU, "|7|MÁY GẮP THÚ"
-                                                + "\n\n|2| Sử dụng Thỏi Vàng để gắp và nhận được Linh thú chỉ số Ngẫu nhiên như sau :"
-                                                + "\n|4| -Thường : 10-20% chỉ số SD, HP, KI"
-                                                + "\n -VIP : Chỉ số SD, HP, KI max 30%"
-                                                + "->Lưu ý : Gắp VIP có tỉ lệ nhận thêm dòng chỉ số % TNSM random từ 50-100%"
-                                                + "\n\n|3| *Gắp Thường cần 10 Thỏi vàng 1 lượt"
-                                                + "\n *Gắp VIP cần 50 Thỏi vàng 1 lượt"
-                                                + "\n\n|1|Hãy tham gia và nhận các Linh thú quý hiếm nào !!!",
+                                        + "\n\n|2| Sử dụng Thỏi Vàng để gắp và nhận được Linh thú chỉ số Ngẫu nhiên như sau :"
+                                        + "\n|4| -Thường : 10-20% chỉ số SD, HP, KI"
+                                        + "\n -VIP : Chỉ số SD, HP, KI max 30%"
+                                        + "->Lưu ý : Gắp VIP có tỉ lệ nhận thêm dòng chỉ số % TNSM random từ 50-100%"
+                                        + "\n\n|3| *Gắp Thường cần 10 Thỏi vàng 1 lượt"
+                                        + "\n *Gắp VIP cần 50 Thỏi vàng 1 lượt"
+                                        + "\n\n|1|Hãy tham gia và nhận các Linh thú quý hiếm nào !!!",
                                         "Gắp\nThường", "Gắp\nVIP");
                             }
                         }
@@ -5444,44 +5515,44 @@ public class NpcFactory {
                         switch (select) {
                             case 0:
                                 try {
-                                    ItemService.gI().settaiyoken(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().settaiyoken(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                             case 1:
                                 try {
-                                    ItemService.gI().setgenki(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().setgenki(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                             case 2:
                                 try {
-                                    ItemService.gI().setkamejoko(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().setkamejoko(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                         }
                         break;
                     case ConstNpc.MENU_NM:
                         switch (select) {
                             case 0:
                                 try {
-                                    ItemService.gI().setgodki(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().setgodki(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                             case 1:
                                 try {
-                                    ItemService.gI().setgoddam(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().setgoddam(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                             case 2:
                                 try {
-                                    ItemService.gI().setsummon(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().setsummon(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                         }
                         break;
 
@@ -5489,66 +5560,66 @@ public class NpcFactory {
                         switch (select) {
                             case 0:
                                 try {
-                                    ItemService.gI().setgodgalick(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().setgodgalick(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                             case 1:
                                 try {
-                                    ItemService.gI().setmonkey(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().setmonkey(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                             case 2:
                                 try {
-                                    ItemService.gI().setgodhp(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().setgodhp(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                         }
                         break;
                     case ConstNpc.MENU_TD_HD:
                         switch (select) {
                             case 0:
                                 try {
-                                    ItemService.gI().settaiyokenHD(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().settaiyokenHD(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                             case 1:
                                 try {
-                                    ItemService.gI().setgenkiHD(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().setgenkiHD(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                             case 2:
                                 try {
-                                    ItemService.gI().setkamejokoHD(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().setkamejokoHD(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                         }
                         break;
                     case ConstNpc.MENU_NM_HD:
                         switch (select) {
                             case 0:
                                 try {
-                                    ItemService.gI().setgodkiHD(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().setgodkiHD(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                             case 1:
                                 try {
-                                    ItemService.gI().setgoddamHD(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().setgoddamHD(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                             case 2:
                                 try {
-                                    ItemService.gI().setsummonHD(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().setsummonHD(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                         }
                         break;
 
@@ -5556,88 +5627,88 @@ public class NpcFactory {
                         switch (select) {
                             case 0:
                                 try {
-                                    ItemService.gI().setgodgalickHD(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().setgodgalickHD(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                             case 1:
                                 try {
-                                    ItemService.gI().setmonkeyHD(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().setmonkeyHD(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                             case 2:
                                 try {
-                                    ItemService.gI().setgodhpHD(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().setgodhpHD(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                         }
                         break;
                     case ConstNpc.MENU_TD_TL:
                         switch (select) {
                             case 0:
                                 try {
-                                    ItemService.gI().settaiyokenTL(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().settaiyokenTL(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                             case 1:
                                 try {
-                                    ItemService.gI().setgenkiTL(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().setgenkiTL(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                             case 2:
                                 try {
-                                    ItemService.gI().setkamejokoTL(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().setkamejokoTL(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                         }
                         break;
                     case ConstNpc.MENU_NM_TL:
                         switch (select) {
                             case 0:
                                 try {
-                                    ItemService.gI().setgodkiTL(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().setgodkiTL(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                             case 1:
                                 try {
-                                    ItemService.gI().setgoddamTL(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().setgoddamTL(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                             case 2:
                                 try {
-                                    ItemService.gI().setsummonTL(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().setsummonTL(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                         }
                         break;
                     case ConstNpc.MENU_XD_TL:
                         switch (select) {
                             case 0:
                                 try {
-                                    ItemService.gI().setgodgalickTL(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().setgodgalickTL(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                             case 1:
                                 try {
-                                    ItemService.gI().setmonkeyTL(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().setmonkeyTL(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                             case 2:
                                 try {
-                                    ItemService.gI().setgodhpTL(player);
-                                } catch (Exception e) {
-                                }
-                                break;
+                                ItemService.gI().setgodhpTL(player);
+                            } catch (Exception e) {
+                            }
+                            break;
                         }
                         break;
                     case ConstNpc.TAIXIU:
@@ -5646,8 +5717,8 @@ public class NpcFactory {
                             switch (select) {
                                 case 0:
                                     NpcService.gI().createMenuConMeo(player, ConstNpc.TAIXIU, 11039, "\n|7|---NHÀ CÁI TÀI XỈU---\n\n|3|Kết quả kì trước:  " + TaiXiu.gI().x + " : " + TaiXiu.gI().y + " : " + TaiXiu.gI().z
-                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Hồng ngọc"
-                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Hồng ngọc\n\n|5|Thời gian còn lại: " + time, "Cập nhập", "Theo TÀI", "Theo XỈU", "Đóng");
+                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Thỏi vàng"
+                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Thỏi vàng\n\n|5|Thời gian còn lại: " + time, "Cập nhập", "Theo TÀI", "Theo XỈU", "Đóng");
                                     break;
                                 case 1:
                                     if (!player.getSession().actived) {
@@ -5676,40 +5747,40 @@ public class NpcFactory {
                             switch (select) {
                                 case 0:
                                     NpcService.gI().createMenuConMeo(player, ConstNpc.TAIXIU, 11039, "\n|7|---NHÀ CÁI TÀI XỈU---\n\n|3|Kết quả kì trước:  " + TaiXiu.gI().x + " : " + TaiXiu.gI().y + " : " + TaiXiu.gI().z
-                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Hồng ngọc"
-                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Hồng ngọc\n\n|5|Thời gian còn lại: " + time + "\n\n|7|Bạn đã cược Tài : " + Util.format(player.goldTai) + " Hồng ngọc", "Cập nhập", "Đóng");
+                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Thỏi vàng"
+                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Thỏi vàng\n\n|5|Thời gian còn lại: " + time + "\n\n|7|Bạn đã cược Tài : " + Util.format(player.goldTai) + " Thỏi vàng", "Cập nhập", "Đóng");
                                     break;
                             }
                         } else if (((TaiXiu.gI().lastTimeEnd - System.currentTimeMillis()) / 1000) > 0 && player.goldXiu > 0 && TaiXiu.gI().baotri == false) {
                             switch (select) {
                                 case 0:
                                     NpcService.gI().createMenuConMeo(player, ConstNpc.TAIXIU, 11039, "\n|7|---NHÀ CÁI TÀI XỈU---\n\n|3|Kết quả kì trước:  " + TaiXiu.gI().x + " : " + TaiXiu.gI().y + " : " + TaiXiu.gI().z
-                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Hồng ngọc"
-                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Hồng ngọc\n\n|5|Thời gian còn lại: " + time + "\n\n|7|Bạn đã cược Xỉu : " + Util.format(player.goldXiu) + " Hồng ngọc", "Cập nhập", "Đóng");
+                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Thỏi vàng"
+                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Thỏi vàng\n\n|5|Thời gian còn lại: " + time + "\n\n|7|Bạn đã cược Xỉu : " + Util.format(player.goldXiu) + " Thỏi vàng", "Cập nhập", "Đóng");
                                     break;
                             }
                         } else if (((TaiXiu.gI().lastTimeEnd - System.currentTimeMillis()) / 1000) > 0 && player.goldTai > 0 && TaiXiu.gI().baotri == true) {
                             switch (select) {
                                 case 0:
                                     NpcService.gI().createMenuConMeo(player, ConstNpc.TAIXIU, 11039, "\n|7|---NHÀ CÁI TÀI XỈU---\n\n|3|Kết quả kì trước:  " + TaiXiu.gI().x + " : " + TaiXiu.gI().y + " : " + TaiXiu.gI().z
-                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Hồng ngọc"
-                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Hồng ngọc\n\n|5|Thời gian còn lại: " + time + "\n\n|7|Bạn đã cược Tài : " + Util.format(player.goldTai) + " Hồng ngọc" + "\n\n|7|Hệ thống sắp bảo trì", "Cập nhập", "Đóng");
+                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Thỏi vàng"
+                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Thỏi vàng\n\n|5|Thời gian còn lại: " + time + "\n\n|7|Bạn đã cược Tài : " + Util.format(player.goldTai) + " Thỏi vàng" + "\n\n|7|Hệ thống sắp bảo trì", "Cập nhập", "Đóng");
                                     break;
                             }
                         } else if (((TaiXiu.gI().lastTimeEnd - System.currentTimeMillis()) / 1000) > 0 && player.goldXiu > 0 && TaiXiu.gI().baotri == true) {
                             switch (select) {
                                 case 0:
                                     NpcService.gI().createMenuConMeo(player, ConstNpc.TAIXIU, 11039, "\n|7|---NHÀ CÁI TÀI XỈU---\n\n|3|Kết quả kì trước:  " + TaiXiu.gI().x + " : " + TaiXiu.gI().y + " : " + TaiXiu.gI().z
-                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Hồng ngọc"
-                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Hồng ngọc\n\n|5|Thời gian còn lại: " + time + "\n\n|7|Bạn đã cược Xỉu : " + Util.format(player.goldXiu) + " Hồng ngọc" + "\n\n|7|Hệ thống sắp bảo trì", "Cập nhập", "Đóng");
+                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Thỏi vàng"
+                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Thỏi vàng\n\n|5|Thời gian còn lại: " + time + "\n\n|7|Bạn đã cược Xỉu : " + Util.format(player.goldXiu) + " Thỏi vàng" + "\n\n|7|Hệ thống sắp bảo trì", "Cập nhập", "Đóng");
                                     break;
                             }
                         } else if (((TaiXiu.gI().lastTimeEnd - System.currentTimeMillis()) / 1000) > 0 && player.goldXiu == 0 && player.goldTai == 0 && TaiXiu.gI().baotri == true) {
                             switch (select) {
                                 case 0:
                                     NpcService.gI().createMenuConMeo(player, ConstNpc.TAIXIU, 11039, "\n|7|---NHÀ CÁI TÀI XỈU---\n\n|3|Kết quả kì trước:  " + TaiXiu.gI().x + " : " + TaiXiu.gI().y + " : " + TaiXiu.gI().z
-                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Hồng ngọc"
-                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Hồng ngọc\n\n|5|Thời gian còn lại: " + time + "\n\n|7|Hệ thống sắp bảo trì", "Cập nhập", "Đóng");
+                                            + "\n\n|6|Tổng nhà TÀI: " + Util.format(TaiXiu.gI().goldTai) + " Thỏi vàng"
+                                            + "\n\nTổng nhà XỈU: " + Util.format(TaiXiu.gI().goldXiu) + " Thỏi vàng\n\n|5|Thời gian còn lại: " + time + "\n\n|7|Hệ thống sắp bảo trì", "Cập nhập", "Đóng");
                                     break;
                             }
                         }
@@ -6036,188 +6107,188 @@ public class NpcFactory {
                     // cá tiên tri -> mở đt zeno
                     case ConstNpc.MO_DE_TU:
                         try {
-                            switch (select) {
-                                case 0:
-                                    Item item = InventoryService.gI().findItemBagByOption(player, 1459, 240, 10);
-                                    if (item == null) {
-                                        Service.getInstance().sendThongBao(player, "Không đủ yêu cầu");
-                                        return;
-                                    }
-                                    InventoryService.gI().subQuantityItemsBag(player, item, 1);
-                                    InventoryService.gI().sendItemBags(player);
-                                    PetService.gI().changeZenoPet(player, 0);
-                                    break;
-                                case 1:
-                                    Item item1 = InventoryService.gI().findItemBagByOption(player, 1459, 240, 10);
-                                    if (item1 == null) {
-                                        Service.getInstance().sendThongBao(player, "Không đủ yêu cầu");
-                                        return;
-                                    }
-                                    InventoryService.gI().subQuantityItemsBag(player, item1, 1);
-                                    InventoryService.gI().sendItemBags(player);
-                                    PetService.gI().changeZenoPet(player, 1);
-                                    break;
-                                case 2:
-                                    Item item2 = InventoryService.gI().findItemBagByOption(player, 1459, 240, 10);
-                                    if (item2 == null) {
-                                        Service.getInstance().sendThongBao(player, "Không đủ yêu cầu");
-                                        return;
-                                    }
-                                    InventoryService.gI().subQuantityItemsBag(player, item2, 1);
-                                    InventoryService.gI().sendItemBags(player);
-                                    PetService.gI().changeZenoPet(player, 2);
-                                    break;
-                            }
-                            break;
-                        } catch (Exception e) {
-                            System.out.println("Loi mo de tu zeno");
+                        switch (select) {
+                            case 0:
+                                Item item = InventoryService.gI().findItemBagByOption(player, 1459, 240, 10);
+                                if (item == null) {
+                                    Service.getInstance().sendThongBao(player, "Không đủ yêu cầu");
+                                    return;
+                                }
+                                InventoryService.gI().subQuantityItemsBag(player, item, 1);
+                                InventoryService.gI().sendItemBags(player);
+                                PetService.gI().changeZenoPet(player, 0);
+                                break;
+                            case 1:
+                                Item item1 = InventoryService.gI().findItemBagByOption(player, 1459, 240, 10);
+                                if (item1 == null) {
+                                    Service.getInstance().sendThongBao(player, "Không đủ yêu cầu");
+                                    return;
+                                }
+                                InventoryService.gI().subQuantityItemsBag(player, item1, 1);
+                                InventoryService.gI().sendItemBags(player);
+                                PetService.gI().changeZenoPet(player, 1);
+                                break;
+                            case 2:
+                                Item item2 = InventoryService.gI().findItemBagByOption(player, 1459, 240, 10);
+                                if (item2 == null) {
+                                    Service.getInstance().sendThongBao(player, "Không đủ yêu cầu");
+                                    return;
+                                }
+                                InventoryService.gI().subQuantityItemsBag(player, item2, 1);
+                                InventoryService.gI().sendItemBags(player);
+                                PetService.gI().changeZenoPet(player, 2);
+                                break;
                         }
+                        break;
+                    } catch (Exception e) {
+                        System.out.println("Loi mo de tu zeno");
+                    }
                     case ConstNpc.DE_TU_MABU:
                         try {
-                            switch (select) {
-                                case 0:
-                                    Item itemMabu1 = InventoryService.gI().findItemBagByTemp(player, 1538);
-                                    if (itemMabu1 == null) {
-                                        Service.getInstance().sendThongBao(player, "Không đủ yêu cầu");
-                                        return;
-                                    }
-                                    InventoryService.gI().subQuantityItemsBag(player, itemMabu1, 1);
-                                    InventoryService.gI().sendItemBags(player);
-                                    PetService.gI().changeMabuPet(player, 0);
-                                    break;
-                                case 1:
-                                    Item itemMabu2 = InventoryService.gI().findItemBagByTemp(player, 1538);
-                                    if (itemMabu2 == null) {
-                                        Service.getInstance().sendThongBao(player, "Không đủ yêu cầu");
-                                        return;
-                                    }
-                                    InventoryService.gI().subQuantityItemsBag(player, itemMabu2, 1);
-                                    InventoryService.gI().sendItemBags(player);
-                                    PetService.gI().changeMabuPet(player, 1);
-                                    break;
-                                case 2:
-                                    Item itemMabu3 = InventoryService.gI().findItemBagByTemp(player, 1538);
-                                    if (itemMabu3 == null) {
-                                        Service.getInstance().sendThongBao(player, "Không đủ yêu cầu");
-                                        return;
-                                    }
-                                    InventoryService.gI().subQuantityItemsBag(player, itemMabu3, 1);
-                                    InventoryService.gI().sendItemBags(player);
-                                    PetService.gI().changeMabuPet(player, 2);
-                                    break;
-                            }
-                            break;
-                        } catch (Exception e) {
-                            System.out.println("Loi mo de tu mabu");
+                        switch (select) {
+                            case 0:
+                                Item itemMabu1 = InventoryService.gI().findItemBagByTemp(player, 1538);
+                                if (itemMabu1 == null) {
+                                    Service.getInstance().sendThongBao(player, "Không đủ yêu cầu");
+                                    return;
+                                }
+                                InventoryService.gI().subQuantityItemsBag(player, itemMabu1, 1);
+                                InventoryService.gI().sendItemBags(player);
+                                PetService.gI().changeMabuPet(player, 0);
+                                break;
+                            case 1:
+                                Item itemMabu2 = InventoryService.gI().findItemBagByTemp(player, 1538);
+                                if (itemMabu2 == null) {
+                                    Service.getInstance().sendThongBao(player, "Không đủ yêu cầu");
+                                    return;
+                                }
+                                InventoryService.gI().subQuantityItemsBag(player, itemMabu2, 1);
+                                InventoryService.gI().sendItemBags(player);
+                                PetService.gI().changeMabuPet(player, 1);
+                                break;
+                            case 2:
+                                Item itemMabu3 = InventoryService.gI().findItemBagByTemp(player, 1538);
+                                if (itemMabu3 == null) {
+                                    Service.getInstance().sendThongBao(player, "Không đủ yêu cầu");
+                                    return;
+                                }
+                                InventoryService.gI().subQuantityItemsBag(player, itemMabu3, 1);
+                                InventoryService.gI().sendItemBags(player);
+                                PetService.gI().changeMabuPet(player, 2);
+                                break;
                         }
+                        break;
+                    } catch (Exception e) {
+                        System.out.println("Loi mo de tu mabu");
+                    }
                     case ConstNpc.DE_TU_BERUS:
                         try {
-                            switch (select) {
-                                case 0:
-                                    Item itemBerus1 = InventoryService.gI().findItemBagByTemp(player, 1539);
-                                    if (itemBerus1 == null) {
-                                        Service.getInstance().sendThongBao(player, "Không đủ yêu cầu");
-                                        return;
-                                    }
-                                    InventoryService.gI().subQuantityItemsBag(player, itemBerus1, 1);
-                                    InventoryService.gI().sendItemBags(player);
-                                    PetService.gI().changeBerusPet(player, 0);
-                                    break;
-                                case 1:
-                                    Item itemBerus2 = InventoryService.gI().findItemBagByTemp(player, 1539);
-                                    if (itemBerus2 == null) {
-                                        Service.getInstance().sendThongBao(player, "Không đủ yêu cầu");
-                                        return;
-                                    }
-                                    InventoryService.gI().subQuantityItemsBag(player, itemBerus2, 1);
-                                    InventoryService.gI().sendItemBags(player);
-                                    PetService.gI().changeBerusPet(player, 1);
-                                    break;
-                                case 2:
-                                    Item itemBerus3 = InventoryService.gI().findItemBagByTemp(player, 1539);
-                                    if (itemBerus3 == null) {
-                                        Service.getInstance().sendThongBao(player, "Không đủ yêu cầu");
-                                        return;
-                                    }
-                                    InventoryService.gI().subQuantityItemsBag(player, itemBerus3, 1);
-                                    InventoryService.gI().sendItemBags(player);
-                                    PetService.gI().changeBerusPet(player, 2);
-                                    break;
-                            }
-                            break;
-                        } catch (Exception e) {
-                            System.out.println("Loi mo de tu berus");
+                        switch (select) {
+                            case 0:
+                                Item itemBerus1 = InventoryService.gI().findItemBagByTemp(player, 1539);
+                                if (itemBerus1 == null) {
+                                    Service.getInstance().sendThongBao(player, "Không đủ yêu cầu");
+                                    return;
+                                }
+                                InventoryService.gI().subQuantityItemsBag(player, itemBerus1, 1);
+                                InventoryService.gI().sendItemBags(player);
+                                PetService.gI().changeBerusPet(player, 0);
+                                break;
+                            case 1:
+                                Item itemBerus2 = InventoryService.gI().findItemBagByTemp(player, 1539);
+                                if (itemBerus2 == null) {
+                                    Service.getInstance().sendThongBao(player, "Không đủ yêu cầu");
+                                    return;
+                                }
+                                InventoryService.gI().subQuantityItemsBag(player, itemBerus2, 1);
+                                InventoryService.gI().sendItemBags(player);
+                                PetService.gI().changeBerusPet(player, 1);
+                                break;
+                            case 2:
+                                Item itemBerus3 = InventoryService.gI().findItemBagByTemp(player, 1539);
+                                if (itemBerus3 == null) {
+                                    Service.getInstance().sendThongBao(player, "Không đủ yêu cầu");
+                                    return;
+                                }
+                                InventoryService.gI().subQuantityItemsBag(player, itemBerus3, 1);
+                                InventoryService.gI().sendItemBags(player);
+                                PetService.gI().changeBerusPet(player, 2);
+                                break;
                         }
+                        break;
+                    } catch (Exception e) {
+                        System.out.println("Loi mo de tu berus");
+                    }
                     case ConstNpc.DE_TU_ZENO:
                         try {
-                            switch (select) {
-                                case 0:
-                                    Item itemZeno1 = InventoryService.gI().findItemBagByTemp(player, 1540);
-                                    if (itemZeno1 == null) {
-                                        Service.getInstance().sendThongBao(player, "Không đủ yêu cầu");
-                                        return;
-                                    }
-                                    InventoryService.gI().subQuantityItemsBag(player, itemZeno1, 1);
-                                    InventoryService.gI().sendItemBags(player);
-                                    PetService.gI().changeZenoPet(player, 0);
-                                    break;
-                                case 1:
-                                    Item itemZeno2 = InventoryService.gI().findItemBagByTemp(player, 1540);
-                                    if (itemZeno2 == null) {
-                                        Service.getInstance().sendThongBao(player, "Không đủ yêu cầu");
-                                        return;
-                                    }
-                                    InventoryService.gI().subQuantityItemsBag(player, itemZeno2, 1);
-                                    InventoryService.gI().sendItemBags(player);
-                                    PetService.gI().changeZenoPet(player, 1);
-                                    break;
-                                case 2:
-                                    Item itemZeno3 = InventoryService.gI().findItemBagByTemp(player, 1540);
-                                    if (itemZeno3 == null) {
-                                        Service.getInstance().sendThongBao(player, "Không đủ yêu cầu");
-                                        return;
-                                    }
-                                    InventoryService.gI().subQuantityItemsBag(player, itemZeno3, 1);
-                                    InventoryService.gI().sendItemBags(player);
-                                    PetService.gI().changeZenoPet(player, 2);
-                                    break;
-                            }
-                            break;
-                        } catch (Exception e) {
-                            System.out.println("Loi mo de tu zeno");
+                        switch (select) {
+                            case 0:
+                                Item itemZeno1 = InventoryService.gI().findItemBagByTemp(player, 1540);
+                                if (itemZeno1 == null) {
+                                    Service.getInstance().sendThongBao(player, "Không đủ yêu cầu");
+                                    return;
+                                }
+                                InventoryService.gI().subQuantityItemsBag(player, itemZeno1, 1);
+                                InventoryService.gI().sendItemBags(player);
+                                PetService.gI().changeZenoPet(player, 0);
+                                break;
+                            case 1:
+                                Item itemZeno2 = InventoryService.gI().findItemBagByTemp(player, 1540);
+                                if (itemZeno2 == null) {
+                                    Service.getInstance().sendThongBao(player, "Không đủ yêu cầu");
+                                    return;
+                                }
+                                InventoryService.gI().subQuantityItemsBag(player, itemZeno2, 1);
+                                InventoryService.gI().sendItemBags(player);
+                                PetService.gI().changeZenoPet(player, 1);
+                                break;
+                            case 2:
+                                Item itemZeno3 = InventoryService.gI().findItemBagByTemp(player, 1540);
+                                if (itemZeno3 == null) {
+                                    Service.getInstance().sendThongBao(player, "Không đủ yêu cầu");
+                                    return;
+                                }
+                                InventoryService.gI().subQuantityItemsBag(player, itemZeno3, 1);
+                                InventoryService.gI().sendItemBags(player);
+                                PetService.gI().changeZenoPet(player, 2);
+                                break;
                         }
+                        break;
+                    } catch (Exception e) {
+                        System.out.println("Loi mo de tu zeno");
+                    }
                     case ConstNpc.INFO_ALL:
                         switch (select) {
                             case 0:
                                 NpcService.gI().createMenuConMeo(player, ConstNpc.INFO_ALL, 12713,
                                         "|7|THÔNG TIN NHÂN VẬT"
-                                                + "\b|5|HP bản thân: " + Util.format(player.nPoint.hp) + "/" + Util.powerToString(player.nPoint.hpMax)
-                                                + "\bKI bản thân: " + Util.format(player.nPoint.mp) + "/" + Util.powerToString(player.nPoint.mpMax)
-                                                + "\bSức đánh: " + Util.format(player.nPoint.dame)
-                                                + "\bGiáp: " + Util.format(player.nPoint.def)
-                                                //                                        + "\b|4|HP Gốc: " + Util.format(player.nPoint.hpg)
-                                                //                                        + "\bKI Gốc: " + Util.format(player.nPoint.mpg)
-                                                //                                        + "\bSức đánh Gốc: " + Util.format(player.nPoint.dameg)
-                                                //                                        + "\bGiáp Gốc: " + Util.format(player.nPoint.defg)
-                                                + "\b|8|-Vàng: " + Util.format(player.inventory.gold)
-                                                + "   -Ngọc: " + Util.format(player.inventory.gem)
-                                                + "   -H.Ngọc: " + Util.format(player.inventory.ruby)
-                                                + "\b|5|Tổng vàng nhặt: " + Util.format(player.vangnhat)
-                                                + "\b|3|Tổng Hồng ngọc nhặt: " + Util.format(player.hngocnhat),
+                                        + "\b|5|HP bản thân: " + Util.format(player.nPoint.hp) + "/" + Util.powerToString(player.nPoint.hpMax)
+                                        + "\bKI bản thân: " + Util.format(player.nPoint.mp) + "/" + Util.powerToString(player.nPoint.mpMax)
+                                        + "\bSức đánh: " + Util.format(player.nPoint.dame)
+                                        + "\bGiáp: " + Util.format(player.nPoint.def)
+                                        //                                        + "\b|4|HP Gốc: " + Util.format(player.nPoint.hpg)
+                                        //                                        + "\bKI Gốc: " + Util.format(player.nPoint.mpg)
+                                        //                                        + "\bSức đánh Gốc: " + Util.format(player.nPoint.dameg)
+                                        //                                        + "\bGiáp Gốc: " + Util.format(player.nPoint.defg)
+                                        + "\b|8|-Vàng: " + Util.format(player.inventory.gold)
+                                        + "   -Ngọc: " + Util.format(player.inventory.gem)
+                                        + "   -H.Ngọc: " + Util.format(player.inventory.ruby)
+                                        + "\b|5|Tổng vàng nhặt: " + Util.format(player.vangnhat)
+                                        + "\b|3|Tổng Hồng ngọc nhặt: " + Util.format(player.hngocnhat),
                                         "Thông tin\n nhân vật", "Thông tin\nđệ tử", "Thông tin\nđồ mặc");
                                 break;
                             case 1:
                                 NpcService.gI().createMenuConMeo(player, ConstNpc.INFO_ALL, 12713,
                                         "|7|THÔNG TIN ĐỆ TỬ"
-                                                + "\b\b|7|Hành tinh: " + Service.getInstance().get_HanhTinh(player.pet.gender)
-                                                + "\b|5|HP ĐỆ TỬ: " + Util.format(player.pet.nPoint.hp) + "/" + Util.powerToString(player.pet.nPoint.hpMax)
-                                                + "\bKI ĐỆ TỬ: " + Util.format(player.pet.nPoint.mp) + "/" + Util.powerToString(player.pet.nPoint.mpMax)
-                                                + "\bSức đánh: " + Util.format(player.pet.nPoint.dame)
-                                                + "\bGiáp: " + Util.format(player.pet.nPoint.def)
-                                                + "\b|4|HP Gốc: " + Util.format(player.pet.nPoint.hpg)
-                                                + "\bKI Gốc: " + Util.format(player.pet.nPoint.mpg)
-                                                + "\bSức đánh Gốc: " + Util.format(player.pet.nPoint.dameg)
-                                                + "\bGiáp Gốc: " + Util.format(player.pet.nPoint.defg),
+                                        + "\b\b|7|Hành tinh: " + Service.getInstance().get_HanhTinh(player.pet.gender)
+                                        + "\b|5|HP ĐỆ TỬ: " + Util.format(player.pet.nPoint.hp) + "/" + Util.powerToString(player.pet.nPoint.hpMax)
+                                        + "\bKI ĐỆ TỬ: " + Util.format(player.pet.nPoint.mp) + "/" + Util.powerToString(player.pet.nPoint.mpMax)
+                                        + "\bSức đánh: " + Util.format(player.pet.nPoint.dame)
+                                        + "\bGiáp: " + Util.format(player.pet.nPoint.def)
+                                        + "\b|4|HP Gốc: " + Util.format(player.pet.nPoint.hpg)
+                                        + "\bKI Gốc: " + Util.format(player.pet.nPoint.mpg)
+                                        + "\bSức đánh Gốc: " + Util.format(player.pet.nPoint.dameg)
+                                        + "\bGiáp Gốc: " + Util.format(player.pet.nPoint.defg),
                                         "Thông tin\n nhân vật", "Thông tin\nđệ tử", "Thông tin\nđồ mặc");
                                 break;
                             case 2:
@@ -6235,7 +6306,7 @@ public class NpcFactory {
                         if (it.quantity < 1) {
                             NpcService.gI().createMenuConMeo(player, ConstNpc.CHISODO, 12713,
                                     "|7|Ô này không có đồ!!!"
-                                            + "\n|2|Bạn muốn xem chỉ số đồ bị giới hạn hiện thị:",
+                                    + "\n|2|Bạn muốn xem chỉ số đồ bị giới hạn hiện thị:",
                                     "Chỉ số\nô 1", "Chỉ số\nô 2", "Chỉ số\nô 3",
                                     "Chỉ số\nô 4", "Chỉ số\nô 5", "Chỉ số\nô 6",
                                     "Chỉ số\nô 7", "Chỉ số\nô 8", "Chỉ số\nô 9",
@@ -6244,8 +6315,8 @@ public class NpcFactory {
                         }
                         NpcService.gI().createMenuConMeo(player, ConstNpc.CHISODO, 12713,
                                 "|2|Tên Vật phẩm: " + it.template.name
-                                        + "\n|7|Chỉ số:"
-                                        + "\n|6|" + it.getInfo(),
+                                + "\n|7|Chỉ số:"
+                                + "\n|6|" + it.getInfo(),
                                 "Chỉ số\nô 1", "Chỉ số\nô 2", "Chỉ số\nô 3",
                                 "Chỉ số\nô 4", "Chỉ số\nô 5", "Chỉ số\nô 6",
                                 "Chỉ số\nô 7", "Chỉ số\nô 8", "Chỉ số\nô 9",

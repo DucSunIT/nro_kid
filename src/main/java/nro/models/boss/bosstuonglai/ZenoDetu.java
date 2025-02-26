@@ -18,7 +18,7 @@ import nro.services.SkillService;
 import nro.utils.SkillUtil;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class ZenoDetu extends Boss {
@@ -63,12 +63,12 @@ public class ZenoDetu extends Boss {
 
     @Override
     public void rewards(Player pl) {
-        if (Util.isTrue(5, 100)) {
+        if (Util.isTrue(1, 20)) {
             ItemMap itemMap = new ItemMap(this.zone, 1459, 1,
                     pl.location.x, this.zone.map.yPhysicInTop(pl.location.x, pl.location.y - 24), pl.id);
             itemMap.options.add(new ItemOption(240, 0));
             Service.getInstance().dropItemMap(this.zone, itemMap);
-        } else if (Util.isTrue(20, 100)) {
+        } else if (Util.isTrue(1, 5)) {
             ItemMap itemMap = new ItemMap(this.zone, 1535, 5,
                     pl.location.x, this.zone.map.yPhysicInTop(pl.location.x, pl.location.y - 24), pl.id);
             Service.getInstance().dropItemMap(this.zone, itemMap);

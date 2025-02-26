@@ -24,7 +24,7 @@ import nro.data.ItemData;
 import nro.server.Manager;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class InventoryService {
@@ -153,7 +153,7 @@ public class InventoryService {
                     return false;
                 }
             case 988:
-                if (player.inventory.getGoldLimit() < 100000000000L) {
+                if (player.inventory.getGoldLimit() < 500_000_000_000L) {
                     player.inventory.goldLimit += 1000000000;
                     Service.getInstance().sendThongBao(player, "Giới hạn vàng của bạn đã tăng lên 1 Tỷ\n"
                             + "Giới hạn vàng hiện tại của bạn là " + Util.numberToMoney(player.inventory.getGoldLimit()));

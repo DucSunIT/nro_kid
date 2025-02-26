@@ -1,7 +1,7 @@
 package nro.consts;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  */
 public class ConstAchive {
     public static final int GIA_NHAP_THAN_CAP = 0;

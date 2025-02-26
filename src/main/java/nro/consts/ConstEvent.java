@@ -1,7 +1,7 @@
 package nro.consts;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  */
 public class ConstEvent {
     public static final byte KHONG_CO_SU_KIEN = 0;

@@ -18,7 +18,7 @@ import nro.services.SkillService;
 import nro.utils.SkillUtil;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class RongDen extends Boss {
@@ -31,13 +31,13 @@ public class RongDen extends Boss {
     protected boolean useSpecialSkill() {
         this.playerSkill.skillSelect = this.getSkillSpecial();
         if (SkillService.gI().canUseSkillWithCooldown(this)) {
-            SkillService.gI().useSkill(this, null, null,null);
+            SkillService.gI().useSkill(this, null, null, null);
             return true;
         } else {
             return false;
         }
     }
-    
+
     @Override
     public void attack() {
         try {
@@ -50,7 +50,7 @@ public class RongDen extends Boss {
                             goToXY(pl.location.x + (Util.getOne(-1, 1) * Util.nextInt(20, 80)),
                                     Util.nextInt(10) % 2 == 0 ? pl.location.y : pl.location.y - Util.nextInt(0, 50), false);
                         }
-                        SkillService.gI().useSkill(this, pl, null,null);
+                        SkillService.gI().useSkill(this, pl, null, null);
                         checkPlayerDie(pl);
                     } else {
                         goToPlayer(pl, false);
@@ -63,20 +63,20 @@ public class RongDen extends Boss {
 
     @Override
     public void rewards(Player pl) {
-        int a = 0;
-        int b = 5;
-        for (int i = 0; i < 8; i++) {
-            ItemMap itemMap = new ItemMap(this.zone, 16, 1,
-                    this.location.x + a, this.zone.map.yPhysicInTop(this.location.x, this.location.y - 24), -1);
-            Service.getInstance().dropItemMap(this.zone, itemMap);
-            a += 15;
+        int nro = Util.nextInt(15, 20);
+
+        if (Util.isTrue(1, 2) && this.zone != null && this.location != null && this.zone.map != null) {
+            int dropX = this.location.x;
+            int dropY = this.zone.map.yPhysicInTop(dropX, this.location.y - 24);
+
+            ItemMap itemMap = new ItemMap(this.zone, nro, 1, dropX, dropY, -1);
+
+            if (Service.getInstance() != null) {
+                Service.getInstance().dropItemMap(this.zone, itemMap);
+            }
         }
-        for (int i = 0; i < 2; i++) {
-            ItemMap itemMap1 = new ItemMap(this.zone, 15, 1,
-                    this.location.x + b, this.zone.map.yPhysicInTop(this.location.x, this.location.y - 24), -1);
-            Service.getInstance().dropItemMap(this.zone, itemMap1);
-            b += 15;
-        }
+
+        generalRewards(pl);
     }
 
     @Override
@@ -98,13 +98,13 @@ public class RongDen extends Boss {
 
     @Override
     public void leaveMap() {
-       try{
-           BossFactory.createBoss(BossFactory.RONG_DEN).setJustRest();
-           super.leaveMap();
-           BossManager.gI().removeBoss(this);
-       } catch (Exception e) {
-           throw new RuntimeException(e);
-       }
+        try {
+            BossFactory.createBoss(BossFactory.RONG_DEN).setJustRest();
+            super.leaveMap();
+            BossManager.gI().removeBoss(this);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

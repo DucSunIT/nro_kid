@@ -11,7 +11,7 @@ import nro.services.Service;
 import nro.utils.Util;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class Cooler2 extends FutureBoss {

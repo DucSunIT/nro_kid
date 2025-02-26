@@ -5,7 +5,7 @@ import nro.server.io.Message;
 import nro.utils.Log;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  */
 public class EffSkinService {
 

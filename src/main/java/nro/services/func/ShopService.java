@@ -24,7 +24,7 @@ import nro.utils.Util;
 import java.util.List;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class ShopService {
@@ -326,7 +326,7 @@ public class ShopService {
                 Service.getInstance().sendMoney(player);
                 return;
             }
-            if (is.temp.id == 988 && player.inventory.getGoldLimit() >= 100000000000L) {
+            if (is.temp.id == 988 && player.inventory.getGoldLimit() >= 500_000_000_000L) {
                 Service.getInstance().sendThongBao(player, "Giới hạn vàng của bạn đã đạt tối đa");
                 Service.getInstance().sendMoney(player);
                 return;

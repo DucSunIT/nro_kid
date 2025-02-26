@@ -19,7 +19,7 @@ import java.util.List;
 import nro.models.mob.Mob;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class MapService {

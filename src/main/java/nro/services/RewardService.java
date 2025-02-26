@@ -33,21 +33,21 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class RewardService {
 
     //id option set kich hoat (tên set, hiệu ứng set, tỉ lệ, type tỉ lệ)
     private static final int[][][] ACTIVATION_SET = {{{129, 141, 1, 1000}, {127, 139, 1, 1000}, {128, 140, 1, 1000}}, //songoku - thien xin hang - kirin
-            {{131, 143, 1, 1000}, {132, 144, 1, 1000}, {130, 142, 1, 1000}}, //oc tieu - pikkoro daimao - picolo
-            {{135, 138, 1, 1000}, {133, 136, 1, 1000}, {134, 137, 1, 1000}} //kakarot - cadic - nappa
-    };
+    {{131, 143, 1, 1000}, {132, 144, 1, 1000}, {130, 142, 1, 1000}}, //oc tieu - pikkoro daimao - picolo
+    {{135, 138, 1, 1000}, {133, 136, 1, 1000}, {134, 137, 1, 1000}} //kakarot - cadic - nappa
+};
     //id option set kich hoat (tên set, hiệu ứng set, tỉ lệ, type tỉ lệ)
     private static final int[][][] ACTIVATION_SET_NO = {{{129, 141}, {127, 139}, {128, 140}}, //songoku - thien xin hang - kirin
-            {{131, 143}, {132, 144}, {130, 142}}, //oc tieu - pikkoro daimao - picolo
-            {{135, 138}, {133, 136}, {134, 137}} //kakarot - cadic - nappa
-    };
+    {{131, 143}, {132, 144}, {130, 142}}, //oc tieu - pikkoro daimao - picolo
+    {{135, 138}, {133, 136}, {134, 137}} //kakarot - cadic - nappa
+};
 
     //    public static void main(String[] args) {
 //        int set1 = 0;
@@ -218,6 +218,7 @@ public class RewardService {
                         list.add(itemMap);
                     }
                 }
+
                 if (mob.tempId == ConstMob.HIRUDEGARN) {
                     RandomCollection<Integer> rd = new RandomCollection<>();
                     rd.add(1, 1066);
@@ -253,34 +254,71 @@ public class RewardService {
                     list.add(itemMap);
                 }
                 //mvbbt 5
-                if (Util.isTrue(5, 100) && mob.zone.map.mapId > 155 && mob.zone.map.mapId < 159) {
-                    Item bongtai4 = null;
-                    try {
-                        bongtai4 = InventoryService.gI().findItemBagByTemp(player, 1129);
-                    } catch (Exception ignored) {
+                //if (Util.isTrue(1, 20) && mob.zone.map.mapId > 155 && mob.zone.map.mapId < 159)
+//                if (Util.isTrue(1, 30) && mob.zone.map.mapId==155) {
+//                    Item bongtai4 = null;
+//                    try {
+//                        bongtai4 = InventoryService.gI().findItemBagByTemp(player, 1129);
+//                    } catch (Exception ignored) {
+//                    }
+//                    if (player.isPl() && bongtai4 != null) {
+//                        RandomCollection<Integer> rd = new RandomCollection<>();
+//                        rd.add(1, 1549);
+//                        int itemID = rd.next();
+//                        ItemMap itemMap = new ItemMap(mob.zone, itemID, 1, x + Util.nextInt(-50, 50), yEnd, player.id);
+//                        list.add(itemMap);
+//                    }
+//                }
+//                // mảnh thiên sứ 
+//                if (Util.isTrue(5, 100) && mob.zone.map.mapId == 155) {
+//                    if (player.setClothes.setDHD == 5) {
+//                        RandomCollection<Integer> rd = new RandomCollection<>();
+//                        rd.add(1, 1066);
+//                        rd.add(1, 1067);
+//                        rd.add(1, 1068);
+//                        rd.add(1, 1069);
+//                        rd.add(1, 1070);
+//                        int itemID = rd.next();
+//                        ItemMap itemMap = new ItemMap(mob.zone, itemID, 1, x + Util.nextInt(-50, 50), yEnd, player.id);
+//                        list.add(itemMap);
+//                    }
+//                }
+//                // đá cầu vòng
+//                if (Util.isTrue(1, 1_000_000) && mob.zone.map.mapId == 155) {
+//                    if (player.setClothes.setDHD == 5) {
+//                        RandomCollection<Integer> rd = new RandomCollection<>();
+//                        rd.add(1, 1083);
+//                        int itemID = rd.next();
+//                        ItemMap itemMap = new ItemMap(mob.zone, itemID, 1, x + Util.nextInt(-50, 50), yEnd, player.id);
+//                        list.add(itemMap);
+//                    }
+//                }
+                // map hành tinh ngục tù
+                if (mob.zone.map.mapId == 155) {
+                    // Bong tai 4
+                    if (Util.isTrue(1, 50)) {
+                        try {
+                            Item bongtai4 = InventoryService.gI().findItemBagByTemp(player, 1129);
+                            if (player.isPl() && bongtai4 != null) {
+                                list.add(new ItemMap(mob.zone, 1549, 1, x + Util.nextInt(-50, 50), yEnd, player.id));
+                            }
+                        } catch (Exception ignored) {
+                        }
                     }
-                    if (player.isPl() && bongtai4 != null) {
-                        RandomCollection<Integer> rd = new RandomCollection<>();
-                        rd.add(1, 1549);
-                        int itemID = rd.next();
-                        ItemMap itemMap = new ItemMap(mob.zone, itemID, 1, x + Util.nextInt(-50, 50), yEnd, player.id);
-                        list.add(itemMap);
+
+                    // Mảnh thiên sứ
+                    if (Util.isTrue(1, 30) && player.setClothes.setDHD == 5) {
+                        int[] thienSuItems = {1066, 1067, 1068, 1069, 1070};
+                        int itemID = thienSuItems[Util.nextInt(0, thienSuItems.length - 1)];
+                        list.add(new ItemMap(mob.zone, itemID, 1, x + Util.nextInt(-50, 50), yEnd, player.id));
+                    }
+
+                    // Đá cầu vồng
+                    if (Util.isTrue(1, 1_000_000) && player.setClothes.setDHD == 5) {
+                        list.add(new ItemMap(mob.zone, 1083, 1, x + Util.nextInt(-50, 50), yEnd, player.id));
                     }
                 }
-                // mảnh thiên sứ 
-                if (Util.isTrue(5, 100) && mob.zone.map.mapId == 155) {
-                    if (player.setClothes.setDHD == 5) {
-                        RandomCollection<Integer> rd = new RandomCollection<>();
-                        rd.add(1, 1066);
-                        rd.add(1, 1067);
-                        rd.add(1, 1068);
-                        rd.add(1, 1069);
-                        rd.add(1, 1070);
-                        int itemID = rd.next();
-                        ItemMap itemMap = new ItemMap(mob.zone, itemID, 1, x + Util.nextInt(-50, 50), yEnd, player.id);
-                        list.add(itemMap);
-                    }
-                }
+
                 if (Util.isTrue(5, 100) && (mob.zone.map.mapId == 0 || mob.zone.map.mapId == 7 || mob.zone.map.mapId == 14)) {
                     RandomCollection<Integer> rd = new RandomCollection<>();
                     rd.add(1, 1215);
@@ -355,8 +393,7 @@ public class RewardService {
                             }
                         }
                     }
-                }
-                // sự kiện tết
+                } // sự kiện tết
                 else if (Manager.EVENT_SEVER == ConstEvent.SU_KIEN_TET) {
                     // vạn sự như ý và thiệp chúc tết
 //                    if (check ? tile : Util.isTrue(1, 1)) {
@@ -401,8 +438,7 @@ public class RewardService {
 //                            itemMap.options.add(new ItemOption(74, 0));
 //                            list.add(itemMap);
 //                        }
-                    }
-                    // đi doanh trại, bản đồ kho báu được đỗ xanh, lá dong, lá chuối, gia vị tổng hợp
+                    } // đi doanh trại, bản đồ kho báu được đỗ xanh, lá dong, lá chuối, gia vị tổng hợp
                     else if (MapService.gI().isMapDoanhTrai(mapid) || MapService.gI().isMapBanDoKhoBau(mapid)) {
                         if (check ? tile : Util.isTrue(1, 150)) {
                             ItemMap itemMap = new ItemMap(mob.zone, Util.nextInt(ConstItem.LA_DONG_2023, ConstItem.LA_CHUOI), 1, x, yEnd, player.id);
@@ -479,9 +515,19 @@ public class RewardService {
                         }
                     }
                 }
-                if ((mapid >= 92 && mapid <= 100) || (mapid >= 105 && mapid <= 110)) {
+//                if ((mapid >= 92 && mapid <= 100) || (mapid >= 105 && mapid <= 110)) {
+//                    if (check ? tile : Util.isTrue(1, 15)) {
+//                        int a = Util.nextInt(10, 20);
+//                        player.inventory.ruby += a;
+//                        player.hngocnhat += a;
+//                        Service.getInstance().sendMoney(player);
+//                        Service.getInstance().sendThongBao(player, "Bạn nhận được " + a + " Hồng ngọc");
+//                    }
+//                }
+                // up hồng ngọc bên map cold
+                if (mapid >= 105 && mapid <= 110) {
                     if (check ? tile : Util.isTrue(1, 15)) {
-                        int a = Util.nextInt(10, 50);
+                        int a = Util.nextInt(10, 20);
                         player.inventory.ruby += a;
                         player.hngocnhat += a;
                         Service.getInstance().sendMoney(player);
@@ -493,19 +539,39 @@ public class RewardService {
         return list;
     }
 
+    //    private void initQuantityGold(ItemMap item, double tileVang) {
+//        switch (item.itemTemplate.id) {
+//            case 76:
+//                item.quantity = Util.nextInt(2000, 3000) + (int) (Util.nextInt(2000, 3000) * tileVang);
+//                break;
+//            case 188:
+//                item.quantity = Util.nextInt(500, 1000) + (int) (Util.nextInt(500, 1000) * tileVang);
+//                break;
+//            case 189:
+//                item.quantity = Util.nextInt(1000, 20000) + (int) (Util.nextInt(1000, 2000) * tileVang);
+//                break;
+//            case 190:
+//                item.quantity = Util.nextInt(2000, 3000) + (int) (Util.nextInt(2000, 3000) * tileVang);
+//                break;
+//        }
+//        Attribute at = ServerManager.gI().getAttributeManager().find(ConstAttribute.VANG);
+//        if (at != null && !at.isExpired()) {
+//            item.quantity += item.quantity * at.getValue() / 100;
+//        }
+//    }
     private void initQuantityGold(ItemMap item, double tileVang) {
         switch (item.itemTemplate.id) {
             case 76:
-                item.quantity = Util.nextInt(2000, 3000) + (int) (Util.nextInt(2000, 3000) * tileVang);
+                item.quantity = Util.nextInt(400_000, 500_000) + (int) (Util.nextInt(400_000, 500_000) * tileVang);
                 break;
             case 188:
-                item.quantity = Util.nextInt(500, 1000) + (int) (Util.nextInt(500, 1000) * tileVang);
+                item.quantity = Util.nextInt(350_000, 400_000) + (int) (Util.nextInt(350_000, 400_000) * tileVang);
                 break;
             case 189:
-                item.quantity = Util.nextInt(1000, 20000) + (int) (Util.nextInt(1000, 2000) * tileVang);
+                item.quantity = Util.nextInt(300_000, 350_000) + (int) (Util.nextInt(300_000, 350_000) * tileVang);
                 break;
             case 190:
-                item.quantity = Util.nextInt(2000, 3000) + (int) (Util.nextInt(2000, 3000) * tileVang);
+                item.quantity = Util.nextInt(200_000, 250_000) + (int) (Util.nextInt(200_000, 250_000) * tileVang);
                 break;
         }
         Attribute at = ServerManager.gI().getAttributeManager().find(ConstAttribute.VANG);
@@ -1357,7 +1423,7 @@ public class RewardService {
             case 265:
             case 276:
             case 277:
-                // đồ thần
+            // đồ thần
             case 555:
             case 556:
             case 562:

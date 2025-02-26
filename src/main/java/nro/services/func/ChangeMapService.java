@@ -24,7 +24,7 @@ import java.util.List;
 import nro.models.phuban.DragonNamecWar.TranhNgocService;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class ChangeMapService {

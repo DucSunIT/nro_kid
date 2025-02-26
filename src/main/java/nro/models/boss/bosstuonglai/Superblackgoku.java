@@ -29,7 +29,7 @@ import java.util.Map;
 import nro.services.TaskService;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class Superblackgoku extends Boss {
@@ -230,38 +230,92 @@ public class Superblackgoku extends Boss {
         super.die();
     }
 
+//    @Override
+//    public void rewards(Player pl) {
+//        // do than 1/20
+//        int[] tempIds1 = new int[]{563, 565, 567}; // giày thần
+//        int tempId = -1;
+//        if (Util.isTrue(1, 40)) {
+//            tempId = 992; // nhẫn thời không
+//        } else if (Util.isTrue(1, 50)) {
+//            tempId = tempIds1[Util.nextInt(0, tempIds1.length - 1)];
+//        }
+//        if (Manager.EVENT_SEVER == 4 && tempId == -1) {
+//            tempId = ConstItem.LIST_ITEM_NLSK_TET_2023[Util.nextInt(0, ConstItem.LIST_ITEM_NLSK_TET_2023.length - 1)];
+//        }
+//        if (tempId != -1 && tempId != 992 && !(Manager.EVENT_SEVER == 4)) {
+//            ItemMap itemMap = new ItemMap(this.zone, tempId, 1,
+//                    pl.location.x, this.zone.map.yPhysicInTop(pl.location.x, pl.location.y - 24), pl.id);
+//            RewardService.gI().initBaseOptionClothes(itemMap.itemTemplate.id, itemMap.itemTemplate.type, itemMap.options);
+//            RewardService.gI().initStarOption(itemMap, new RewardService.RatioStar[]{
+//                    new RewardService.RatioStar((byte) 1, 1, 2),
+//                    new RewardService.RatioStar((byte) 2, 1, 3),
+//                    new RewardService.RatioStar((byte) 3, 1, 4),
+//                    new RewardService.RatioStar((byte) 4, 1, 5),
+//                    new RewardService.RatioStar((byte) 5, 1, 6),
+//                    new RewardService.RatioStar((byte) 6, 1, 7),
+//                    new RewardService.RatioStar((byte) 7, 1, 8)
+//            });
+//
+//            Service.getInstance().dropItemMap(this.zone, itemMap);
+//        }
+//        TaskService.gI().checkDoneTaskKillBoss(pl, this);
+//        generalRewards(pl);
+//    }
     @Override
     public void rewards(Player pl) {
-        // do than 1/20
-        int[] tempIds1 = new int[]{563, 565, 567};
+        // Kiểm tra null tránh lỗi
+        if (this.zone == null || this.zone.map == null || pl == null || pl.location == null) {
+            return;
+        }
+
+        int[] tempIds1 = new int[]{563, 565, 567}; // Giày thần
         int tempId = -1;
+
+        // Xác suất chọn vật phẩm
         if (Util.isTrue(1, 40)) {
-            tempId = 992;
-        } else if (Util.isTrue(1, 40)) {
+            tempId = 992; // Nhẫn thời không
+        } else if (Util.isTrue(1, 50)) {
             tempId = tempIds1[Util.nextInt(0, tempIds1.length - 1)];
         }
+
+        // Nếu event đang diễn ra và chưa có item, chọn vật phẩm event
         if (Manager.EVENT_SEVER == 4 && tempId == -1) {
             tempId = ConstItem.LIST_ITEM_NLSK_TET_2023[Util.nextInt(0, ConstItem.LIST_ITEM_NLSK_TET_2023.length - 1)];
         }
+
+        // Kiểm tra xem có vật phẩm hợp lệ để thả không
         if (tempId != -1) {
-            ItemMap itemMap = new ItemMap(this.zone, tempId, 1,
-                    pl.location.x, this.zone.map.yPhysicInTop(pl.location.x, pl.location.y - 24), pl.id);
-            RewardService.gI().initBaseOptionClothes(itemMap.itemTemplate.id, itemMap.itemTemplate.type, itemMap.options);
-            RewardService.gI().initStarOption(itemMap, new RewardService.RatioStar[]{
-                new RewardService.RatioStar((byte) 1, 1, 2),
-                new RewardService.RatioStar((byte) 2, 1, 3),
-                new RewardService.RatioStar((byte) 3, 1, 4),
-                new RewardService.RatioStar((byte) 4, 1, 5),
-                new RewardService.RatioStar((byte) 5, 1, 6),
-                new RewardService.RatioStar((byte) 6, 1, 7),
-                new RewardService.RatioStar((byte) 7, 1, 8)
-            });
+            int dropX = pl.location.x;
+            int dropY = this.zone.map.yPhysicInTop(dropX, pl.location.y - 24);
+
+            ItemMap itemMap = new ItemMap(this.zone, tempId, 1, dropX, dropY, pl.id);
+
+            // Nếu không phải nhẫn thời không, gán thuộc tính ngẫu nhiên
+            if (tempId != 992) {
+                RewardService.gI().initBaseOptionClothes(itemMap.itemTemplate.id, itemMap.itemTemplate.type, itemMap.options);
+                RewardService.gI().initStarOption(itemMap, new RewardService.RatioStar[]{
+                    new RewardService.RatioStar((byte) 1, 1, 2),
+                    new RewardService.RatioStar((byte) 2, 1, 3),
+                    new RewardService.RatioStar((byte) 3, 1, 4),
+                    new RewardService.RatioStar((byte) 4, 1, 5),
+                    new RewardService.RatioStar((byte) 5, 1, 6),
+                    new RewardService.RatioStar((byte) 6, 1, 7),
+                    new RewardService.RatioStar((byte) 7, 1, 8)
+                });
+            }
+
+            // Drop item
             Service.getInstance().dropItemMap(this.zone, itemMap);
         }
+
+        // Kiểm tra nhiệm vụ giết boss
         TaskService.gI().checkDoneTaskKillBoss(pl, this);
+
+        // Thưởng chung cho player
         generalRewards(pl);
     }
-
+    
     @Override
     protected boolean useSpecialSkill() {
         return false;

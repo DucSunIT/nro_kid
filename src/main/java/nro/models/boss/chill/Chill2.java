@@ -9,7 +9,7 @@ import nro.utils.Util;
 
 /**
  *
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  *
  */
@@ -33,7 +33,7 @@ public class Chill2 extends FutureBoss {
         int[] tempIds2 = new int[]{562, 564, 566, 561};
         int tempId = -1;
 
-        if (Util.isTrue(1, 10)) {
+        if (Util.isTrue(1, 30)) {
             tempId = tempIds1[Util.nextInt(0, tempIds1.length - 1)];
         } else if (Util.isTrue(1, 100)) {
             tempId = tempIds2[Util.nextInt(0, tempIds2.length - 1)];

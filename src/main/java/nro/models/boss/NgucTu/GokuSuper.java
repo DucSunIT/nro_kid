@@ -19,8 +19,14 @@ import nro.models.boss.BossManager;
 import nro.services.SkillService;
 import nro.utils.SkillUtil;
 
+import nro.models.boss.BossData;
+
+import nro.models.boss.BossFactory;
+
+import nro.models.boss.Boss;
+
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  * @copyright 💖 GirlkuN 💖
  */
 public class GokuSuper extends Boss {
@@ -63,18 +69,52 @@ public class GokuSuper extends Boss {
         }
     }
 
+//    @Override
+//    public void rewards(Player pl) {
+//        int a = 0;
+//        int b = 5;
+//        if (Util.isTrue(90, 100)) {
+//            for (int i = 0; i < 3; i++) {
+//                ItemMap itemMap = new ItemMap(this.zone, 1235, 1,
+//                        this.location.x + a, this.zone.map.yPhysicInTop(this.location.x, this.location.y - 24), -1);
+//                Service.getInstance().dropItemMap(this.zone, itemMap);
+//                a += 15;
+//            }
+//        } else {
+//            for (int i = 0; i < 2; i++) {
+//                ItemMap itemMap = new ItemMap(this.zone, 457, 1,
+//                        this.location.x + a, this.zone.map.yPhysicInTop(this.location.x, this.location.y - 24), -1);
+//                Service.getInstance().dropItemMap(this.zone, itemMap);
+//                a += 15;
+//            }
+//        }
+//        for (int i = 0; i < 2; i++) {
+//            ItemMap itemMap1 = new ItemMap(this.zone, 1236, 1,
+//                    this.location.x + b, this.zone.map.yPhysicInTop(this.location.x, this.location.y - 24), -1);
+//            Service.getInstance().dropItemMap(this.zone, itemMap1);
+//            b += 15;
+//        }
+//    }
     @Override
     public void rewards(Player pl) {
         int a = 0;
-        int b = 5;
-        if (Util.isTrue(90, 100)) {
-            for (int i = 0; i < 3; i++) {
-                ItemMap itemMap = new ItemMap(this.zone, 1235, 1,
-                        this.location.x + a, this.zone.map.yPhysicInTop(this.location.x, this.location.y - 24), -1);
-                Service.getInstance().dropItemMap(this.zone, itemMap);
-                a += 15;
-            }
-        } else {
+        boolean dropped = false;  // Biến để kiểm tra xem đã rơi vật phẩm hay chưa
+        if (Util.isTrue(1, 2)) {
+            ItemMap itemMap = new ItemMap(this.zone, 1235, 1,
+                    this.location.x + a, this.zone.map.yPhysicInTop(this.location.x, this.location.y - 24), -1);
+            Service.getInstance().dropItemMap(this.zone, itemMap);
+            dropped = true; // Đánh dấu đã rơi đồ
+        }
+
+        if (Util.isTrue(1, 10)) {
+            ItemMap itemMap1 = new ItemMap(this.zone, 1236, 1,
+                    this.location.x, this.zone.map.yPhysicInTop(this.location.x, this.location.y - 24), -1);
+            Service.getInstance().dropItemMap(this.zone, itemMap1);
+            dropped = true; // Đánh dấu đã rơi đồ
+        }
+
+        // Nếu không rơi bất kỳ vật phẩm nào, rơi vật phẩm mặc định (ID 457)
+        if (!dropped) {
             for (int i = 0; i < 2; i++) {
                 ItemMap itemMap = new ItemMap(this.zone, 457, 1,
                         this.location.x + a, this.zone.map.yPhysicInTop(this.location.x, this.location.y - 24), -1);
@@ -82,12 +122,7 @@ public class GokuSuper extends Boss {
                 a += 15;
             }
         }
-        for (int i = 0; i < 2; i++) {
-            ItemMap itemMap1 = new ItemMap(this.zone, 1236, 1,
-                    this.location.x + b, this.zone.map.yPhysicInTop(this.location.x, this.location.y - 24), -1);
-            Service.getInstance().dropItemMap(this.zone, itemMap1);
-            b += 15;
-        }
+
     }
 
     @Override
@@ -96,7 +131,8 @@ public class GokuSuper extends Boss {
     }
 
     @Override
-    public void checkPlayerDie(Player pl) {
+    public void checkPlayerDie(Player pl
+    ) {
 
     }
 

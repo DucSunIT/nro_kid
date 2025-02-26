@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  *
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  */
 public abstract class BigBoss extends Mob implements IBigBoss {
 

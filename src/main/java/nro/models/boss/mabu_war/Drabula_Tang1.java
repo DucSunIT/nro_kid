@@ -15,7 +15,7 @@ import nro.services.Service;
 import nro.services.SkillService;
 
 /**
- * @author Văn Tuấn - 0337766460
+ * @author DucSunIT
  */
 public class Drabula_Tang1 extends BossMabuWar {
 
